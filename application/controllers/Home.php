@@ -21,10 +21,10 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('fontEnd/Template/Header');
-		// $this->load->view('Template/front/sidebar');
-		$this->load->view('fontEnd/home');
-		$this->load->view('fontEnd/Template/Footer');
+		 $this->load->view('backEnd/Template/Header');
+		 $this->load->view('backEnd/Template/Sidebar');
+		$this->load->view('backEnd/dashboard');
+		 $this->load->view('backEnd/Template/Footer');
 	}
 
 }
