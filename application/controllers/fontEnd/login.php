@@ -25,4 +25,12 @@ class login extends CI_Controller {
 		$this->load->view('fontEnd/login');
 		$this->load->view('fontEnd/Template/Footer');
 	}
+	public function register()
+{
+
+		$this->load->view('fontEnd/Template/Header');
+		// $this->load->view('Template/front/sidebar');
+		$this->load->view('fontEnd/register');
+		//$this->load->view('fontEnd/Template/Footer');
+	}
 }
