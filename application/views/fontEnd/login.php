@@ -18,7 +18,7 @@
                       <center>
                         <h3>เข้าสู่ระบบ</h3><br/>
                       <label>
-                            ไม่มีบัญชีผู้ใช้งาน?
+                            ไม่มีบัญชีผู้ใช้งานนนนนน?
                           &nbsp; &nbsp; <a href="register.php"><strong style="color:Red"><U>ลงทะเบียน</U></strong></a>
                       </label>
                       </center>
@@ -73,8 +73,3 @@
       </div>
     </div>
   <!--จบเนื้อหาส่วนกลาง-->
-
-
-
-
-  			
