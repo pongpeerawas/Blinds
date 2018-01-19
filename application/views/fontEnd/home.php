@@ -12,7 +12,7 @@
 
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="asset/img/slide1.jpg" class="img-responsive" alt="">
+						<img src="img/slide1.jpg" class="img-responsive" alt="">
 						<div class="carousel-caption">
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
 								<h2><span>Clean & Modern Design Template</span></h2>
@@ -25,10 +25,10 @@
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
 								<form class="form-inline">
 									<div class="form-group">
-										<button type="livedemo" name="Live Demo" class="btn btn-primary btn-lg" required="required">Live Demo</button>
+										<button type="livedemo" name="Live Demo" class="btn btn-primary btn-lg" required="required">ดูสินค้า</button>
 									</div>
 									<div class="form-group">
-										<button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">Get Now</button>
+										<button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">ช้อปเลย</button>
 									</div>
 								</form>
 							</div>
@@ -36,7 +36,7 @@
 				    </div>
 
 				    <div class="item">
-						<img src="asset/img/slide2.jpg" class="img-responsive" alt="">
+						<img src="img/slide2.jpg" class="img-responsive" alt="">
 						<div class="carousel-caption">
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
 								<h2>Fully Responsive</h2>

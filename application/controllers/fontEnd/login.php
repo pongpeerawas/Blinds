@@ -48,6 +48,7 @@
 								echo '<label><a href="'.base_url().'fontEnd/login/logout">Logout</a></label>';
 						    // echo '<label><a href="'.site_url('welcome/insertform')>logout</a></label>';
 
+<<<<<<< HEAD
            }
            else
            {
@@ -60,3 +61,29 @@
            redirect('fontEnd/login/index');
       }
  }
+=======
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
+	public function Index()
+	{
+		$this->load->view('fontEnd/Template/Header');
+		// $this->load->view('Template/front/sidebar');
+		$this->load->view('fontEnd/login');
+		$this->load->view('fontEnd/Template/Footer');
+}
+
+}
+>>>>>>> 155bb20b49009f546ff7717d0f68ed48a38aafa3

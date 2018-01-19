@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class register extends CI_Controller {
 
+<<<<<<< HEAD
 	public function loadpage($value)
  	{
 	   $this->load->view('fontEnd/Template/Header');
@@ -124,4 +125,28 @@ class register extends CI_Controller {
 // 	redirect('fontEnd/login/showLogin');
 // 	//print_r($value);
 // }
+=======
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
+	public function index()
+	{
+		$this->load->view('fontEnd/Template/Header');
+		// $this->load->view('Template/front/sidebar');
+		$this->load->view('fontEnd/register');
+		$this->load->view('fontEnd/Template/Footer');
+	}
+>>>>>>> 155bb20b49009f546ff7717d0f68ed48a38aafa3
 }
