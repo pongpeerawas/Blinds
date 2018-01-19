@@ -5,17 +5,10 @@
 </div>
 
 <!--end-Footer-part-->
-<script src="<?php echo base_url('assetAdmin/js/matrix.tables.js') ?>"></script>
-
-
-
-
 <script src="<?php echo base_url('assetAdmin/js/excanvas.min.js') ?>"></script>
 <script src="<?php echo base_url('assetAdmin/js/jquery.min.js') ?>"></script>
-
 <script src="<?php echo base_url('assetAdmin/js/jquery.ui.custom.js') ?>"></script>
 <script src="<?php echo base_url('assetAdmin/js/bootstrap.min.js') ?>"></script>
-
 <script src="<?php echo base_url('assetAdmin/js/jquery.flot.min.js') ?>"></script>
 <script src="<?php echo base_url('assetAdmin/js/jquery.flot.resize.min.js') ?>"></script>
 <script src="<?php echo base_url('assetAdmin/js/jquery.peity.min.js') ?>"></script>
@@ -33,6 +26,10 @@
 <script src="<?php echo base_url('assetAdmin/js/matrix.popover.js') ?>"></script>
 <script src="<?php echo base_url('assetAdmin/js/jquery.dataTables.min.js') ?>"></script>
 <script src="<?php echo base_url('assetAdmin/js/matrix.tables.js') ?>"></script>
+
+
+
+
 
 
 <!-- <script type="text/javascript">

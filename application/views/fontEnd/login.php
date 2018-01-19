@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resi Bootstrap Template</title>
 
-    <!-- Bootstrap -->
+
   <link href="<?php echo base_url('asset/css/bootstrap.min.css') ?>" rel="stylesheet" />
 	<link href="<?php echo base_url('asset/css/responsive-slider.css') ?>" rel="stylesheet" />
 	<link href="<?php echo base_url('asset/css/animate.css') ?>" rel="stylesheet" />
@@ -16,12 +16,6 @@
 
 
 
-    <!-- =======================================================
-        Theme Name: Resi
-        Theme URL: https://bootstrapmade.com/resi-free-bootstrap-html-template/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
   </head>
 
   <body>
@@ -50,7 +44,7 @@
 				</nav>
 			</div>
 		</div>
-	</header>
+	</header> -->
 
 
 
@@ -71,7 +65,7 @@
                         <h3>เข้าสู่ระบบ</h3><br/>
                       <label>
                             ไม่มีบัญชีผู้ใช้งาน?
-                          &nbsp; &nbsp; <a href="<?php echo site_url('fontEnd/register/pageRegister'); ?>"><strong style="color:Red"><U>ลงทะเบียน</U></strong></a>
+                          &nbsp; &nbsp; <a href="<?php echo site_url('fontEnd/register'); ?>"><strong style="color:Red"><U>ลงทะเบียน</U></strong></a>
                       </label>
                       </center>
                       <br/>

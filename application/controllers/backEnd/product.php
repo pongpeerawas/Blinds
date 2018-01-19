@@ -3,13 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class product extends CI_Controller {
 
-	public function loadpage($value)
-	{
-		$this->load->view('backEnd/Template/header');
-		$this->load->view('backEnd/Template/sidebar');
-		$this->load->view($value['views'],$value['result']);
-		$this->load->view('backEnd/Template/footer');
-	}
 	public function index()
 	{
 		 $query = $this->productModel->read_db();
@@ -23,20 +16,29 @@ class product extends CI_Controller {
 		$this->loadpage($value);
 	}
 
-
-public function showProduct()
-{
-	$this->load->view('backEnd/product');
-}
-public function getProduct()
-{
-	$query = $this->productModel->read_db();
-	$value = array(
-		'data'=>$query
-	);
-	$this->load->view('product',$value);
-	//print_r($value);
-}
+	public function loadpage($value)
+	{
+		$this->load->view('backEnd/Template/header');
+		$this->load->view('backEnd/Template/sidebar');
+		$this->load->view($value['views'],$value['result']);
+		$this->load->view('backEnd/Template/footer');
+	}
+// 
+//
+// public function showProduct()
+// {
+// 	$this->load->view('backEnd/product');
+// }
+//
+// public function getProduct()
+// {
+// 	$query = $this->productModel->read_db();
+// 	$value = array(
+// 		'data'=>$query
+// 	);
+// 	$this->load->view('product',$value);
+// 	//print_r($value);
+// }
 
 
 public function insertform()

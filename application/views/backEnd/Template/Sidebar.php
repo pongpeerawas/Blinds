@@ -4,7 +4,7 @@
     <li class="active"><a href="<?php echo site_url('backEnd/dashboard'); ?>"><i class="icon icon-home"></i> <span>ภาพรวมของระบบ</span></a> </li>
     <li> <a href="<?php echo site_url('backEnd/category'); ?>"><i class="icon icon-th"></i> <span>จักการประเภทสินค้า</span></a> </li>
     <li> <a href="<?php echo site_url('backEnd/product'); ?>"><i class="icon icon-inbox"></i> <span>จัดการสินค้า</span></a> </li>
-    <li><a href="<?php echo site_url('backEnd/category'); ?>"><i class="icon icon-user"></i> <span>จัดการสมาชิก</span></a></li>
+    <li><a href="<?php echo site_url('backEnd/customer'); ?>"><i class="icon icon-user"></i> <span>จัดการสมาชิก</span></a></li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
       <ul>
         <li><a href="form-common.html">Basic Form</a></li>

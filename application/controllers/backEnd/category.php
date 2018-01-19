@@ -3,33 +3,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class category extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+	public function loadpage($value)
+	{
+		$this->load->view('backEnd/Template/header');
+		$this->load->view('backEnd/Template/sidebar');
+		$this->load->view($value['views'],$value['result']);
+		$this->load->view('backEnd/Template/footer');
+	}
 	public function index()
 	{
-		 $this->load->view('backEnd/Template/Header');
-		 $this->load->view('backEnd/Template/Sidebar');
-		$this->load->view('backEnd/category');
-		$this->load->view('backEnd/Template/Footer');
+		 $query = $this->categoryModel->read_db();
+
+		$value = array(
+			'result' => array(
+				'data' => $query
+			),
+			'views' => 'backEnd/category'
+		);
+		$this->loadpage($value);
 	}
 
-	public function addCategory()
+
+	public function insert()
 	{
-	
+		$input = $this->input->post();
+		$this->categoryModel->insert($input);
+		redirect('backEnd/category');
+		//print_r($value);
 	}
+public function del()
+{
+	$del = $this->uri->segment(4);
+	$this->categoryModel->del($del);
+	redirect('backEnd/category');
+
+
+}
 
 
 

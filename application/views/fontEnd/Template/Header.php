@@ -12,18 +12,8 @@
 	<link href="<?php echo base_url('asset/css/animate.css') ?>" rel="stylesheet" />
   <link href="<?php echo base_url('asset/css/font-awesome.min.css') ?>" rel="stylesheet" />
   <link href="<?php echo base_url('asset/css/style.css') ?>" rel="stylesheet" />
-
-
-
-    <!-- =======================================================
-        Theme Name: Resi
-        Theme URL: https://bootstrapmade.com/resi-free-bootstrap-html-template/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
   </head>
 
-  <body>
 
     <header>
 		<div class="container">
@@ -41,7 +31,7 @@
 								<li role="presentation"><a href="feature.html">Feature</a></li>
 								<li role="presentation"><a href="blog.html">Blog</a></li>
 								<li role="presentation"><a href="portfolio.html">Portfolio</a></li>
-								<li role="presentation"><a href="<?php echo site_url('fontEnd/login/pageLogin'); ?>">เข้าสู่ระบบ</li>
+								<li role="presentation"><a href="<?php echo site_url('fontEnd/login');?>">เข้าสู่ระบบ</li></a>
 
 							</ul>
 						</div>
