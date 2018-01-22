@@ -21,6 +21,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$data['listProduct'] = $this->homeModel->findAll();
 		//  $this->load->view('backEnd/Template/Header');
 		//  $this->load->view('backEnd/Template/Sidebar');
 		// $this->load->view('backEnd/dashboard');
@@ -29,9 +30,8 @@ class Home extends CI_Controller {
     //
 		 $this->load->view('fontEnd/Template/Header');
 		 // $this->load->view('fontEnd/Template/Sidebar');
-		 $this->load->view('fontEnd/home');
+		 $this->load->view('fontEnd/home',$data);
 		 $this->load->view('fontEnd/Template/Footer');
-
 	}
 
 }
