@@ -3,25 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class register extends CI_Controller {
 
-<<<<<<< HEAD
 	public function loadpage($value)
  	{
 	   $this->load->view('fontEnd/Template/Header');
      $this->load->view($value['views'],$value['result']);
 
 	}
-		public function index()
-		{
-			 $query = $this->registermodel->read_db();
-
-			$value = array(
-				'result' => array(
-					'data' => $query
-				),
-				'views' => 'fontEnd/registerform'
-			);
-			$this->loadpage($value);
-		}
+		// public function index()
+		// {
+		// 	 $query = $this->registermodel->read_db();
+    //
+		// 	$value = array(
+		// 		'result' => array(
+		// 			'data' => $query
+		// 		),
+		// 		'views' => 'fontEnd/registerform'
+		// 	);
+		// 	$this->loadpage($value);
+		// }
 
 	public function registerform()
 	{
@@ -125,7 +124,7 @@ class register extends CI_Controller {
 // 	redirect('fontEnd/login/showLogin');
 // 	//print_r($value);
 // }
-=======
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -148,5 +147,5 @@ class register extends CI_Controller {
 		$this->load->view('fontEnd/register');
 		$this->load->view('fontEnd/Template/Footer');
 	}
->>>>>>> 155bb20b49009f546ff7717d0f68ed48a38aafa3
+
 }

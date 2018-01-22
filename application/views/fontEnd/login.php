@@ -1,83 +1,8 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
  <html>
  <head>
-      <title>Webslesson | <?php echo $title; ?></title>
-      <link rel="stylesheet"
 
-href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
- </head>
- <body>
-      <div class="container">
-           <br /><br /><br />
-           <!-- <form method="post" action="<?php echo base_url(); ?>main/login_validation"> -->
-             <?php echo form_open('fontEnd/login/login_validation'); ?>
-                <div class="form-group">
-                     <label>Enter Username</label>
-                     <input type="text" name="username" class="form-control" />
-                     <span class="text-danger"><?php echo form_error('username'); ?></span>
-                </div>
-                <div class="form-group">
-                     <label>Enter Password</label>
-                     <input type="password" name="password" class="form-control" />
-                     <span class="text-danger"><?php echo form_error('password'); ?></span>
-                </div>
-                <div class="form-group">
-                     <input type="submit" name="insert" value="Login" class="btn btn-info" />
-                     <?php
-                          echo '<label class="text-danger">'.$this->session->flashdata("error").'</label>';
-                     ?>
-                </div>
-           <!-- </form> -->
-           	<?php echo form_close(); ?>
-=======
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resi Bootstrap Template</title>
-
-
-  <link href="<?php echo base_url('asset/css/bootstrap.min.css') ?>" rel="stylesheet" />
-	<link href="<?php echo base_url('asset/css/responsive-slider.css') ?>" rel="stylesheet" />
-	<link href="<?php echo base_url('asset/css/animate.css') ?>" rel="stylesheet" />
-  <link href="<?php echo base_url('asset/css/font-awesome.min.css') ?>" rel="stylesheet" />
-  <link href="<?php echo base_url('asset/css/style.css') ?>" rel="stylesheet" />
-
-
-
-  </head>
-
-  <body>
-
-    <header>
-		<div class="container">
-			<div class="row">
-				<nav class="navbar navbar-default" role="navigation">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<div class="navbar-brand">
-								<a href="index.html"><h1>Resi</h1></a>
-							</div>
-						</div>
-						<div class="menu">
-							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" ><a href="index.html">Home</a></li>
-								<li role="presentation"><a href="feature.html">Feature</a></li>
-								<li role="presentation"><a href="blog.html">Blog</a></li>
-								<li role="presentation"><a href="portfolio.html">Portfolio</a></li>
-								<li role="presentation" class="active"><a href="<?php echo site_url('fontEnd/login/pageLogin'); ?>">เข้าสู่ระบบ</li>
-
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</header> -->
 
 
 
@@ -93,7 +18,6 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <div class="col-md-6 col-md-offset-3">
 
 
-            <form class="form-horizontal" method="post" action="check_login.php">
                       <center>
                         <h3>เข้าสู่ระบบ</h3><br/>
                       <label>
@@ -102,35 +26,35 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
                       </label>
                       </center>
                       <br/>
+
+                      <?php echo form_open('fontEnd/login/login_validation'); ?>
+
                       <div class="form-group">
                       <label for="inputEmail3" class="col-sm-4 control-label">Username:</label>
                       <div class="col-sm-6">
-                      <input type="text" name="txtUsername" class="form-control" id="txtUsername" placeholder="Username">
+                        <input type="text" name="username" class="form-control" />
+                        <span class="text-danger"><?php echo form_error('username'); ?></span>
                       </div>
                       </div>
                       <div class="form-group">
                       <label for="inputPassword3" class="col-sm-4 control-label">Password:</label>
                       <div class="col-sm-6">
-                      <input type="password" name="txtPassword" class="form-control" id="txtPassword" placeholder="Password">
+                        <input type="password" name="password" class="form-control" />
+                        <span class="text-danger"><?php echo form_error('password'); ?></span>
                       </div>
                       </div>
-                      <div class="form-group">
-                      <div class="col-sm-offset-4">
-                      <div class="checkbox">
-                      <!-- <label>
-                      <input type="checkbox" name="chk" id="chk" value="on"> จำฉันไว้ในระบบ
-                      </label> -->
-
-                      </div>
-                      </div>
-                      </div>
+                        <br>
                       <div class="form-group">
                      <center>
-                      <button type="submit" class="btn btn-default">เข้าสู่ระบบ</button>
+                       <input type="submit" name="insert" value="Login" class="btn btn-info" />
+                       <?php
+                            echo '<label class="text-danger">'.$this->session->flashdata("error").'</label>';
+                       ?>
                       </center>
 
                   </div>
-                </form>
+                  <?php echo form_close(); ?>
+
 
 
             </div>
@@ -149,7 +73,6 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
 
 
->>>>>>> 155bb20b49009f546ff7717d0f68ed48a38aafa3
       </div>
  </body>
  </html>

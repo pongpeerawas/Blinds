@@ -5,6 +5,8 @@
       {
            $this->db->where('User_Username', $username);
            $this->db->where('User_Password', $password);
+          
+
            $query = $this->db->get('user');
            //SELECT * FROM users WHERE username = '$username' AND password = '$password'
            if($query->num_rows() > 0)
