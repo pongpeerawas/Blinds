@@ -12,6 +12,9 @@
 	<link href="<?php echo base_url('asset/css/animate.css') ?>" rel="stylesheet" />
   <link href="<?php echo base_url('asset/css/font-awesome.min.css') ?>" rel="stylesheet" />
   <link href="<?php echo base_url('asset/css/style.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('asset/css/datepicker.css') ?>" rel="stylesheet" />
+  <!-- <link href="<?php echo base_url('asset/css/custom_css.css') ?>" rel="stylesheet" /> -->
+
   </head>
 
 
@@ -27,8 +30,10 @@
 						</div>
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="index.html">Home</a></li>
-								<li role="presentation"><a href="feature.html">Feature</a></li>
+								<li role="presentation" class="active"><a href="<?php echo site_url('');?>">Home</a></li>
+                <!-- <li role="presentation"><a href="<?php echo site_url('fontEnd/ShoppingCart');?>">ตะกร้าสินค้า</li></a> -->
+                <li> <a href="<?php echo site_url('fontEnd/Checkout');?>"><i class="glyphicon glyphicon-shopping-cart"></i> Checkout (<span id="update_cart"><?php if($cart_session){echo array_sum($cart_session);} else { echo '0'; } ?></span>)</a> </li>
+
 								<li role="presentation"><a href="blog.html">Blog</a></li>
 								<li role="presentation"><a href="portfolio.html">Portfolio</a></li>
 								<li role="presentation"><a href="<?php echo site_url('fontEnd/login');?>">เข้าสู่ระบบ</li></a>
