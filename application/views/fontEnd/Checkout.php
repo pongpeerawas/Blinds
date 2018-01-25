@@ -3,12 +3,12 @@
 	  <div class="table-responsive">
               <table id="mytable" class="table table-bordred table-striped">
                    <thead>
-					 <th>สินค้า</th>
-           <th>รูปสินค้า</th>
-					 <th>ราคา</th>
-					 <th>จำนวน</th>
-					 <th>ราคารวม/ชิ้น</th>
-				    <th>ลบ</th>
+					 <th>Product</th>
+                     <th>Photo</th>
+					 <th>Price</th>
+					 <th>Quantity</th>
+					 <th>Total</th>
+				     <th>Delete</th>
                    </thead>
 
 			       <tbody id="tb_checkout">
@@ -19,13 +19,13 @@
 					$i = 0;
 					$total =0;
 					foreach($cart_session as $cs=>$value){
-						$row = $this->homeModel->product_detail($cs);
+						$row = $this->Product_model->product_detail($cs);
 						$total += $row->Pro_Price*$value;
 					?>
 
 					<tr id="tr<?php echo $cs;?>">
 					  <td><?php echo $row->Pro_Name;?></td>
-					  <td><img src="<?php echo base_url();?>assetAdmin/img<?php if($row->Pro_Pic){echo $row->Pro_Pic;} else {echo 'no_image.png';}?>" width="100" ></td>
+					  <td><img src="<?php echo base_url();?>assetAdmin/img/<?php if($row->Pro_Pic){echo $row->Pro_Pic;} else {echo 'no_image.png';}?>" width="100" ></td>
 					  <td>$ <?php echo $row->Pro_Price;?></td>
 					  <td>
 
@@ -57,17 +57,16 @@
 					  </td>
 					  <td>$ <span id="span_total<?php echo $cs;?>"><?php echo $row->Pro_Price*$value;?></span></td>
 					  <td>
-						<a class="delete_cart btn btn-danger btn-xs" title="Delete" style="cursor:pointer" product_id="<?php echo $cs;?>" position="<?php echo $i;?>"><span class="glyphicon glyphicon-trash"></span></a>
+						<a class="delete_cart btn btn-danger btn-xs" title="Delete" style="cursor:pointer" Pro_Id="<?php echo $cs;?>" position="<?php echo $i;?>"><span class="glyphicon glyphicon-trash"></span></a>
 					  </td>
 					</tr>
 
 					<?php
 					$i++;
 					}?>
-
 					<input type="hidden" id="total" value="<?php echo $total;?>">
 					<tr id="tr_total">
-					  <td colspan="4" align="right">ราคารวม &nbsp;</td>
+					  <td colspan="4" align="right">Total &nbsp;</td>
 					  <td>$ <span id="span_all_total"><?php echo $total;?></span></td>
 					  <td>&nbsp;</td>
 					</tr>
@@ -78,7 +77,7 @@
 					?>
 
 					<tr>
-					  <td colspan="6" align="center">ล้างตะกร้า</td>
+					  <td colspan="6" align="center">Cart empty</td>
 					</tr>
 
 					<?php

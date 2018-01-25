@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class homeModel extends CI_Model {
+class Product_model extends CI_Model {
 
 	function __construct() {
 		parent::__construct();
@@ -12,7 +12,7 @@ class homeModel extends CI_Model {
 	}
 
 	function product_detail($id){
-		return $q = $this->db->select('*')->from('product')->where('Pro_id',$id)->get()->row();
+		return $q = $this->db->select('*')->from('product')->where('Pro_Id',$id)->get()->row();
 	}
 
 }

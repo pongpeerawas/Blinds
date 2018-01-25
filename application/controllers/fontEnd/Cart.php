@@ -44,7 +44,7 @@ class Cart extends CI_Controller {
 
 
 
-		$Pro_Id= $this->input->post('Pro_Id');
+		$Pro_Id = $this->input->post('Pro_Id');
 		$qty = $this->input->post('qty');
 
 		$count_arr = count($Pro_Id);

@@ -60,6 +60,7 @@
 				    </div>
 				</div>
 
+
 				<a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
 					<i class="fa fa-angle-left"></i>
 				</a>

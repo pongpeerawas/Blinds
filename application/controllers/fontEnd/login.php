@@ -4,10 +4,9 @@
       //functions
       function index()
       {
-           //http://localhost/tutorial/codeigniter/main/login
-           $data['title'] = 'CodeIgniter Simple Login Form With Sessions';
+
            $this->load->view("fontEnd/Template/Header");
-           $this->load->view("fontEnd/login", $data);
+           $this->load->view("fontEnd/login");
            $this->load->view("fontEnd/Template/Footer");
 
       }
