@@ -5,9 +5,9 @@ class registerModel extends CI_Model {
 
   public function read_db()
   {
-  	$this->db->join('province','customer.Province_Id = province.Province_Id','left');
-  	$db = $this->db->get('customer')->result_array();
-  	return $db;
+    $this->db->join('province','customer.Province_Id = province.Province_Id','left');
+    $db = $this->db->get('customer')->result_array();
+    return $db;
   }
   public function read_province()
   {
@@ -29,5 +29,10 @@ class registerModel extends CI_Model {
   	->result_array();
   	return $query;
   }
-
+  public function update($input)
+{
+ $this->db
+ ->where('Cus_Id',$input['Cus_Id'])
+ ->update('customer',$input);
+}
 }

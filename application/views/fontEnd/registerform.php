@@ -93,10 +93,9 @@
                                           <td align="right">จังหวัด : </td>
                                           <td>
                                             <select name="Province_Id">
-                                            <?php foreach ($province as $key ): ?>
-
+                                            <?php foreach ($province as $key): ?>
                                               <?php if ($data[0]['Province_Id']==$key['Province_Id']): ?>
-                                                <option selected value="<?php echo $key['Province_Id']?>" ><?php echo $key['province_name'] ?></option>
+                                                <option selected value="<?php echo $key['Province_Id']?>"><?php echo $key['province_name'] ?></option>
 
                                               <?php else: ?>
                                                 <option value="<?php echo $key['Province_Id']?>" ><?php echo $key['province_name'] ?></option>
