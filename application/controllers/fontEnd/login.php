@@ -4,10 +4,16 @@
       //functions
       function index()
       {
+        $contents['cart_session'] = $this->session->userdata('cart_session');
 
-           $this->load->view("fontEnd/Template/Header");
-           $this->load->view("fontEnd/login");
-           $this->load->view("fontEnd/Template/Footer");
+        $template['content']    = $this->load->view('fontEnd/login',$contents,TRUE);
+
+       $this->load->view('fontEnd/Template/Header');
+       $this->load->view('fontEnd/Template/Sidebar',$template);
+       $this->load->view('fontEnd/Template/Footer');
+           // $this->load->view("fontEnd/Template/Header");
+           // $this->load->view("fontEnd/login");
+           // $this->load->view("fontEnd/Template/Footer");
 
       }
       function login_validation()
@@ -23,6 +29,7 @@
                 $password = $this->input->post('password');
                 //model function
                 $this->load->model('loginModel');
+                
                 if($this->loginModel->can_login($username, $password))
                 {
                      $session_data = array(
@@ -47,12 +54,14 @@
       function enter(){
            if($this->session->userdata('username') != '')
            {
-             $this->load->view('fontEnd/Template/Header');
-        		 // $this->load->view('fontEnd/Template/Sidebar');
-        		 $this->load->view('fontEnd/home');
-        		 $this->load->view('fontEnd/Template/Footer');
-								echo '<label><a href="'.base_url().'index.php/fontEnd/login/logout">Logout</a></label>';
-						    // echo '<label><a href="'.site_url('welcome/insertform')>logout</a></label>';
+
+         			 echo '<a href= "<?php echo base_url();?>index.php/fontEnd/login/logout">Logout</a> ';
+
+
+              redirect('Home');
+
+
+
 
            }
            else
