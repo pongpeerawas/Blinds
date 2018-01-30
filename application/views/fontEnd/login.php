@@ -22,34 +22,32 @@
                         <h3>เข้าสู่ระบบ</h3><br/>
                       <label>
                             ไม่มีบัญชีผู้ใช้งาน?
-                          &nbsp; &nbsp; <a href="<?php echo site_url('fontEnd/register'); ?>"><strong style="color:Red"><U>ลงทะเบียน</U></strong></a>
+                          &nbsp; &nbsp; <a href="<?php echo site_url('fontEnd/register/registerform'); ?>"><strong style="color:Red"><U>ลงทะเบียน</U></strong></a>
                       </label>
                       </center>
                       <br/>
+                         <?= validation_errors() ?>
+                         <?= $this->session->flashdata('error') ?>
+                      <?php echo form_open('fontEnd/login'); ?>
 
-                      <?php echo form_open('fontEnd/login/login_validation'); ?>
 
                       <div class="form-group">
                       <label for="inputEmail3" class="col-sm-4 control-label">Username:</label>
                       <div class="col-sm-6">
                         <input type="text" name="username" class="form-control" />
-                        <span class="text-danger"><?php echo form_error('username'); ?></span>
                       </div>
                       </div>
                       <div class="form-group">
                       <label for="inputPassword3" class="col-sm-4 control-label">Password:</label>
                       <div class="col-sm-6">
                         <input type="password" name="password" class="form-control" />
-                        <span class="text-danger"><?php echo form_error('password'); ?></span>
                       </div>
                       </div>
                         <br>
                       <div class="form-group">
                      <center>
-                       <input type="submit" name="insert" value="Login" class="btn btn-info" />
-                       <?php
-                            echo '<label class="text-danger">'.$this->session->flashdata("error").'</label>';
-                       ?>
+                       <button type="submit" class="btn btn-success">Login</button>
+                       <?=  anchor(base_url(),'Cancel',['class'=>'btn']) ?>
                       </center>
 
                   </div>

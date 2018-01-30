@@ -59,7 +59,7 @@
                   <td><?php echo $key['Cus_HouseNum'];?></td>
                   <td><?php echo $key['Cus_District1'];?></td>
                   <td><?php echo $key['Cus_District2'];?></td>
-                  <td><?php echo $key['Cus_Province'];?></td>
+                  <td><?php echo $key['province_name'];?></td>
                   <td><?php echo $key['Cus_Zipcode'];?></td>
                   <td><?php echo $key['Cus_Country'];?></td>
                   <td>

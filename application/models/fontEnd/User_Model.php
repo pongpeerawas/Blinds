@@ -8,10 +8,10 @@
        $password = set_value('password');
        $stuts = '1';
        $gry = $this->db->where('User_Username',$username)
-               ->where('usr_password',$password)
-               ->where('stuts',$stuts)
+               ->where('User_Password',$password)
+               ->where('User_Status	',$stuts)
                ->limit(1)
-               ->get('users');
+               ->get('user');
        if($gry->num_rows()	>	0)
        {
          return $gry->row();
@@ -28,11 +28,11 @@
        $username = set_value('username');
        $password = set_value('password');
        $stuts = '0';
-       $gry = $this->db->where('usr_name',$username)
-               ->where('usr_password',$password)
-               ->where('stuts',$stuts)
+       $gry = $this->db->where('User_Username',$username)
+               ->where('User_Password',$password)
+               ->where('User_Status',$stuts)
                ->limit(1)
-               ->get('users');
+               ->get('user');
        if($gry->num_rows()	>	0)
        {
          return $gry->row();
@@ -45,7 +45,7 @@
 
    public function members()
      {
-       $member = $this->db->get('users');
+       $member = $this->db->get('user');
        if($member->num_rows() > 0 ) {
          return $member->result();
        } else {
@@ -56,21 +56,21 @@
 
    public function active($usr_id,$data_user)
      {
-       $this->db->where('usr_id',$usr_id)
-           ->update('users',$data_user);
+       $this->db->where('User_Id',$usr_id)
+           ->update('user',$data_user);
 
      }
 
    public function disable($usr_id,$data_user)
      {
-       $this->db->where('usr_id',$usr_id)
-       ->update('users',$data_user);
+       $this->db->where('User_Id',$usr_id)
+       ->update('user',$data_user);
 
      }
 
    public function register_new($data_register_new)
    {
-     $this->db->insert('users',$data_register_new);
+     $this->db->insert('user',$data_register_new);
    }
 
 
