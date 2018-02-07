@@ -63,6 +63,12 @@
                   <span class="help-block"></span> </div>
                 </div>
                 <div class="control-group">
+                  <label class="control-label">ขนาด :</label>
+                  <div class="controls">
+                    <input  class="span2" type="text" name="Pro_Size" value="<?php echo $data[0]['Pro_Size'] ?>" >&nbsp; ซม.
+                    <span class="help-block"></span> </div>
+                  </div>
+                <div class="control-group">
                   <label class="control-label">รูปสินค้าเดิม :</label>
                   <div class="controls">
 

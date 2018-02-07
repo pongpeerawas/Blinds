@@ -8,7 +8,7 @@ class category extends CI_Controller {
 		$this->load->view('backEnd/Template/header');
 		$this->load->view('backEnd/Template/sidebar');
 		$this->load->view($value['views'],$value['result']);
-		$this->load->view('backEnd/Template/footer');
+		// $this->load->view('backEnd/Template/footer');
 	}
 	public function index()
 	{

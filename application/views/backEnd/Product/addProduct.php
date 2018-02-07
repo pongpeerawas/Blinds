@@ -60,6 +60,12 @@
                 <span class="help-block"></span> </div>
               </div>
               <div class="control-group">
+                <label class="control-label">ขนาด :</label>
+                <div class="controls">
+                  <input type="text"  name="Pro_Size" id="Pro_Size" class="span2"  onkeypress="return noNumbers(event)">&nbsp; ซม.
+                  <span class="help-block"></span> </div>
+                </div>
+              <div class="control-group">
                 <label class="control-label">รูปสินค้า :</label>
                 <div class="controls">
                 <input type="file"   name="Pro_Pic" class="btn btn-primary">

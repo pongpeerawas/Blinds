@@ -2,7 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class product extends CI_Controller {
-
+	public function loadpage($value)
+	{
+		$this->load->view('backEnd/Template/Header');
+		$this->load->view('backEnd/Template/Sidebar');
+		$this->load->view($value['views'],$value['result']);
+	  // $this->load->view('backEnd/Template/footer');
+	}
 	public function index()
 	{
 		 $query = $this->productModel->read_db();
@@ -16,29 +22,6 @@ class product extends CI_Controller {
 		$this->loadpage($value);
 	}
 
-	public function loadpage($value)
-	{
-		$this->load->view('backEnd/Template/header');
-		$this->load->view('backEnd/Template/sidebar');
-		$this->load->view($value['views'],$value['result']);
-		$this->load->view('backEnd/Template/footer');
-	}
-// 
-//
-// public function showProduct()
-// {
-// 	$this->load->view('backEnd/product');
-// }
-//
-// public function getProduct()
-// {
-// 	$query = $this->productModel->read_db();
-// 	$value = array(
-// 		'data'=>$query
-// 	);
-// 	$this->load->view('product',$value);
-// 	//print_r($value);
-// }
 
 
 public function insertform()
@@ -63,15 +46,6 @@ public function insert()
 	$input['Pro_Pic']=$new_file;
 	$this->productModel->insert($input);
 	redirect('backEnd/product');
-
-}
-
-public function del()
-{
-	$del = $this->uri->segment(4);
-	$this->productModel->del($del);
-	redirect('backEnd/product');
-
 
 }
 
@@ -107,5 +81,13 @@ public function update()
 	redirect('backEnd/product');
 }
 
+public function del()
+{
+	$del = $this->uri->segment(4);
+	$this->productModel->del($del);
+	redirect('backEnd/product');
+
+
+}
 
 }

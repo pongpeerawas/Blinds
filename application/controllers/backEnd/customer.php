@@ -4,15 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class customer extends CI_Controller {
 
 
-
-
-
 	public function loadpage($value)
 	{
-		$this->load->view('backEnd/Template/header');
-		$this->load->view('backEnd/Template/sidebar');
+		$this->load->view('backEnd/Template/Header');
+		$this->load->view('backEnd/Template/Sidebar');
 		$this->load->view($value['views'],$value['result']);
-    $this->load->view('backEnd/Template/footer');
+    // $this->load->view('backEnd/Template/Footer');
 
 	}
 

@@ -54,27 +54,50 @@
 
      }//end function member
 
-   public function active($usr_id,$data_user)
-     {
-       $this->db->where('User_Id',$usr_id)
-           ->update('user',$data_user);
 
-     }
 
-   public function disable($usr_id,$data_user)
-     {
-       $this->db->where('User_Id',$usr_id)
-       ->update('user',$data_user);
 
-     }
-
-   public function register_new($data_register_new)
+   public function register($data_register,$data_customer)
    {
-     $this->db->insert('user',$data_register_new);
+     $this->db->insert('user',$data_register);
+      $this->db->insert('customer',$data_customer);
+     // $this->db->insert('customer',$data_register);
    }
 
+   public function is_usr()
+   {
+     $username = set_value('username');
+     $gry = $this->db->where('User_Username',$username)
+     ->limit(1)
+     ->get('user');
+     if($gry->num_rows()	>	0)
+     {
+       return TRUE;
+       }else{
+       return FALSE;
+     }
 
+
+   }
+
+   public function check()
+   {
+     $username = set_value('username');
+     $password = set_value('password');
+     $stuts = '1';
+     $gry = $this->db->where('User_Username',$username)
+     ->where('User_Password',$password)
+     ->where('User_Status',$stuts)
+     ->limit(1)
+     ->get('user');
+     if($gry->num_rows()	>	0)
+     {
+       return $gry->row();
+       }else{
+       return array();
+     }
 
 
 
  }
+}

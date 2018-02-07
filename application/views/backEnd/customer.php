@@ -18,7 +18,7 @@
 
 
 </head>
-<
+
 <div id="content">
   <div id="content-header">
     <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Form elements</a> <a href="#" class="current">Form wizard</a> </div>
@@ -30,7 +30,7 @@
 
     <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>Data table</h5>
+            <h5>รายชื่อสมาชิก</h5>
           </div>
           <div class="widget-content nopadding">
             <table class="table  data-table">

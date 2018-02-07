@@ -3,52 +3,101 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class register extends CI_Controller {
 
-	public function loadpage($value)
- 	{
-	   $this->load->view('fontEnd/Template/Header');
-     $this->load->view($value['views'],$value['result']);
-	}
-
-	public function registerform()
+	public function __construct ()
 	{
-		$province = $this->registerModel->read_province();
-		$value = array(
-			'result' => array(
-			'province' => $province
-			),
-			'views' => 'fontEnd/registerform'
-		);
-		$this->loadpage($value);
+		parent::__construct();
+		$this->load->model('User_Model');
 	}
 
-	public function insert()
+	public function index()
 	{
-		$input = $this->input->post();
-		$this->registerModel->insert($input);
 
-		redirect('fontEnd/login/index');
-		//print_r($value);
+		$this->form_validation->set_rules('username','Username','required|alpha_numeric|min_length[4]|max_length[20]');
+		$this->form_validation->set_rules('password','Password','required|alpha_numeric|min_length[6]|max_length[24]');
+		$contents['cart_session'] = $this->session->userdata('cart_session');
+
+
+		if($this->form_validation->run()	==	FALSE)
+		{
+			$template['content']    = $this->load->view('fontEnd/registerform',$contents,TRUE);
+
+			 $this->load->view('fontEnd/Template/Header');
+			$this->load->view('fontEnd/Template/Sidebar',$template);
+			$this->load->view('fontEnd/Template/Footer');
+			// $this->load->view('fontEnd/registerform',$data);
+
+		}else{
+				$data_user = array
+				 (
+					'User_Username'			=> set_value('username'),
+					'User_Password'		=> set_value('password'),
+					'User_Status'				=> '1',
+					'User_Group'				=> '2'
+				 );
+				 	$data_customer = array
+ 				 (
+ 					'Cus_Name'			=> set_value('Cus_Name')
+
+ 				 );
+				 if($this->User_Model->is_usr() == FALSE)
+				 {
+					 $this->User_Model->register($data_user,$data_customer);
+						 $this->form_validation->set_rules('username');
+						 $this->form_validation->set_rules('password');
+						 if($this->form_validation->run()	==	FALSE)
+						 {
+								$this->load->view('fontEnd/login');
+						 }else{
+								$valid_user	= $this->User_Model->check();
+								 if($valid_user	==	FALSE)
+								 {
+									 $this->session->set_flashdata('error','Username / Password Not Correct !' );
+									 redirect('fontEnd/register');
+								 }else{
+										 $this->session->set_userdata('username',$valid_user->User_Username);
+										 $this->session->set_userdata('group',$valid_user->User_Group);
+										 switch($valid_user->usr_group)
+										 {
+											 case 2 ://for member
+											redirect('Home');
+											 break;
+
+											 default: break;
+										 }
+								 }
+						 }
+
+					 redirect(base_url());
+				 }else{
+						$this->session->set_flashdata('error','Please Write Other User Name !' );
+						redirect('fontEnd/register');
+				 }
+		}
 	}
-	public function updateform()
-{
-	$Cus_Id = $this->uri->segment(3);
-	$query = $this->registerModel->read_one($Cus_Id);
-	$cus = $this->registerModel->read_province();
-	$value = array(
-		'result' => array(
-			'data' => $query,
-			'province' => $cus
-		),
-		'views' => 'editProfile'
-	);
-	$this->loadpage($value);
-}
-	public function update()
-{
-	$input = $this->input->post();
-	$this->registerModel->update($input);
-	redirect('');
-	//print_r($value);
-}
+	// public function loadpage($value)
+ 	// {
+	// 	  $contents['cart_session'] = $this->session->userdata('cart_session');
+	// 		$template['content']    = $this->load->view('fontEnd/login',$contents,TRUE);
+  //
+	//    $this->load->view('fontEnd/Template/Header');
+  //    $this->load->view($value['views'],$value['result']);
+	// 	   $this->load->view('fontEnd/Template/Footer');
+	// }
+  //
+	// public function registerform()
+	// {
+	// 	$province = $this->registerModel->read_province();
+	// 	$value = array(
+	// 		'result' => array(
+	// 		'province' => $province
+	// 		),
+	// 		'views' => 'fontEnd/registerform'
+	// 	);
+	// 	$this->loadpage($value);
+	// }
+
+
+
+
 
 }

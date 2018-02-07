@@ -3,14 +3,24 @@
   <title>Register Page</title>
 </head>
 <body>
-      <?php echo form_open('fontEnd/register/insert'); ?>
-      <?php echo form_open('fontEnd/register/validate'); ?>
+
       <div class="container" align="center">
                                 <div class="row">
                                   <div class="col-md-2 col-sm=2"></div>
                                   <div class="col-md-8">
                                     <h3>ลงทะเบียนสมาชิกใหม่</h3>
                                     <table class="table table-hover" border="0">
+                                      <?= validation_errors() ?>
+                                      <?= $this->session->flashdata('error') ?>
+                                      <?= form_open('fontEnd/register') ?>
+                                      <tr>
+                                        <td align="right">ชื่อเข้าใช้ :</td>
+                                        <td><input type="text" class="form-control" name="username" value="<?= set_value('User_Username') ?>"></td>
+                                      </tr>
+                                      <tr>
+                                        <td align="right">รหัสผ่าน :</td>
+                                        <td><input type="text" class="form-control" name="password" value="<?= set_value('User_Password') ?>"></td>
+                                      </tr>
                                       <tr>
                                         <td align="right">ชื่อ-นามสกุล :</td>
                                         <td><input type="text" class="form-control" name="Cus_Name" value=""></td>
@@ -310,30 +320,16 @@
                                         </select></td>
 
                                       </tr>
-                                      <!-- <tr>
-                                        <td align="right">จังหวัด :</td>
-                                          <select name="province_id">
-                                            <<?php foreach ($province as $key ): ?>
-                                              <?php if ($data[0]['province_id']==$key['province_id']): ?>
-                                                <option selected value="<?php echo $key['province_id']?>" ><?php echo $key['province_name'] ?></option>
-
-                                              <?php else: ?>
-                                                <option value="<?php echo $key['province_id']?>" ><?php echo $key['province_name'] ?></option>
-
-                                              <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        </td> -->
-
-                                      <!-- </tr> -->
                                       <tr>
-                                        <td align="center" colspan="3"><input class="btn btn-info" type="submit" value="เพิ่ม"></td>
+                                        <td align="center" colspan="3"><input class="btn btn-success" type="submit" value="สมัครสมาชิก"></td>
+
                                       </tr>
                                     </table>
                                   </div>
                                 </div>
                               </div>
                               	<?php echo form_close(); ?>
-                                <?php echo form_close(); ?>
+
 <!-- </form> -->
 <!-- </div> -->
 </body>
