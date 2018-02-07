@@ -16,6 +16,11 @@ class Product extends CI_Controller {
 
 
 	}
+	public function single()
+	 {
+			 $id = $_GET['id'];
+			 redirect('fontEnd/productDetail/productDetailForm?id='.$id);
+	 }
 
 
 
