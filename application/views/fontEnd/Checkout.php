@@ -13,76 +13,78 @@
 
 		<tbody id="tb_checkout">
 
-			<?php
+	<?php
 
-			if($cart_session){
-				$i = 0;
-				$total =0;
-				foreach($cart_session as $cs=>$value){
-					$row = $this->Product_model->product_detail($cs);
-					$total += $row->Pro_Price*$value;
-					?>
+ if($cart_session){
+ $i = 0;
+ $total =0;
+ foreach($cart_session as $cs=>$value){
+	 $row = $this->Product_model->product_detail($cs);
+	 $total += $row->Pro_Price*$value;
+ ?>
 
-					<tr id="tr<?php echo $cs;?>">
-						<td><?php echo $row->Pro_Name;?></td>
-						<td><img src="<?php echo base_url();?>assetAdmin/img/<?php if($row->Pro_Pic){echo $row->Pro_Pic;} else {echo 'no_image.png';}?>" width="100" ></td>
-						<td> <?php echo $row->Pro_Price;?> บาท</td>
-						<td>
-							<div class="input-group" style="width:70px" id="#fh5co-hero">
-								<span class="input-group-btn">
-									<button type="button" class="btn btn-primary  less_qty"  size="1" position="<?php echo $i;?>">
-										<span class="glyphicon glyphicon-minus"></span>
-									</button>
-								</span>
-
-								<input type="text" size="1"  class=" qty" value="<?php echo $value;?>" style="text-align:center" onkeypress="return numbOnly(event)" id="qty[<?php echo $i;?>]">
-
-								<span class="input-group-btn">
-									<!-- <button type="button" class="btn btn-primary  add_qty" position="<?php echo $i;?>"> -->
-										<a class="btn btn-primary add_qty " size="1" position="<?php echo $i;?>">
-										<span class="glyphicon glyphicon-plus"></span>
-										</a>
-									</button>
-								</span>
-							</div>
+ <tr id="tr<?php echo $cs;?>">
+	 <td><?php echo $row->Pro_Name;?></td>
+	 <td><img src="<?php echo base_url();?>assetAdmin/img/<?php echo ($row->Pro_Pic)?>" width="100px"></td>
+	 <td>$ <?php echo $row->Pro_Price;?></td>
+	 <td>
 
 
 
-							<input type="hidden" class="Pro_Id"  id="Pro_Id[<?php echo $i;?>]" value="<?php echo $cs;?>">
-							<input type="hidden" class="Pro_Price"  id="Pro_Price[<?php echo $i;?>]" value="<?php echo $row->Pro_Price;?>">
+		 <div class="input-group" style="width:120px">
+			 <span class="input-group-btn">
+				 <button type="button" class="btn btn-primarys btn-number less_qty" position="<?php echo $i;?>">
+				 <span class="glyphicon glyphicon-minus"></span>
+				 </button>
+			 </span>
+
+				 <input type="text" class="form-control qty" value="<?php echo $value;?>" style="text-align:right" onkeypress="return numbOnly(event)" id="qty[<?php echo $i;?>]">
 
 
-						</td>
-						<td> <span id="span_total<?php echo $cs;?>"><?php echo $row->Pro_Price*$value;?> บาท</span></td>
-						<td>
-							<a class="delete_cart btn btn-danger btn-xs" title="Delete" style="cursor:pointer" Pro_Id="<?php echo $cs;?>" position="<?php echo $i;?>">ลบ</a>
-						</td>
-					</tr>
+			 <span class="input-group-btn">
+				 <button type="button" class="btn btn-primarys btn-number add_qty" position="<?php echo $i;?>">
+				 <span class="glyphicon glyphicon-plus"></span>
+				 </button>
+			 </span>
+		 </div>
 
-					<?php
-					$i++;
-				}?>
-				<input type="hidden" id="total" value="<?php echo $total;?>">
-				<tr id="tr_total">
-					<td colspan="4" align="right">ราคาสุทธิ &nbsp;</td>
-					<td> <span id="span_all_total"><?php echo $total;?>  บาท</span></td>
-					<td>&nbsp;</td>
-				</tr>
-				<?php
 
-			} else {
 
-				?>
+	 <input type="hidden" class="Pro_Id"  id="Pro_Id[<?php echo $i;?>]" value="<?php echo $cs;?>">
+	 <input type="hidden" class="Pro_Price"  id="Pro_Price[<?php echo $i;?>]" value="<?php echo $row->Pro_Price;?>">
 
-				<tr>
-					<td colspan="6" align="center">ไม่มีสินค้าในตะกร้า</td>
-				</tr>
 
-				<?php
-			}
-			?>
+	 </td>
+	 <td>$ <span id="span_total<?php echo $cs;?>"><?php echo $row->Pro_Price*$value;?></span></td>
+	 <td>
+	 <a class="delete_cart " title="Delete" style="cursor:pointer" Pro_Id="<?php echo $cs;?>" position="<?php echo $i;?>"><span class="glyphicon glyphicon-trash"></span></a>
+	 </td>
+ </tr>
 
-		</tbody>
+ <?php
+ $i++;
+ }?>
+ <input type="hidden" id="total" value="<?php echo $total;?>">
+ <tr id="tr_total">
+	 <td colspan="4" align="right">มูลค่าสินค้า: &nbsp;</td>
+	 <td>$ <span id="span_all_total"><?php echo $total;?></span></td>
+	 <td>&nbsp;</td>
+ </tr>
+ <?php
+
+ } else {
+
+ ?>
+
+ <tr>
+	 <td colspan="6" align="center">Cart empty</td>
+ </tr>
+
+ <?php
+ }
+ ?>
+
+					</tbody>
 
 	</table>
 
@@ -103,7 +105,7 @@ if($cart_session){
 <form action="" method="post">
 	<div class="modal fade bs-example-modal-sm modal-alert" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 
-		<div class="modal-dialog modal-sm" style="width:90%">
+		<div class="modal-dialog modal-sm" style="width:80%">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&#215;</button>

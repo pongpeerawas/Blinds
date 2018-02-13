@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class productDetail extends CI_Controller {
   public function index(){
 
-    $contents['row']          = $this->Product_model->product_detail();
+    $contents['row']          = $this->Product_model->product();
     $contents['cart_session'] = $this->session->userdata('cart_session');
 
     $template['content']      = $this->load->view('fontEnd/productDetail',$contents,TRUE);
@@ -31,8 +31,8 @@ class productDetail extends CI_Controller {
     $data['relpro'] = $query->result();
 
     $this->load->view('fontEnd/Template/Header');
-    $this->load->view('fontEnd/productDetail',$data);
     $this->load->view('fontEnd/Template/Sidebar',$template);
+    $this->load->view('fontEnd/productDetail',$data);
     $this->load->view('fontEnd/Template/Footer');
 
 

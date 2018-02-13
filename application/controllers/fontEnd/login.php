@@ -20,7 +20,7 @@ class login extends CI_Controller {
     }
     else{
       $this->load->model('User_Model');
-      $valid_user	= $this->User_Model->check_usr();
+      $valid_user	= $this->User_Model->check_login();
       $check_user_is_active = $this->User_Model->check_user_is_active();
 
       if($valid_user	==	FALSE)

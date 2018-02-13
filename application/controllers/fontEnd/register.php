@@ -30,15 +30,26 @@ class register extends CI_Controller {
 				$data_user = array
 				 (
 					'User_Username'			=> set_value('username'),
-					'User_Password'		=> set_value('password'),
+					'User_Password'		=>  set_value('password'),
 					'User_Status'				=> '1',
 					'User_Group'				=> '2'
 				 );
 				 	$data_customer = array
  				 (
- 					'Cus_Name'			=> set_value('Cus_Name')
+ 					'Cus_Name'			=> set_value('Cus_Name'),
+					'Cus_Phone'			=> set_value('Cus_Phone	'),
+					'Cus_Email'			=> set_value('Cus_Email'),
+					'Cus_HouseNum'			=> set_value('Cus_HouseNum'),
+					'Cus_District1'			=> set_value('Cus_District1'),
+					'Cus_District2'			=> set_value('Cus_District2'),
+					// 'Province_Name'			=> set_value('Province_Name'),
+					'Cus_Zipcode'			=> set_value('Cus_Zipcode'),
+					'Cus_Country'			=> set_value('Cus_Country')
+
+
 
  				 );
+				 
 				 if($this->User_Model->is_usr() == FALSE)
 				 {
 					 $this->User_Model->register($data_user,$data_customer);

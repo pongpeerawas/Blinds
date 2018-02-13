@@ -2,7 +2,7 @@
  class User_Model extends CI_Model
  {
 
-   public function check_usr()
+   public function check_login()
      {
        $username = set_value('username');
        $password = set_value('password');
@@ -53,8 +53,6 @@
        } //end if num_rows
 
      }//end function member
-
-
 
 
    public function register($data_register,$data_customer)

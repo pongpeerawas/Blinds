@@ -17,17 +17,19 @@
   <header>
   <div class="container">
     <div class="row">
+
       <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <div class="navbar-brand">
-              <a href="<?php echo site_url('');?>"><h1>ม่านและมู่ลี่</h1></a>
+              <a href="<?php echo site_url('');?>"><h1>Blinds Shop</h1></a>
             </div>
           </div>
           <div class="menu">
             <ul class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active"><a href="<?php echo base_url();?>index.php/Home"> หน้าแรก</a></li>
-              <li > <a href="<?php echo base_url();?>index.php/fontEnd/Checkout"> <i class="glyphicon glyphicon-shopping-cart"></i> ตะกร้าสินค้า <span class="badge badge-info" id="update_cart"><?php if($cart_session){echo array_sum($cart_session);} else { echo '0'; } ?></span></a> </li>
+              <li > <a href="<?php echo base_url();?>index.php/fontEnd/Checkout"> <i class="glyphicon glyphicon-shopping-cart"></i> <span class="badge badge-info" id="update_cart"><?php if($cart_session){echo array_sum($cart_session);} else { echo '0'; } ?></span></a> </li>
+              <li role="presentation"><a href="portfolio.html">วิธีการชำระเงิน</a></li>
 
 
               <li  role="presentation" >
@@ -36,20 +38,16 @@
                   <a href="<?php echo site_url('fontEnd/login');?>">สมัครสมาชิก/ล็อกอิน</li></a>
                 <?php }else{ ?>
               <li role="presentation"><a href="blog.html">ข้อมูลการสั่งซื้อ</a></li>
-              <li>  <?php echo ('<a>'.''.$this->session->userdata('username').'</a>'); ?></li>
+              <li><a  data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href= "<?php echo base_url()?>index.php/fontEnd/Customer/single?id="> <?php echo ($this->session->userdata('username')); ?></a></li>
               <li><a href= "<?php echo base_url();?>index.php/fontEnd/login/logout">ล็อกเอาท์</a></li>
               <?php } ?></i></a>
               </li>
-
-
-
-              <li role="presentation"><a href="portfolio.html">Portfolio</a></li>
-              
-
             </ul>
           </div>
         </div>
+
       </nav>
+
     </div>
   </div>
 

@@ -19,7 +19,7 @@
                                       </tr>
                                       <tr>
                                         <td align="right">รหัสผ่าน :</td>
-                                        <td><input type="text" class="form-control" name="password" value="<?= set_value('User_Password') ?>"></td>
+                                        <td><input type="password" class="form-control" name="password" value="<?= set_value('User_Password') ?>"></td>
                                       </tr>
                                       <tr>
                                         <td align="right">ชื่อ-นามสกุล :</td>
