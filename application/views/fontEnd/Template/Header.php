@@ -38,7 +38,9 @@
                   <a href="<?php echo site_url('fontEnd/login');?>">สมัครสมาชิก/ล็อกอิน</li></a>
                 <?php }else{ ?>
               <li role="presentation"><a href="blog.html">ข้อมูลการสั่งซื้อ</a></li>
-              <li><a  data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href= "<?php echo base_url()?>index.php/fontEnd/Customer/single?id="> <?php echo ($this->session->userdata('username')); ?></a></li>
+
+              <li><a href="<?php echo base_url()?>index.php/fontEnd/Customer/single?id=<?$this->session->userdata('id')?> ">คุณ : <?php echo ($this->session->userdata('name')); ?></a></li>
+
               <li><a href= "<?php echo base_url();?>index.php/fontEnd/login/logout">ล็อกเอาท์</a></li>
               <?php } ?></i></a>
               </li>

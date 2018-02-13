@@ -19,6 +19,7 @@ class Product extends CI_Controller {
 	public function single()
 	 {
 			 $id = $_GET['id'];
+			 // $id =	 $this->session->userdata('id')
 			 redirect('fontEnd/productDetail/productDetailForm?id='.$id);
 	 }
 

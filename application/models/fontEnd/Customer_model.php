@@ -14,8 +14,8 @@ class Customer_model extends CI_Model
     return $q = $this->db->select('*')->from('customer')->where('Cus_Id',$cid)->get()->row();
   }
 
-  function getCustomer($cid){
-    $query = $this->db->get_where('customer',array('Cus_Id' => $cid));
+  function getCustomer($id){
+    $query = $this->db->get_where('customer',array('Cus_Id' => $id));
     return $query;
   }
 
@@ -112,4 +112,26 @@ class Customer_model extends CI_Model
       return array();
     }
   }
+
+  public function get_profile($id)
+		{// get all invoices identified by $user
+
+      $get_it =  $this->db->select('*')
+    								->from('customer')
+    								->where('Cus_Id',$user)
+    								->get();
+
+			if($get_it->num_rows() > 0 )
+			{
+				return $get_it->result();
+			}else{
+					return FALSE; //if there are no matching records
+				}
+		}
+
+    //
+    // function getPro($id){
+    //     $query = $this->db->get_where('product',array('Pro_Id' => $id));
+    //     return $query;
+    // }
 }

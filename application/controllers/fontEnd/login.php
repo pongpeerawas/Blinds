@@ -36,7 +36,9 @@ class login extends CI_Controller {
       }else{
 
         $this->session->set_userdata('username',$valid_user->Cus_Username);
+        $this->session->set_userdata('id',$valid_user->Cus_Id);
         $this->session->set_userdata('group',$valid_user->Cus_Group);
+        $this->session->set_userdata('name',$valid_user->Cus_Name);
 
         switch($valid_user->Cus_Group)
         {
