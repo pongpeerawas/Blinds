@@ -19,9 +19,9 @@ class login extends CI_Controller {
 
     }
     else{
-      $this->load->model('User_Model');
-      $valid_user	= $this->User_Model->check_login();
-      $check_user_is_active = $this->User_Model->check_user_is_active();
+      $this->load->model('Customer_model');
+      $valid_user	= $this->Customer_model->check_login();
+      $check_user_is_active = $this->Customer_model->check_user_is_active();
 
       if($valid_user	==	FALSE)
       {
@@ -35,10 +35,10 @@ class login extends CI_Controller {
         redirect('fontEnd/login');
       }else{
 
-        $this->session->set_userdata('username',$valid_user->User_Username);
-        $this->session->set_userdata('group',$valid_user->User_Group);
+        $this->session->set_userdata('username',$valid_user->Cus_Username);
+        $this->session->set_userdata('group',$valid_user->Cus_Group);
 
-        switch($valid_user->User_Group)
+        switch($valid_user->Cus_Group)
         {
           case 1 ://for admin
           redirect('backEnd/dashboard');

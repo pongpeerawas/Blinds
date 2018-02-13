@@ -9,8 +9,6 @@ class customerModel extends CI_Model {
 
 public function read_db()
 {
-  $this->db->join('province','customer.Province_Id = province.Province_Id','left');
-  $this->db->join('user','customer.User_ID = user.User_Id','left');
 
 	$db = $this->db->get('customer')->result_array();
   return $db;

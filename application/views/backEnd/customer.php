@@ -41,9 +41,7 @@
                   <th>ชื่อเข้าใช้</th>
                   <th>เบอร์โทรศัพท์</th>
                   <th>อีเมลล์</th>
-                  <th>บ้านเลขที่</th>
-                  <th>ตำบล</th>
-                  <th>อำเภอ</th>
+                  <th>ที่อยู่</th>
                   <th>จังหวัด</th>
                   <th>รหัสไปรษณย์</th>
                   <th>ประเทศ</th>
@@ -55,13 +53,11 @@
                 <tr class="gradeX">
                   <td><?php echo $key['Cus_Id']; ?></td>
                   <td><?php echo $key['Cus_Name'];?></td>
-                  <td><?php echo $key['User_Username'];?></td>
+                  <td><?php echo $key['Cus_Username'];?></td>
                   <td><?php echo $key['Cus_Phone'];?></td>
                   <td><?php echo $key['Cus_Email'];?></td>
-                  <td><?php echo $key['Cus_HouseNum'];?></td>
-                  <td><?php echo $key['Cus_District1'];?></td>
-                  <td><?php echo $key['Cus_District2'];?></td>
-                  <td><?php echo $key['province_name'];?></td>
+                  <td><?php echo $key['Cus_District'];?></td>
+                  <td><?php echo $key['Cus_Province'];?></td>
                   <td><?php echo $key['Cus_Zipcode'];?></td>
                   <td><?php echo $key['Cus_Country'];?></td>
                   <td>
