@@ -15,24 +15,24 @@
           <?= form_open('fontEnd/register') ?>
           <tr>
             <td align="right">ชื่อเข้าใช้ :</td>
-            <td><input type="text" class="form-control" name="username" value="<?= set_value('Cus_Username') ?>"></td>
+            <td><input type="text" class="form-control" name="username" value="<?= set_value('Cus_Username') ?>" required></td>
           </tr>
           <tr>
             <td align="right">รหัสผ่าน :</td>
-            <td><input type="password" class="form-control" name="password" value="<?= set_value('Cus_Password') ?>"></td>
+            <td><input type="password" class="form-control" name="password" value="<?= set_value('Cus_Password') ?>" required></td>
           </tr>
           <tr>
             <td align="right">ชื่อ-นามสกุล :</td>
-            <td><input type="text" class="form-control" name="Cus_Name" value=""></td>
+            <td><input type="text" class="form-control" name="Cus_Name" value="" required> </td>
             <td><?php echo form_error('first_name', '<div class="error">', '</div>'); ?></td>
           </tr>
           <tr>
             <td align="right">เบอร์โทรศัพท์ :</td>
-            <td><input type="text" class="form-control" name="Cus_Phone" value=""></td>
+            <td><input type="text" class="form-control" name="Cus_Phone" value="" required ></td>
           </tr>
           <tr>
             <td align="right">อีเมล :</td>
-            <td><input type="text" class="form-control" name="Cus_Email" value=""></td>
+            <td><input type="text" class="form-control" name="Cus_Email" value="" required ></td>
           </tr>
           <tr>
             <td align="right">ที่อยู่ :</td>

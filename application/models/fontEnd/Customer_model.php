@@ -128,10 +128,11 @@ class Customer_model extends CI_Model
 					return FALSE; //if there are no matching records
 				}
 		}
+    public function update($update)
+    {
+     $this->db
+     ->where('Cus_Id',$update['Cus_Id'])
+     ->update('customer',$update);
+    }
 
-    //
-    // function getPro($id){
-    //     $query = $this->db->get_where('product',array('Pro_Id' => $id));
-    //     return $query;
-    // }
 }
