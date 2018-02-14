@@ -18,39 +18,41 @@
             </div>
             <table class="table table-hover" border="0">
               <tr>
-                <td align="right">ชื่อเข้าใช้ :</td>
+                <td align="right"><label>ชื่อเข้าใช้ :</label></td>
                 <td align="left"><?php echo $row->Cus_Username ?></td>
               </tr>
               <tr>
-                <td align="right">รหัสผ่าน :</td>
-                <td align="left"><?php echo $row->Cus_Password ?></td>
+                <td align="right"><label>รหัสผ่าน :</label></td>
+                <td align="left">
+                  <input type="password" style="border:none" name="Cus_Password" value="<?php echo $row->Cus_Password ?>" required>
+                </td>
               </tr>
               <tr>
-                <td align="right">ชื่อ-สกุล :</td>
+                <td align="right"><label>ชื่อ-สกุล :</label></td>
                 <td align="left"><?php echo $row->Cus_Name ?></td>
               </tr>
               <tr>
-                <td align="right">เบอร์โทรศัพท์ :</td>
+                <td align="right"><label>เบอร์โทรศัพท์ :</label></td>
                 <td align="left"><?php echo $row->Cus_Phone ?></td>
               </tr>
               <tr>
-                <td align="right">อีเมลล์ :</td>
+                <td align="right"><label>อีเมลล์ :</label></td>
                 <td align="left"><?php echo $row->Cus_Email ?></td>
               </tr>
           <tr>
-            <td align="right">ที่อยู่ :</td>
+            <td align="right"><label>ที่อยู่ :</label></td>
             <td align="left"><?php echo $row->Cus_District ?></td>
           </tr>
           <tr>
-            <td align="right">จังหวัด :</td>
+            <td align="right"><label>จังหวัด :</label></td>
             <td align="left"><?php echo $row->Cus_Province ?></td>
           </tr>
           <tr>
-            <td align="right">รหัสไปรษณีย์ :</td>
+            <td align="right"><label>รหัสไปรษณีย์ :</label></td>
             <td align="left"><?php echo $row->Cus_Zipcode ?></td>
           </tr>
           <tr>
-            <td align="right">ประเทศ :</td>
+            <td align="right"><label>ประเทศ :</label></td>
             <td align="left"><?php echo $row->Cus_Country ?></td>
           </tr>
           <tr>
@@ -108,7 +110,11 @@
                   </div>
                   <div class="form-group">
                     <label for="phone">เบอร์โทรศัพท์ :</label>
-                    <input type="text" class="form-control" name="Cus_Phone" value="<?php echo $row->Cus_Phone ?>" required>
+                    <input type="text" class="form-control" name="Cus_Phone" value="<?php echo $row->Cus_Phone ?>" required|min_length[10]|>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">อีเมลล์ :</label>
+                    <input type="email" class="form-control" name="Cus_Email" value="<?php echo $row->Cus_Email ?>" required>
                   </div>
                   <div class="form-group">
                     <label for="address">ที่อยู่ :</label>
@@ -117,8 +123,8 @@
                   </div>
                   <div class="form-group">
                     <label for="Cus_Province">จังหวัด :</label>
-                    <select name="Cus_Province"   required>
-                      <option value="" selected><?php echo $row->Cus_Province ?></option>
+                    <select name="Cus_Province" value="<?php echo $row->Cus_Province ?>"   required>
+                      <option value="<?php echo $row->Cus_Province ?>" ><?php echo $row->Cus_Province ?></option>
                       <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
                       <option value="กระบี่">กระบี่ </option>
                       <option value="กาญจนบุรี">กาญจนบุรี </option>
@@ -199,11 +205,15 @@
                       <option value="อื่นๆ">อื่นๆ</option>
                     </select>
                   </div>
+                  <div class="form-group">
+                    <label for="address">รหัรหัสไปรษณีย์ :</label>
+                    <input type="text" class="form-control" name="Cus_Zipcode" value="<?php echo $row->Cus_Zipcode ?>" required>
 
+                  </div>
                   <div class="form-group">
                     <label for="address">ประเทศ :</label>
                     <select name="Cus_Country" value="<?php echo $row->Cus_Country ?>" required>
-                      <option value="" selected><?php echo $row->Cus_Country ?></option>
+                      <option value="<?php echo $row->Cus_Country ?>" ><?php echo $row->Cus_Country ?></option>
                       <option value="AF">Afghanistan</option>
                       <option value="AX">Åland Islands</option>
                       <option value="AL">Albania</option>
