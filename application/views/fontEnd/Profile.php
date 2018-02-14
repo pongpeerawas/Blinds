@@ -24,7 +24,7 @@
               <tr>
                 <td align="right"><label>รหัสผ่าน :</label></td>
                 <td align="left">
-                  <input type="password" style="border:none" name="Cus_Password" value="<?php echo $row->Cus_Password ?>" required>
+                  <input type="password" style="border:none" name="Cus_Password" value="<?php echo $row->Cus_Password ?>" readonly required>
                 </td>
               </tr>
               <tr>
