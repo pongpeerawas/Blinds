@@ -76,7 +76,7 @@ class register extends CI_Controller {
 
 					 redirect(base_url());
 				 }else{
-						$this->session->set_flashdata('error','Please Write Other User Name !' );
+						$this->session->set_flashdata('error','<div class="alert alert-warning"><strong>มีบัญชีผู้ใช้นี้อยู่แล้ว</strong></div>' );
 						redirect('fontEnd/register');
 				 }
 		}
