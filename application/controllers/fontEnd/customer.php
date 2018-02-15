@@ -3,6 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Customer extends CI_Controller {
 
+	public function __construct ()
+		{
+			parent::__construct();
+			if($this->session->userdata('group') ==	('1') )
+			{
+				$this->session->sess_destroy();
+				redirect('fontEnd/login');
+			}
+
+		}
+
 	public function index(){
 		$contents['row']          = $this->Customer_model->customer();
 		$contents['cart_session'] = $this->session->userdata('cart_session');

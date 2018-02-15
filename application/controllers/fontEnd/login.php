@@ -2,6 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class login extends CI_Controller {
   //functions
+  public function __construct ()
+		{
+			parent::__construct();
+			if($this->session->userdata('group') ==	('1') )
+			{
+				$this->session->sess_destroy();
+				redirect('fontEnd/login');
+			}
+
+		}
   function index()
   {
 

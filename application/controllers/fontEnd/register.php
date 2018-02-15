@@ -7,12 +7,14 @@ class register extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Customer_model');
+
+		
 	}
 
 	public function index()
 	{
 
-		$this->form_validation->set_rules('username','Username','required|alpha_numeric|min_length[4]|max_length[20]');
+		$this->form_validation->set_rules('username','Username','required|alpha_numeric|min_length[6]|max_length[20]');
 		$this->form_validation->set_rules('password','Password','required|alpha_numeric|min_length[6]|max_length[24]');
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 
