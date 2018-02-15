@@ -19,7 +19,7 @@
  $i = 0;
  $total =0;
  foreach($cart_session as $cs=>$value){
-	 $row = $this->Product_model->product_detail($cs);
+	 $row = $this->Product_model->product_id($cs);
 	 $total += $row->Pro_Price*$value;
  ?>
 
@@ -77,7 +77,7 @@
  ?>
 
  <tr>
-	 <td colspan="6" align="center">Cart empty</td>
+	 <td colspan="6" align="center">ไม่มีสินค้าในตระกร้า</td>
  </tr>
 
  <?php
@@ -93,7 +93,7 @@
 if($cart_session){
 	?>
 	<span id="button_bottom">
-		<button class="btn btn-success pull-right" type="submit" id="submit">ดำเนินการต่อ</button>
+		<a href="<?php echo base_url();?>index.php/fontEnd/Checkout" ><input class="btn btn-success pull-right" type="submit" value="ดำเนินการต่อ"></a>
 		<button class="btn btn-danger pull-right RbtnMargin empty_cart" type="button" >ล้างตะกร้า</button>
 		<button class="btn btn-warning pull-right RbtnMargin update_cart" type="button" >อัพเดต</button>
 	</span>

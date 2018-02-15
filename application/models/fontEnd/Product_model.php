@@ -11,7 +11,7 @@ class Product_model extends CI_Model {
 		return $q = $this->db->select('*')->from('product')->get()->result();
 	}
 
-	function product_detail($id){
+	function product_id($id){
 		return $q = $this->db->select('*')->from('product')->where('Pro_Id',$id)->get()->row();
 	}
 

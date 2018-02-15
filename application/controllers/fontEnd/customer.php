@@ -14,11 +14,10 @@ class Customer extends CI_Controller {
 
 	}
 	public function single()
-	{
-		// $id = $_GET['id'];
-		//
-		redirect('fontEnd/Customer/Profile?id='.$this->session->userdata('id'));
-	}
+	 {
+			  // $id =	 $this->session->userdata('name')
+			 redirect('fontEnd/Customer/Profile?id='.$this->session->userdata('id'));
+	 }
 
 	function Profile(){
 
@@ -45,8 +44,11 @@ class Customer extends CI_Controller {
 
 	public function update()
 	{
+
+
 		$update = $this->input->post();
-		$this->Customer_model->update($update);
+		$edit = 	$this->Customer_model->update($update);
+
 		redirect('fontEnd/Customer/single');
 	}
 

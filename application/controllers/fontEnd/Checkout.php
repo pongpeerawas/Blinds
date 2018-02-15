@@ -2,23 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Checkout extends CI_Controller {
+	public function __construct ()
+		{
+			parent::__construct();
+			if($this->session->userdata('group')!=	('2') )
+			{
+				$this->session->set_flashdata('error','กรุณาสมัครสมาชิก');
+				redirect('fontEnd/login');
+			}
+
+		}
 
 	public function index(){
 
 
-		if($this->input->post()){
-
-			$this->session->unset_userdata('cart_session');
-			$this->session->set_flashdata('alert','<div class="alert alert-success" role="alert">Your order has been sent.</div>');
-			redirect('');
-		}
-
-		$contents['cart_session'] = $this->session->userdata('cart_session');
-		$template['content']    = $this->load->view('fontEnd/checkout',$contents,TRUE);
-
-	  $this->load->view('fontEnd/Template/Header');
-		$this->load->view('fontEnd/Template/Sidebar',$template);
-		$this->load->view('fontEnd/Template/Footer');
 
 
 	}

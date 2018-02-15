@@ -28,7 +28,7 @@
           <div class="menu">
             <ul class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active"><a href="<?php echo base_url();?>index.php/Home"> หน้าแรก</a></li>
-              <li > <a href="<?php echo base_url();?>index.php/fontEnd/Checkout"> <i class="glyphicon glyphicon-shopping-cart"></i> <span class="badge badge-info" id="update_cart"><?php if($cart_session){echo array_sum($cart_session);} else { echo '0'; } ?></span></a> </li>
+              <li > <a href="<?php echo base_url();?>index.php/fontEnd/Cart/getCart"> <i class="glyphicon glyphicon-shopping-cart"></i> <span class="badge badge-info" id="update_cart"><?php if($cart_session){echo array_sum($cart_session);} else { echo '0'; } ?></span></a> </li>
               <li role="presentation"><a href="portfolio.html">วิธีการชำระเงิน</a></li>
 
 
@@ -39,7 +39,7 @@
                 <?php }else{ ?>
               <li role="presentation"><a href="blog.html">ข้อมูลการสั่งซื้อ</a></li>
 
-              <li><a href="<?php echo base_url()?>index.php/fontEnd/Customer/single?id=<?$this->session->userdata('id')?> ">คุณ : <?php echo ($this->session->userdata('name')); ?></a></li>
+              <li><a href="<?php echo base_url()?>index.php/fontEnd/Customer/single?id=<?$this->session->userdata('id')?> ">คุณ : <?php echo $this->session->userdata('name') ?></a></li>
 
               <li><a href= "<?php echo base_url();?>index.php/fontEnd/login/logout">ล็อกเอาท์</a></li>
               <?php } ?></i></a>

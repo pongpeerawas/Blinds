@@ -32,7 +32,7 @@
           </tr>
           <tr>
             <td align="right">อีเมล :</td>
-            <td><input type="text" class="form-control" name="Cus_Email" value="" required ></td>
+            <td><input type="email" class="form-control" name="Cus_Email" value="" required ></td>
           </tr>
           <tr>
             <td align="right">ที่อยู่ :</td>
