@@ -15,7 +15,7 @@
 
     <div class="col-sm-8 col-md-4">
       <div class="boxs">
-        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.5s">
+        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1s">
           <div class="thumbnail">
             <a  data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="<?php echo base_url()?>index.php/fontEnd/Product/single?id=<?php echo $row->Pro_Id ?>">
               <img id="myImg" src="<?php echo base_url();?>assetAdmin/img/<?php echo $row->Pro_Pic ?>" alt="<?php echo $row->Pro_Name;?>" class="img-responsive" style="height:300px">

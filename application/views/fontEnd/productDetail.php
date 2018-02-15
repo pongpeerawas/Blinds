@@ -125,7 +125,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
               </div>
               <h3><?php echo $row->Pro_Name ?></h3>  <!-- ชื่อสินค้า -->
               <div class="media-body">
-                <h4 ><?php echo $row->Cg_Id?></h4>
+                <h4 ><?php echo $row->Cg_name?></h4>
                 <h4 ><?php echo $row->Pro_Size ?></h4>
                 <h4 >฿ <?php echo $row->Pro_Price ?></h4>
 
@@ -147,8 +147,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     </span>
                   </div>
                   <hr>
-                  <div class="" style="float:right;margin-left:-70px">
-                    <button class="btn btn-primary add_to_cart" type="button" Pro_Id="<?php echo $row->Pro_Id;?>"><i class="glyphicon glyphicon-shopping-cart">ใส่ตะกร้า</i></button>
+                  <div class="" >
+                  <a href="#">  <button class="btn btn-primary add_to_cart" type="button" Pro_Id="<?php echo $row->Pro_Id;?>"><i class="glyphicon glyphicon-shopping-cart">ใส่ตะกร้า</i></button></a>
                   </div>
                 </div>
               </div>

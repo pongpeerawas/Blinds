@@ -36,8 +36,8 @@
           <div class="menu">
             <ul class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active"><a href="<?php echo base_url();?>index.php/Home"> หน้าแรก</a></li>
-              <li role="presentation" id="submit" ><a href="#" ><i class="glyphicon glyphicon-shopping-cart" ></i> <span class="badge badge-info" id="update_cart"><?php if($cart_session){echo array_sum($cart_session);} else { echo '0'; } ?></span> </li></a>
-                <!-- <?php echo base_url();?>index.php/fontEnd/Cart/getCart -->
+              <li role="presentation" id="" ><a href="<?php echo base_url();?>index.php/fontEnd/Cart/getCart" ><i class="glyphicon glyphicon-shopping-cart" ></i> <span class="badge badge-info" id="update_cart"><?php if($cart_session){echo array_sum($cart_session);} else { echo '0'; } ?></span> </li></a>
+
 
 
               <li role="presentation"><a href="portfolio.html">วิธีการชำระเงิน</a></li>
@@ -74,7 +74,7 @@
 
 </header>
 
-<form action="" method="post">
+<!-- <form action="" method="post">
 	<div class="modal fade bs-example-modal-sm modal-alert" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 
 		<div class="modal-dialog modal-sm" style="width:80%">
@@ -201,4 +201,4 @@
 		</div>
 
 	</div>
-</form>
+</form> -->
