@@ -77,10 +77,16 @@
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="<?php echo base_url('asset/js/bootstrap.min.js') ?>"></script>
-  
+
 
   <script src="<?php echo base_url('asset/js/responsive-slider.js') ?>"></script>
-
+  <script src="<?php echo base_url('asset/js/jquery-1.12.4.js') ?>"></script>
+  <script src="<?php echo base_url('asset/js/jquery.dataTables.min.js') ?>"></script>
+  <script>
+  $(document).ready(function() {
+      $('#example').dataTable();
+  } );
+  </script>
 
   <script>
   	function numberOnly(numb) {

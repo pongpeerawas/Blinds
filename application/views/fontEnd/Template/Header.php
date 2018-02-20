@@ -8,12 +8,15 @@
 
     <!-- Bootstrap -->
   <link href="<?php echo base_url('asset/css/bootstrap.min.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('asset/css/bootstrap.css') ?>" rel="stylesheet" />
+
 	<link href="<?php echo base_url('asset/css/responsive-slider.css') ?>" rel="stylesheet" />
 	<link href="<?php echo base_url('asset/css/animate.css') ?>" rel="stylesheet" />
   <link href="<?php echo base_url('asset/css/font-awesome.min.css') ?>" rel="stylesheet" />
   <link href="<?php echo base_url('asset/css/style.css') ?>" rel="stylesheet" />
   <link href="<?php echo base_url('asset/css/datepicker.css') ?>" rel="stylesheet" />
 
+  <link href="<?php echo base_url('asset/css/jquery.dataTables.min.css') ?>" rel="stylesheet" />
   <header>
   <div class="container">
     <div class="row">

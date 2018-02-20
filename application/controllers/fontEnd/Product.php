@@ -41,11 +41,13 @@ class Product extends CI_Controller {
 	     $contents['cart_session'] = $this->session->userdata('cart_session');
 
 	     $template['content']      = $this->load->view('fontEnd/productDetail',$contents,TRUE);
-			 
+
 	     $id = $_GET['id'];
 	     $query = $this->Product_model->getPro($id);
 	     $data['product'] = $query->result();
 
+			 $query = $this->Product_model->rel_pro();
+			 $data['relpro'] = $query->result();
 
 	     $this->load->view('fontEnd/Template/Header');
 	     $this->load->view('fontEnd/Template/Sidebar',$template);

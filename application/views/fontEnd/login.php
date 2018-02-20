@@ -3,17 +3,19 @@
 <!--หน้าหาส่วนกลาง-->
       <div class="col-sm-12">
 
-
+        <div class="breadcrumb">
+            <h4>เข้าสู่ระบบ</h4>
+        </div>
         <div class="panel panel-default">
   				<div class="panel-body">
 
 
           <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3">
 
 
                       <center>
-                        <h3>เข้าสู่ระบบ</h3><br/>
+
                       <label>
                             ไม่มีบัญชีผู้ใช้งาน?
                           &nbsp; &nbsp; <a href="<?php echo site_url('fontEnd/register'); ?>"><strong style="color:Red"><U>ลงทะเบียน</U></strong></a>

@@ -10,13 +10,13 @@ public function read_db()
 	$db = $this->db->get('product')->result_array();
 	return $db;
 }
-// public function read_category()
-// {
-// 	$db = $this->db
-// 	->get('category')
-// 	->result_array();
-// 	return $db;
-// }
+public function read_category()
+{
+	$db = $this->db
+	->get('category')
+	->result_array();
+	return $db;
+}
 
 public function insert($input)
 {
