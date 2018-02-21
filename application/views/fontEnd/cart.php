@@ -6,7 +6,7 @@
 											<table id="mytable" class="table table-bordred table-striped">
 												<thead>
 													<th>สินค้า</th>
-													<th>รูปสินค้า</th>
+													<th></th>
 													<th>ราคา</th>
 													<th>จำนวน</th>
 													<th>ราคารวม</th>
@@ -20,15 +20,18 @@
 													if($cart_session){
 														$i = 0;
 														$total =0;
+														 $vat =0;
 														foreach($cart_session as $cs=>$value){
 															$row = $this->Product_model->product_id($cs);
 															$total += $row->Pro_Price*$value;
+															$vat = (($total*7)/107)+$total;
+															// $total1
 															?>
 
 															<tr id="tr<?php echo $cs;?>">
 																<td><?php echo $row->Pro_Name;?></td>
-																<td><img src="<?php echo base_url();?>assetAdmin/img/<?php echo ($row->Pro_Pic)?>" width="100px"></td>
-																<td>$ <?php echo $row->Pro_Price;?></td>
+																<td><img src="<?php echo base_url();?>assetAdmin/img/<?php echo ($row->Pro_Pic)?>" width="300px"></td>
+																<td>฿ <?php echo $row->Pro_Price;?></td>
 																<td>
 
 
@@ -57,7 +60,7 @@
 
 
 																</td>
-																<td>$ <span id="span_total<?php echo $cs;?>"><?php echo $row->Pro_Price*$value;?></span></td>
+																<td>฿ <span id="span_total<?php echo $cs;?>"><?php echo $row->Pro_Price*$value;?></span></td>
 																<td>
 																	<a class="delete_cart " title="Delete" style="cursor:pointer" Pro_Id="<?php echo $cs;?>" position="<?php echo $i;?>"><span class="glyphicon glyphicon-trash"></span></a>
 																</td>
@@ -69,7 +72,9 @@
 														<input type="hidden" id="total" value="<?php echo $total;?>">
 														<tr id="tr_total">
 															<td colspan="4" align="right">มูลค่าสินค้า: &nbsp;</td>
-															<td>$ <span id="span_all_total"><?php echo $total;?></span></td>
+															<td>฿ <span id="span_all_total"><?php echo $total;?></span></td>
+															<!-- <td>฿ <span id="span_all_total"><?php echo $vat;?></span></td> -->
+
 															<td>&nbsp;</td>
 														</tr>
 														<?php

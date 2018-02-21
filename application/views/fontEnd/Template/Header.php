@@ -38,7 +38,7 @@
           <div class = "collapse navbar-collapse navHeaderCollapse">
           <div class="menu">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="<?php echo base_url();?>index.php/Home"> หน้าแรก</a></li>
+              <!-- <li role="presentation" class="active"><a href="<?php echo base_url();?>index.php/Home"> หน้าแรก</a></li> -->
               <li role="presentation" id="" ><a href="<?php echo base_url();?>index.php/fontEnd/Cart/getCart" ><i class="glyphicon glyphicon-shopping-cart" ></i> <span class="badge badge-info" id="update_cart"><?php if($cart_session){echo array_sum($cart_session);} else { echo '0'; } ?></span> </li></a>
 
 

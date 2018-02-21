@@ -86,6 +86,7 @@
     .modal-content {
       width: 100%;
     }
+
   }
 </style>
 </head>
@@ -102,43 +103,44 @@
       ?>
 
       <div class="container">
+        <div class="content">
+          <h2><span><?php echo $row->Pro_Name ?></span></h2>
+
+        </div>
         <div class="row">
           <div class="col-md-8">
-            <div class="page-header">
-              <div class="blog">
 
-                <img id="myImg"  alt="<?php echo $row->Pro_Name ?>" style="height: 350px; width: 350px" src="<?php echo base_url() ?>assetAdmin/img/<?php echo $row->Pro_Pic ?>" >
+                <img src="<?php echo base_url() ?>assetAdmin/img/<?php echo $row->Pro_Pic ?>"  alt="<?php echo $row->Pro_Name ?>" width="448" height="377" id="myImg" style="height: 450px; width: 450px" >
                 <p> <?php echo $row->Pro_Detail ?></p>
 
-              </div>
-            </div>
 
           </div>
 
           <div class="col-md-4 ">
             <form class="form-search">
-              <input class="form-control" type="text" placeholder="Search..">
             </form>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <strong>รายละเอียดสินค้า</strong>
-              </div>
-              <h3><?php echo $row->Pro_Name ?></h3>  <!-- ชื่อสินค้า -->
               <div class="media-body">
-                <h4 ><?php echo $row->Cg_name?></h4>
-                <p ><?php echo $row->Pro_Size ?></p>
-                <h4 >฿ <?php echo $row->Pro_Price ?></h4>
+
+                <h3><?php echo $row->Pro_Name ?></h3>
+                <hr>
+                <b>  ประเภท : </b><?php echo $row->Cg_name?>
+                <br>
+                <b>   ขนาด : </b> <?php echo $row->Pro_Size ?> ซ.ม.
+
+
+
+                <font color="#ff751a">  <h1><?php echo $row->Pro_Price;?> ฿</h1></font>
 
                 <hr>
+
                 <div class="ficon">
-                  <div class="input-group" >
-                    <!-- <p>จำนวน :</p> -->
+                  <!-- <div class="input-group" >
                     <span class="input-group-btn">
                       <button type="button" class="btn btn-primarys btn-number less_qty" position="<?php echo $i;?>">
                         <span class="glyphicon glyphicon-minus"></span>
                       </button>
                     </span>
-                    <input type="text" id="qty[<?php echo $i;?>]" class="form-control input-number qty<?php echo $row->Pro_Id;?>" style="text-align:right;width:45px" value="<?php echo @$cart_session[$row->Pro_Id];?>" onkeypress="return numberOnly(event)">
+                    <input type="text" id="qty[<?php echo $i;?>]" class="form-control input-number qty<?php echo $row->Pro_Id;?>" style="text-align:right;width:45px" value="<?php echo @$cart_session[$row->Pro_Id];?>" onkeypress="return numberOnly(event)" readonly>
 
                     <span class="input-group-btn">
                       <button type="button" class="btn btn-primarys btn-number add_qty" position="<?php echo $i;?>">
@@ -146,14 +148,14 @@
                       </button>
                     </span>
                   </div>
-                  <hr>
-                  <div class="" >
-                    <a href="#">  <button class="btn btn-primary add_to_cart" type="button" Pro_Id="<?php echo $row->Pro_Id;?>"><i class="glyphicon glyphicon-shopping-cart">ใส่ตะกร้า</i></button></a>
-                  </div>
+             -->
+
+
                 </div>
+                <a href="#"> <button class="btn btn-warning add_to_cart" type="button"  style="width:200px;height:40px "  Pro_Id="<?php echo $row->Pro_Id;?>"><i class="glyphicon glyphicon-shopping-cart"><b>ใส่ตะกร้า</b></i></button></a>
+
               </div>
 
-            </div>
             <?php
           }
         }
@@ -178,62 +180,31 @@
 
 
 
-<!--
-
-  <?php
-  if(isset($relpro)){
-    foreach($relpro as $row ){
-      ?>
-      <div class="col-sm-8 col-md-4">
-        <div class="boxs">
-          <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1s">
-            <div class="thumbnail">
-                <a  data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="<?php echo base_url()?>index.php/fontEnd/Product/single?id=<?php echo $row->Pro_Id ?>">
-                  <img style="height: 300px; width: 300px" src="<?php echo base_url();?>assetAdmin/img/<?php echo $row->Pro_Pic ?>" alt="<?php echo $row->Pro_Name;?>">
-
-                </div>
-                <h3><?php echo $row->Pro_Name;?></h3>
-                <h5><?php echo $row->Pro_Size;?></h5>
-                <h2><?php echo $row->Pro_Price;?> ฿</h2>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
 
 
-          <?php
-        }
-      }
-      ?>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
 
- -->
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-      <script>
-      // Get the modal
-      var modal = document.getElementById('myModal');
-
-      // Get the image and insert it inside the modal - use its "alt" text as a caption
-      var img = document.getElementById('myImg');
-      var modalImg = document.getElementById("img01");
-      var captionText = document.getElementById("caption");
-      img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-      }
-
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-    </script>
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
 
 
-  </body>
-  </html>
+</body>
+</html>
