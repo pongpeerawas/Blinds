@@ -8,9 +8,10 @@ class Product_model extends CI_Model {
 	}
 
 	function product(){
-		return $q = $this->db->select('*')->from('product')->get()->result();
+		$this->db->join('category','product.Cg_Id = category.Cg_Id','left');
 
-
+		$q = $this->db->select('*')->from('product')->get()->result();
+		return $q;
 	}
 
 
@@ -22,7 +23,7 @@ class Product_model extends CI_Model {
 				$this->db->join('category','product.Cg_Id = category.Cg_Id','left');
         $query = $this->db->get_where('product',array('Pro_Id' => $id));
 				return $query;
-				
+
     }
 
     function rel_pro(){

@@ -45,12 +45,13 @@
                 <td>
                   <a  data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="<?php echo base_url()?>index.php/fontEnd/Product/single?id=<?php echo $row->Pro_Id ?>">
                   <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.5s">
-                      <h3><?php echo $row->Pro_Name;?></h3>
+                      <h2><?php echo $row->Pro_Name;?></h2>
                       <h5><?php echo $row->Pro_Size;?></h5>
+                      <h5><?php echo $row->Cg_name;?><h5>
                       <h2><?php echo $row->Pro_Price;?> ฿</h2>
                     </div>
                  </a>
-          
+
 
                </td>
 

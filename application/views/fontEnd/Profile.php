@@ -56,7 +56,7 @@
                 <td align="left"><?php echo $row->Cus_Country ?></td>
               </tr>
               <tr>
-                <td align="center" colspan="3"><input class="btn btn-default" type="submit" value="แก้ไขข้อมูล" id="edit"></td>
+                <td align="center" colspan="3"><input class="btn btn-default" type="submit" value="แก้ไขข้อมูล" id="submit"></td>
 
               </tr>
 
@@ -76,7 +76,7 @@
   <?php echo form_open('fontEnd/Customer/update');?>
 
   <?php foreach ($editProfile as $row): ?>
-    <form action="" method="edit">
+    <form action="" method="post">
       <div class="modal fade bs-example-modal-sm modal-alert" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 
         <div class="modal-dialog modal-sm" style="width:50%">
