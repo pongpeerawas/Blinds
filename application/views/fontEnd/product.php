@@ -1,3 +1,15 @@
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    /* text-align: left; */
+    border-bottom: 1px solid #ddd;
+}
+</style>
 
  <div class="row">
   <div class="breadcrumb">
@@ -8,8 +20,7 @@
 
 
 
-
-<table id="example" class="responsive"  width="97%" border="0">
+  <table id="example" class="responsive"  width="100%" border="0">
 
  <thead>
             <tr>
@@ -32,9 +43,9 @@
 
                 <td align="center">
                   <a  data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="<?php echo base_url()?>index.php/fontEnd/Product/single?id=<?php echo $row->Pro_Id ?>">
-                  <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1s"><img  src="<?php echo base_url();?>assetAdmin/img/<?php echo $row->Pro_Pic ?>" alt="<?php echo $row->Pro_Name;?>" width="387" class="img-responsive" style="height:350px"></div>
+                  <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1s"><img  src="<?php echo base_url();?>assetAdmin/img/<?php echo $row->Pro_Pic ?>" alt="<?php echo $row->Pro_Name;?>" class="img-responsive" style="width:350px"></div>
                   </a>
-                  <hr>
+                  <br>
                 </td>
                 <td>
                   <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.5s">

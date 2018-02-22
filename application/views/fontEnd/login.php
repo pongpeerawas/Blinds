@@ -18,13 +18,13 @@
 
                       <label>
                             ไม่มีบัญชีผู้ใช้งาน?
-                          &nbsp; &nbsp; <a href="<?php echo site_url('fontEnd/register'); ?>"><strong style="color:Red"><U>ลงทะเบียน</U></strong></a>
+                          &nbsp; &nbsp; <a href="<?php echo site_url('fontEnd/Register'); ?>"><strong style="color:Red"><U>ลงทะเบียน</U></strong></a>
                       </label>
                       </center>
                       <br/>
                          <?= validation_errors() ?>
                          <?= $this->session->flashdata('error') ?>
-                      <?php echo form_open('fontEnd/login'); ?>
+                      <?php echo form_open('fontEnd/Login'); ?>
 
 
                       <div class="form-group">

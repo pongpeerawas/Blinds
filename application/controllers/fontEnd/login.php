@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class login extends CI_Controller {
+class Login extends CI_Controller {
   //functions
   public function __construct ()
 		{
@@ -8,7 +8,7 @@ class login extends CI_Controller {
 			if($this->session->userdata('group') ==	('1') )
 			{
 				$this->session->sess_destroy();
-				redirect('fontEnd/login');
+				redirect('fontEnd/Login');
 			}
 
 		}
@@ -21,7 +21,7 @@ class login extends CI_Controller {
 
     if($this->form_validation->run()	==	FALSE)
     {
-      $template['content']    = $this->load->view('fontEnd/login',$contents,TRUE);
+      $template['content']    = $this->load->view('fontEnd/Login',$contents,TRUE);
 
       $this->load->view('fontEnd/Template/Header');
       $this->load->view('fontEnd/Template/Sidebar',$template);
@@ -42,7 +42,7 @@ class login extends CI_Controller {
           $this->session->set_flashdata('error','ขอภัยไม่พบบัญชีผผู้ใช้ในระบบ' );
         }
 
-        redirect('fontEnd/login');
+        redirect('fontEnd/Login');
       }else{
 
         $this->session->set_userdata('username',$valid_user->Cus_Username);
@@ -53,7 +53,7 @@ class login extends CI_Controller {
         switch($valid_user->Cus_Group)
         {
           case 1 ://for admin
-          redirect('backEnd/dashboard');
+          redirect('backEnd/Dashboard');
           break;
 
           case 2 ://for member
@@ -73,7 +73,7 @@ class login extends CI_Controller {
   public function logout()
   {
     $this->session->sess_destroy();
-    redirect('fontEnd/login');
+    redirect('fontEnd/Login');
   }
 
   // function login_validation()

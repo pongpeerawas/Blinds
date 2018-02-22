@@ -61,7 +61,7 @@
                   <td><?php echo $key['Cus_Zipcode'];?></td>
                   <td><?php echo $key['Cus_Country'];?></td>
                   <td>
-                  <a href="<?php echo site_url('backEnd/customer/del/'.$key['Cus_Id'])?>" onclick="return confirm('ยืนยันการลบ !')"><button name="button" class="btn btn-danger">ลบ</button></a></td>
+                  <a href="<?php echo site_url('backEnd/Customer/del/'.$key['Cus_Id'])?>" onclick="return confirm('ยืนยันการลบ !')"><button name="button" class="btn btn-danger">ลบ</button></a></td>
                 </tr>
                 <?php endforeach; ?>
 

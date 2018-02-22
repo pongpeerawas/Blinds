@@ -19,14 +19,14 @@ class Checkout extends CI_Controller {
 			if($this->session->userdata('group')!=	('2') )
 			{
 				$this->session->set_flashdata('error','กรุณาสมัครสมาชิก');
-				redirect('fontEnd/login');
+				redirect('fontEnd/Login');
 			}
 
 		}
 
 	public function index(){
 
-
+			echo "ยังไม่เสร็จครับ";
 
 
 	}

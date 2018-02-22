@@ -3,7 +3,7 @@
     <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Form elements</a> <a href="#" class="current">Form wizard</a> </div>
     <h1>แก้ไขข้อมูลสินค้า</h1>
   </div>
-  <?php echo form_open_multipart('backEnd/product/update');?>
+  <?php echo form_open_multipart('backEnd/Product/update');?>
 
   <div class="container-fluid">
     <hr>

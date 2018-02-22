@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class category extends CI_Controller {
+class Category extends CI_Controller {
 
 		public function __construct ()
 			{
@@ -9,7 +9,7 @@ class category extends CI_Controller {
 				if($this->session->userdata('group')!=	('1') )
 				{
 					$this->session->set_flashdata('error','ไม่ได้กินฉันหรอก');
-					redirect('fontEnd/login');
+					redirect('fontEnd/Login');
 				}
 
 			}
@@ -22,13 +22,13 @@ class category extends CI_Controller {
 	}
 	public function index()
 	{
-		 $query = $this->categoryModel->read_db();
+		 $query = $this->CategoryModel->read_db();
 
 		$value = array(
 			'result' => array(
 				'data' => $query
 			),
-			'views' => 'backEnd/category'
+			'views' => 'backEnd/Category'
 		);
 		$this->loadpage($value);
 	}
@@ -37,15 +37,15 @@ class category extends CI_Controller {
 	public function insert()
 	{
 		$input = $this->input->post();
-		$this->categoryModel->insert($input);
-		redirect('backEnd/category');
+		$this->CategoryModel->insert($input);
+		redirect('backEnd/Category');
 		//print_r($value);
 	}
 public function del()
 {
 	$del = $this->uri->segment(4);
-	$this->categoryModel->del($del);
-	redirect('backEnd/category');
+	$this->CategoryModel->del($del);
+	redirect('backEnd/Category');
 
 
 }

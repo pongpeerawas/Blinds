@@ -38,13 +38,13 @@
         <li><a href="#"><i class="icon-user"></i>โปรไฟล์</a></li>
 
         <li class="divider"></li>
-        <li><a href= "<?php echo base_url();?>index.php/fontEnd/login/logout"><i class="icon-key"></i>ออกจากระบบ</a></li>
+        <li><a href= "<?php echo base_url();?>index.php/fontEnd/Login/logout"><i class="icon-key"></i>ออกจากระบบ</a></li>
 
       </ul>
     </li>
 
     <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
-    <li class=""><a href= "<?php echo base_url();?>index.php/fontEnd/login/logout"><i class="icon icon-share-alt"></i> <span class="text">ออกจากระบบ</span></a></li>
+    <li class=""><a href= "<?php echo base_url();?>index.php/fontEnd/Login/logout"><i class="icon icon-share-alt"></i> <span class="text">ออกจากระบบ</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->

@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class register extends CI_Controller {
+class Register extends CI_Controller {
 
 	public function __construct ()
 	{
 		parent::__construct();
 		$this->load->model('Customer_model');
 
-		
+
 	}
 
 	public function index()
@@ -21,27 +21,28 @@ class register extends CI_Controller {
 
 		if($this->form_validation->run()	==	FALSE)
 		{
-			$template['content']    = $this->load->view('fontEnd/registerform',$contents,TRUE);
+			$template['content']    = $this->load->view('fontEnd/Registerform',$contents,TRUE);
 
 			 $this->load->view('fontEnd/Template/Header');
 			$this->load->view('fontEnd/Template/Sidebar',$template);
 			$this->load->view('fontEnd/Template/Footer');
 			// $this->load->view('fontEnd/registerform',$data);
 
+
 		}else{
 				 	$data_customer = array
  				 (
  					'Cus_Name'			=> set_value('Cus_Name'),
-					'Cus_Phone'			=> set_value('Cus_Phone	'),
+					'Cus_Phone'			=> set_value('Cus_Phone'),
 					'Cus_Email'			=> set_value('Cus_Email'),
-					'Cus_District'			=> set_value('Cus_District'),
-					'Cus_Province'			=> set_value('Cus_Province'),
-					'Cus_Zipcode'			=> set_value('Cus_Zipcode'),
-					'Cus_Country'			=> set_value('Cus_Country'),
-					'Cus_Username'			=> set_value('username'),
-					'Cus_Password'		=>  set_value('password'),
-					'Cus_Status'				=> '1',
-					'Cus_Group'				=> '2'
+					'Cus_District'	=> set_value('Cus_District'),
+					'Cus_Province'	=> set_value('Cus_Province'),
+					'Cus_Zipcode'		=> set_value('Cus_Zipcode'),
+					'Cus_Country'		=> set_value('Cus_Country'),
+					'Cus_Username'	=> set_value('username'),
+					'Cus_Password'  =>  set_value('password'),
+					'Cus_Status'		=> '1',
+					'Cus_Group'			=> '2'
 
  				 );
 
@@ -52,13 +53,13 @@ class register extends CI_Controller {
 						 $this->form_validation->set_rules('password');
 						 if($this->form_validation->run()	==	FALSE)
 						 {
-								$this->load->view('fontEnd/login');
+								$this->load->view('fontEnd/Login');
 						 }else{
 								$valid_user	= $this->Customer_model->check();
 								 if($valid_user	==	FALSE)
 								 {
-									 $this->session->set_flashdata('error','Username / Password Not Correct !' );
-									 redirect('fontEnd/register');
+									 $this->session->set_flashdata('error','<div class="alert alert-warning"><strong>ชื่อเข้าใช้/รหัสผ่านไม่ถูกต้อง</strong></div>' );
+									 redirect('fontEnd/Register');
 								 }else{
 										 $this->session->set_userdata('username',$valid_user->Cus_Username);
 										 $this->session->set_userdata('group',$valid_user->Cus_Group);
@@ -79,7 +80,7 @@ class register extends CI_Controller {
 					 redirect(base_url());
 				 }else{
 						$this->session->set_flashdata('error','<div class="alert alert-warning"><strong>มีบัญชีผู้ใช้นี้อยู่แล้ว</strong></div>' );
-						redirect('fontEnd/register');
+						redirect('fontEnd/Register');
 				 }
 		}
 	}

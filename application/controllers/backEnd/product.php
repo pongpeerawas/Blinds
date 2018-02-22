@@ -9,7 +9,7 @@ class product extends CI_Controller {
 				if($this->session->userdata('group')!=	('1') )
 				{
 					$this->session->set_flashdata('error','ไม่ได้กินฉันหรอก');
-					redirect('fontEnd/login');
+					redirect('fontEnd/Login');
 				}
 
 			}
@@ -22,13 +22,13 @@ class product extends CI_Controller {
 	}
 	public function index()
 	{
-		 $query = $this->productModel->read_db();
+		 $query = $this->ProductModel->read_db();
 
 		$value = array(
 			'result' => array(
 				'data' => $query
 			),
-			'views' => 'backEnd/Product/product'
+			'views' => 'backEnd/Product/Product'
 		);
 		$this->loadpage($value);
 	}
@@ -37,12 +37,12 @@ class product extends CI_Controller {
 
 public function insertform()
 {
-	$product = $this->productModel->read_category();
+	$product = $this->ProductModel->read_category();
 	$value = array(
 		'result' => array(
 		'product' =>$product
 		),
-		'views' => 'backEnd/Product/addProduct'
+		'views' => 'backEnd/Product/AddProduct'
 	);
 	$this->loadpage($value);
 }
@@ -55,8 +55,8 @@ public function insert()
 	move_uploaded_file($_FILES['Pro_Pic']['tmp_name'],"assetAdmin/img/".$new_file);
 
 	$input['Pro_Pic']=$new_file;
-	$this->productModel->insert($input);
-	redirect('backEnd/product');
+	$this->ProductModel->insert($input);
+	redirect('backEnd/Product');
 
 }
 
@@ -64,14 +64,14 @@ public function insert()
 public function updateform()
 {
 	$read = $this->uri->segment(4);
-	$query = $this->productModel->read_one($read);
-	$product = $this->productModel->read_category();
+	$query = $this->ProductModel->read_one($read);
+	$product = $this->ProductModel->read_category();
 	$value = array(
 		'result' => array(
 			'data' => $query,
 			'product' => $product
 		),
-		'views' => 'backEnd/Product/editProduct'
+		'views' => 'backEnd/Product/EditProduct'
 	);
 	$this->loadpage($value);
 }
@@ -88,15 +88,15 @@ public function update()
 	 move_uploaded_file($_FILES['Pro_Pic']['tmp_name'],"assetAdmin/img/".$new_file);
 	$update['Pro_Pic']=$new_file;
 }
-	$this->productModel->update($update);
-	redirect('backEnd/product');
+	$this->ProductModel->update($update);
+	redirect('backEnd/Product');
 }
 
 public function del()
 {
 	$del = $this->uri->segment(4);
-	$this->productModel->del($del);
-	redirect('backEnd/product');
+	$this->ProductModel->del($del);
+	redirect('backEnd/Product');
 
 
 }

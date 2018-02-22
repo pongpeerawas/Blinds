@@ -12,7 +12,7 @@
           <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
             <h5>เพิ่มสินค้า</h5>
           </div>
-            <?php echo form_open_multipart('backEnd/product/insert'); ?>
+            <?php echo form_open_multipart('backEnd/Product/insert'); ?>
           <div class="widget-content nopadding">
             <form action="#" method="get" class="form-horizontal">
 

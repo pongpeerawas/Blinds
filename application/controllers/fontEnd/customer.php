@@ -9,7 +9,7 @@ class Customer extends CI_Controller {
 			if($this->session->userdata('group') ==	('1') )
 			{
 				$this->session->sess_destroy();
-				redirect('fontEnd/login');
+				redirect('fontEnd/Login');
 			}
 
 		}
@@ -17,7 +17,7 @@ class Customer extends CI_Controller {
 	public function index(){
 		$contents['row']          = $this->Customer_model->customer();
 		$contents['cart_session'] = $this->session->userdata('cart_session');
-		$template['content']    = $this->load->view('fontEnd/editProfile',$contents,TRUE);
+		$template['content']    = $this->load->view('fontEnd/EditProfile',$contents,TRUE);
 
 		$this->load->view('fontEnd/Template/Header');
 		$this->load->view('fontEnd/Template/Sidebar',$template);
@@ -58,7 +58,7 @@ class Customer extends CI_Controller {
 
 
 		$update = $this->input->post();
-		$edit = 	$this->Customer_model->update($update);
+		$this->Customer_model->update($update);
 
 		redirect('fontEnd/Customer/single');
 	}

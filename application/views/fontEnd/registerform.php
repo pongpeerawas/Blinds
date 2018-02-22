@@ -12,7 +12,7 @@
         <table class="table table-hover" border="0">
           <?= validation_errors() ?>
           <?= $this->session->flashdata('error') ?>
-          <?= form_open('fontEnd/register') ?>
+          <?= form_open('fontEnd/Register') ?>
           <tr>
             <td align="right">ชื่อเข้าใช้ :</td>
             <td><input type="text" class="form-control" name="username" value="<?= set_value('Cus_Username') ?>" required></td>
@@ -24,11 +24,11 @@
           <tr>
             <td align="right">ชื่อ-นามสกุล :</td>
             <td><input type="text" class="form-control" name="Cus_Name" value="" required> </td>
-            <td><?php echo form_error('first_name', '<div class="error">', '</div>'); ?></td>
+            <!-- <td><?php echo form_error('first_name', '<div class="error">', '</div>'); ?></td> -->
           </tr>
           <tr>
             <td align="right">เบอร์โทรศัพท์ :</td>
-            <td><input type="text" class="form-control" name="Cus_Phone" value="" required ></td>
+            <td><input type="text" class="form-control" name="Cus_Phone" value="" required|min_length[10]|></td>
           </tr>
           <tr>
             <td align="right">อีเมล :</td>

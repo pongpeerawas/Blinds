@@ -1,52 +1,39 @@
-<div class="row">
-
-<?php
-$i = 0;
-$cart_session = @$this->session->userdata('cart_session');
-
-foreach($row as $row):
-
-?>
-
-  <div class="col-sm-6 col-md-3">
-
-
-     <div class="thumbnail">
-     <img id="myImg" src="<?php echo base_url();?>assetAdmin/img/<?php if($row->Pro_Pic != ''){  echo $row->Pro_Pic; } else { echo 'no_image.png'; } ?>" alt="<?php echo $row->Pro_Name;?>" class="img-responsive" style="height:300px">
-     </div>
-        <h3><?php echo $row->Pro_Name;?></h3>
-        <h4><?php echo $row->Pro_Size;?></h4>
-        <h2><?php echo $row->Pro_Price;?> ฿</h2>
-        <p>
-        <div class="input-group" style="width:120px">
-               <span class="input-group-btn">
-                 <button type="button" class="btn btn-danger btn-number less_qty" position="<?php echo $i;?>">
-                 <span class="glyphicon glyphicon-minus"></span>
-                 </button>
-               </span>
-
-                 <input type="text" id="qty[<?php echo $i;?>]" class="form-control input-number qty<?php echo $row->Pro_Id;?>" style="text-align:right;width:45px" value="<?php echo @$cart_session[$row->Pro_Id];?>" onkeypress="return numberOnly(event)">
-
-               <span class="input-group-btn">
-                 <button type="button" class="btn btn-success btn-number add_qty" position="<?php echo $i;?>">
-                 <span class="glyphicon glyphicon-plus"></span>
-                 </button>
-               </span>
-
-               <div class="col-md-1" style="float:right;margin-left:20px">
-                   <button class="btn btn-primary add_to_cart" type="button" Pro_Id="<?php echo $row->Pro_Id;?>"><i class="glyphicon glyphicon-shopping-cart"></i></button>
-                 </div>
-
-             </div>
-
-
-        </p>
+<!-- <div class="row">
+  <div class="breadcrumb">
+    <h4>สินค้า</h4>
   </div>
 
-<?php
-$i++;
+  <?php
+  $i = 0;
+  $cart_session = @$this->session->userdata('cart_session');
 
-?>
-<?php endforeach; ?>
 
-</div>
+  foreach($row as $row){
+
+    ?>
+
+
+    <div class="col-sm-8 col-md-4">
+      <div class="boxs">
+        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1s">
+          <div class="thumbnail">
+            <a  data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="<?php echo base_url()?>index.php/fontEnd/Product/single?id=<?php echo $row->Pro_Id ?>">
+              <img id="myImg" src="<?php echo base_url();?>assetAdmin/img/<?php echo $row->Pro_Pic ?>" alt="<?php echo $row->Pro_Name;?>" class="img-responsive" style="height:300px">
+            </div>
+            <h3><?php echo $row->Pro_Name;?></h3>
+            <h5><?php echo $row->Pro_Size;?></h5>
+            <h2><?php echo $row->Pro_Price;?> ฿</h2>
+          </a>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <?php
+    $i++;
+  }
+
+
+  ?>
+
+<? endforeach; ?>
+</div> -->

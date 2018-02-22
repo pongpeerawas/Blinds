@@ -27,7 +27,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-    <a href="<?php echo site_url('backEnd/product/insertform'); ?>"><button name="button" class="btn btn-info" style="text-align:center">เพิ่ม</button></a>
+    <a href="<?php echo site_url('backEnd/Product/insertform'); ?>"><button name="button" class="btn btn-info" style="text-align:center">เพิ่ม</button></a>
 
 
     <div class="widget-box">

@@ -8,7 +8,7 @@ class Home extends CI_Controller {
 			if($this->session->userdata('group') ==	('1') )
 			{
 				$this->session->sess_destroy();
-		    redirect('fontEnd/login');
+		    redirect('fontEnd/Login');
 			}
 
 		}
@@ -23,9 +23,9 @@ class Home extends CI_Controller {
 
 
 
-			$template['content']      = $this->load->view('fontEnd/product',$contents,TRUE);
+			$template['content']      = $this->load->view('fontEnd/Product',$contents,TRUE);
 		  $this->load->view('fontEnd/Template/Header');
-			$this->load->view('fontEnd/home',$data);
+			$this->load->view('fontEnd/Home',$data);
 			$this->load->view('fontEnd/Template/Sidebar',$template);
 			$this->load->view('fontEnd/Template/Footer');
 

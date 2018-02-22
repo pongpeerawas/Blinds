@@ -9,7 +9,7 @@ class Product extends CI_Controller {
 			if($this->session->userdata('group') ==	('1') )
 			{
 				$this->session->sess_destroy();
-				redirect('fontEnd/login');
+				redirect('fontEnd/Login');
 			}
 
 		}
@@ -19,9 +19,9 @@ class Product extends CI_Controller {
 		$contents['row']          = $this->Product_model->product();
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 
-		$template['content']      = $this->load->view('fontEnd/product',$contents,TRUE);
+		$template['content']      = $this->load->view('fontEnd/Product',$contents,TRUE);
 		$this->load->view('fontEnd/Template/Header');
-		$this->load->view('fontEnd/home');
+		$this->load->view('fontEnd/Home');
 		$this->load->view('fontEnd/Template/Sidebar',$template);
 		$this->load->view('fontEnd/Template/Footer');
 
@@ -31,7 +31,7 @@ class Product extends CI_Controller {
 	 {
 			 $id = $_GET['id'];
 			 // $id =	 $this->session->userdata('id')
-			 redirect('fontEnd/Product/productDetailForm?id='.$id);
+			 redirect('fontEnd/Product/ProductDetailForm?id='.$id);
 	 }
 
 	   function productDetailForm(){
@@ -40,7 +40,7 @@ class Product extends CI_Controller {
 	     $contents['row']          = $this->Product_model->product();
 	     $contents['cart_session'] = $this->session->userdata('cart_session');
 
-	     $template['content']      = $this->load->view('fontEnd/productDetail',$contents,TRUE);
+	     $template['content']      = $this->load->view('fontEnd/ProductDetail',$contents,TRUE);
 
 	     $id = $_GET['id'];
 	     $query = $this->Product_model->getPro($id);
@@ -51,7 +51,7 @@ class Product extends CI_Controller {
 
 	     $this->load->view('fontEnd/Template/Header');
 	     $this->load->view('fontEnd/Template/Sidebar',$template);
-	     $this->load->view('fontEnd/productDetail',$data);
+	     $this->load->view('fontEnd/ProductDetail',$data);
 	     $this->load->view('fontEnd/Template/Footer');
 
 

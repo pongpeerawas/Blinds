@@ -308,9 +308,9 @@ a:hover {
 }
 .recent button.btn-primarys h3 {
 	padding:10px;
-	font-size:30px;
+	font-size:100px;
 	text-decoration:0;
-	color:#5e35b1;
+	color:#8762d0;
 }
 
 .align-center {
@@ -561,6 +561,8 @@ label {
 }
 .form-control {
 	border-radius:0;
+	background-color:#b39ddb;
+
 }
 address {
 	text-align:center;
@@ -571,6 +573,21 @@ address {
 }
 address br {
 	margin-top:10px;
+}
+ul.a {
+    list-style-type: circle;
+}
+
+ul.b {
+    list-style-type: square;
+}
+
+ol.c {
+    list-style-type: upper-roman;
+}
+
+ol.d {
+    list-style-type: lower-alpha;
 }
 
 /* --- Map --- */
@@ -596,7 +613,7 @@ address br {
 }
 
 .link-list ul,li,a {
-	color:#000;
+	color:#333;
 	list-style:none;
 
 }

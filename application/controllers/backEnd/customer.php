@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class customer extends CI_Controller {
+class Customer extends CI_Controller {
 
 
 		public function __construct ()
@@ -10,7 +10,7 @@ class customer extends CI_Controller {
 				if($this->session->userdata('group')!=	('1') )
 				{
 					$this->session->set_flashdata('error','ไม่ได้กินฉันหรอก');
-					redirect('fontEnd/login');
+					redirect('fontEnd/Login');
 				}
 
 			}
@@ -25,13 +25,13 @@ class customer extends CI_Controller {
 
 	public function index()
 	{
-		 $query = $this->customerModel->read_db();
+		 $query = $this->CustomerModel->read_db();
 
 		$value = array(
 			'result' => array(
 				'data' => $query
 			),
-			'views' => 'backEnd/customer'
+			'views' => 'backEnd/Customer'
 		);
 		$this->loadpage($value);
 	}
@@ -39,8 +39,8 @@ class customer extends CI_Controller {
 	public function del()
 	{
 		$del = $this->uri->segment(4);
-		$this->customerModel->del($del);
-		redirect('backEnd/customer');
+		$this->CustomerModel->del($del);
+		redirect('backEnd/Customer');
 
 
 	}
