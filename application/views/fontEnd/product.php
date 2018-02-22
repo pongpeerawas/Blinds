@@ -54,13 +54,13 @@
               <td>&nbsp;</td>
             </tr>
 
+            <?php
+            $i++;
+          }
+          ?>
 
+          <? endforeach; ?>
           </tbody>
-          <?php
-          $i++;
-        }
-        ?>
 
-        <? endforeach; ?>
 
         </table>
