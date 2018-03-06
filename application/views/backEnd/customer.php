@@ -43,8 +43,6 @@
                   <th>อีเมลล์</th>
                   <th>ที่อยู่</th>
                   <th>จังหวัด</th>
-                  <th>รหัสไปรษณย์</th>
-                  <th>ประเทศ</th>
                   <th>จัดการ</th>
                 </tr>
               </thead>
@@ -58,8 +56,6 @@
                   <td><?php echo $key['Cus_Email'];?></td>
                   <td><?php echo $key['Cus_District'];?></td>
                   <td><?php echo $key['Cus_Province'];?></td>
-                  <td><?php echo $key['Cus_Zipcode'];?></td>
-                  <td><?php echo $key['Cus_Country'];?></td>
                   <td>
                   <a href="<?php echo site_url('backEnd/Customer/del/'.$key['Cus_Id'])?>" onclick="return confirm('ยืนยันการลบ !')"><button name="button" class="btn btn-danger">ลบ</button></a></td>
                 </tr>

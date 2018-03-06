@@ -11,8 +11,12 @@ class Customer extends CI_Controller {
 				$this->session->sess_destroy();
 				redirect('fontEnd/Login');
 			}
-
+			if($this->session->userdata('username') ==	FALSE)
+		{
+			redirect('fontEnd/Login');
 		}
+}
+
 
 	public function index(){
 		$contents['row']          = $this->Customer_model->customer();
@@ -37,7 +41,6 @@ class Customer extends CI_Controller {
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 
 		$template['content']      = $this->load->view('fontEnd/Profile',$contents,TRUE);
-		$contents['cart_session'] = $this->session->userdata('cart_session');
 
 		$id = $_GET['id'];
 		$query = $this->Customer_model->getCustomer($id);
@@ -64,5 +67,59 @@ class Customer extends CI_Controller {
 	}
 
 
+	public function single_history()
+	 {
+			  // $id =	 $this->session->userdata('name')
+			 redirect('fontEnd/Customer/shopping_history?id='.$this->session->userdata('id'));
+	 }
 
+	public function shopping_history()
+		{
+
+						$contents['row']          = $this->Customer_model->customer();
+						$contents['cart_session'] = $this->session->userdata('cart_session');
+
+						$template['content']      = $this->load->view('fontEnd/Profile',$contents,TRUE);
+
+						$id = $_GET['id'];
+						$query = $this->Customer_model->getCustomer($id);
+						$user=$this->session->userdata('username');
+						$data['history'] = $this->Customer_model->get_shopping_history($user);
+						$this->load->view('fontEnd/Template/Header');
+						$this->load->view('fontEnd/History',$data);
+						$this->load->view('fontEnd/Template/Footer');
+
+		}
+
+		// public function updateform()
+		// {
+		// 	$read = $this->uri->segment(4);
+		// 	$query = $this->ProductModel->read_one($read);
+		// 	$product = $this->ProductModel->read_category();
+		// 	$value = array(
+		// 		'result' => array(
+		// 			'data' => $query,
+		// 			'product' => $product
+		// 		),
+		// 		'views' => 'backEnd/Product/EditProduct'
+		// 	);
+		// 	$this->loadpage($value);
+		// }
+			 public function OrderDetail()
+	 			{
+
+	 							$contents['row']          = $this->Customer_model->customer();
+	 							$contents['cart_session'] = $this->session->userdata('cart_session');
+
+	 							$template['content']      = $this->load->view('fontEnd/Profile',$contents,TRUE);
+
+	 							$id = $_GET['id'];
+	 							$query = $this->Customer_model->getCustomer($id);
+	 							$user=$this->session->userdata('username');
+	 							$data['history'] = $this->Customer_model->get_shopping_history($user);
+	 							$this->load->view('fontEnd/Template/Header');
+	 							$this->load->view('fontEnd/History',$data);
+	 							$this->load->view('fontEnd/Template/Footer');
+
+	 			}
 }

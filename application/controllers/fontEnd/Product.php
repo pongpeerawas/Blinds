@@ -11,10 +11,10 @@ class Product extends CI_Controller {
 				$this->session->sess_destroy();
 				redirect('fontEnd/Login');
 			}
-
 		}
 
-	public function index(){
+	public function index()
+	{
 
 		$contents['row']          = $this->Product_model->product();
 		$contents['cart_session'] = $this->session->userdata('cart_session');
@@ -24,8 +24,6 @@ class Product extends CI_Controller {
 		$this->load->view('fontEnd/Home');
 		$this->load->view('fontEnd/Template/Sidebar',$template);
 		$this->load->view('fontEnd/Template/Footer');
-
-
 	}
 	public function single()
 	 {

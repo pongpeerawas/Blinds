@@ -30,7 +30,7 @@
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 700px;
+    max-width: 480px;
   }
 
   /* Caption of Modal Image */
@@ -104,13 +104,13 @@
 
       <div class="container">
         <div class="content">
-          <h2><span><?php echo $row->Pro_Name ?></span></h2>
+          <h1><span><?php echo $row->Pro_Name ?></span></h1>
 
         </div>
         <div class="row">
           <div class="col-md-8">
 
-                <img src="<?php echo base_url() ?>assetAdmin/img/<?php echo $row->Pro_Pic ?>"  alt="<?php echo $row->Pro_Name ?>" width="448" height="377" id="myImg" style="height: 450px; width: 450px" >
+                <img src="<?php echo base_url() ?>assetAdmin/img/<?php echo $row->Pro_Pic ?>"  alt="<?php echo $row->Pro_Name ?> <br>สามารถแสดงผล AR" width="448" height="377" id="myImg" style="height: 450px; width: 450px" >
                 <p> <?php echo $row->Pro_Detail ?></p>
 
 
@@ -134,24 +134,7 @@
                 <hr>
 
                 <div class="ficon">
-                  <!-- <div class="input-group" >
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-primarys btn-number less_qty" position="<?php echo $i;?>">
-                        <span class="glyphicon glyphicon-minus"></span>
-                      </button>
-                    </span>
-                    <input type="text" id="qty[<?php echo $i;?>]" class="form-control input-number qty<?php echo $row->Pro_Id;?>" style="text-align:right;width:45px" value="<?php echo @$cart_session[$row->Pro_Id];?>" onkeypress="return numberOnly(event)" readonly>
-
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-primarys btn-number add_qty" position="<?php echo $i;?>">
-                        <span class="glyphicon glyphicon-plus"></span>
-                      </button>
-                    </span>
-                  </div>
-             -->
-
-
-                </div>
+              </div>
                 <a href="#"> <button class="btn btn-warning add_to_cart" type="button"  style="width:200px;height:40px "  Pro_Id="<?php echo $row->Pro_Id;?>"><i class="glyphicon glyphicon-shopping-cart"><b>ใส่ตะกร้า</b></i></button></a>
 
               </div>

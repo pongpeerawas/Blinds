@@ -51,7 +51,7 @@
                 <li role="presentation">
                   <a href="<?php echo site_url('fontEnd/Login');?>">สมัครสมาชิก/ล็อกอิน</li></a>
                 <?php }else{ ?>
-              <li role="presentation"><a href="blog.html">ข้อมูลการสั่งซื้อ</a></li>
+              <li role="presentation"><a href="<?php echo base_url()?>index.php/fontEnd/Customer/single_history?id=<?$this->session->userdata('id')?>">ข้อมูลการสั่งซื้อ</a></li>
 
               <li class ="dropdown">
                               <a href ="#" class = "dropdown-toggle" data-toggle="dropdown">คุณ : <?php echo $this->session->userdata('name') ?></a>

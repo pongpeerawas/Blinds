@@ -37,8 +37,6 @@ class Register extends CI_Controller {
 					'Cus_Email'			=> set_value('Cus_Email'),
 					'Cus_District'	=> set_value('Cus_District'),
 					'Cus_Province'	=> set_value('Cus_Province'),
-					'Cus_Zipcode'		=> set_value('Cus_Zipcode'),
-					'Cus_Country'		=> set_value('Cus_Country'),
 					'Cus_Username'	=> set_value('username'),
 					'Cus_Password'  =>  set_value('password'),
 					'Cus_Status'		=> '1',
@@ -66,7 +64,7 @@ class Register extends CI_Controller {
 										 $this->session->set_userdata('id',$valid_user->Cus_Id);
 										 $this->session->set_userdata('name',$valid_user->Cus_Name);
 
-										 switch($valid_user->usr_group)
+										 switch($valid_user->Cus_Group)
 										 {
 											 case 2 ://for member
 											redirect('Home');

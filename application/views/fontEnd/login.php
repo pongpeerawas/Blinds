@@ -42,7 +42,7 @@
                         <br>
                       <div class="form-group">
                      <center>
-                       <button type="submit" class="btn btn-success">Login</button>
+                       <button type="submit" class="btn btn-primarys">Login</button>
                        <!-- <?=  anchor(base_url(),'Cancel',['class'=>'btn']) ?> -->
                       </center>
 

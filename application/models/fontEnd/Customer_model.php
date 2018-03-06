@@ -9,15 +9,25 @@ class Customer_model extends CI_Model
   function customer(){
     return $q = $this->db->select('*')->from('customer')->get()->result();
   }
+  //
+  // function profile_detail($cid){
+  //   return $q = $this->db->select('*')->from('customer')->where('Cus_Id',$cid)->get()->row();
+  // }
 
-  function profile_detail($cid){
-    return $q = $this->db->select('*')->from('customer')->where('Cus_Id',$cid)->get()->row();
-  }
-
-  function getCustomer($id){
+  function getCustomer($id)
+  {
     $query = $this->db->get_where('customer',array('Cus_Id' => $id));
     return $query;
   }
+
+  public function update($update)
+  {
+   $this->db
+   ->where('Cus_Id',$update['Cus_Id'])
+   ->update('customer',$update);
+  }
+
+
 
   public function check_login()
   {
@@ -60,18 +70,6 @@ class Customer_model extends CI_Model
 
   }
 
-  public function members()
-  {
-    $member = $this->db->get('customer');
-    if($member->num_rows() > 0 ) {
-      return $member->result();
-    } else {
-      return array();
-    } //end if num_rows
-
-  }//end function member
-
-
   public function register($data_customer)
   {
 
@@ -113,26 +111,24 @@ class Customer_model extends CI_Model
     }
   }
 
-  public function get_profile($id)
-		{// get all invoices identified by $user
+  public function get_shopping_history($user)
+  		{// get all invoices identified by $user
+  			$get_it =  $this->db->select('o.*,SUM(ol.quantity * ol.OrderList_Price) AS total')
+  								->from('orders o, customer c, orderlist ol')
+  								->where('c.Cus_Name',$user)
+  								->where('c.Cus_Id = o.Cus_Id')
+  								->where('ol.Order_Id = o.Order_Id')
+  								->group_by('ol.Order_Id')
+  								->get();
 
-      $get_it =  $this->db->select('*')
-    								->from('customer')
-    								->where('Cus_Id',$user)
-    								->get();
+  			if($get_it->num_rows() > 0 )
+  			{
+  				return $get_it->result();
+  			}else{
+  					return FALSE; //if there are no matching records
+  				}
+  		}
 
-			if($get_it->num_rows() > 0 )
-			{
-				return $get_it->result();
-			}else{
-					return FALSE; //if there are no matching records
-				}
-		}
-    public function update($update)
-    {
-     $this->db
-     ->where('Cus_Id',$update['Cus_Id'])
-     ->update('customer',$update);
-    }
+
 
 }

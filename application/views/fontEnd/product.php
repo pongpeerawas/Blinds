@@ -22,7 +22,7 @@ th, td {
 
   <table id="example" class="responsive"  width="100%" border="0">
 
- <thead>
+        <thead>
             <tr>
                 <th width="57%"></th>
                 <th width="43%"></th>
@@ -51,8 +51,8 @@ th, td {
                   <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.5s">
                       <h2><?php echo $row->Pro_Name;?></h2>
                       <hr>
-                      <h5><?php echo $row->Pro_Size;?></h5>
-                      <h5><?php echo $row->Cg_name;?><h5>
+                      <h5>ขนาด : <?php echo $row->Pro_Size;?></h5>
+                      <h5>ประเภท : <?php echo $row->Cg_name;?><h5>
                         <br>
                     <font color="#ff751a">  <h1><?php echo $row->Pro_Price;?> ฿</h1></font>
                     </div>
@@ -60,10 +60,10 @@ th, td {
                </td>
 
             </tr>
-            <tr>
+            <!-- <tr>
               <td align="right">&nbsp;</td>
               <td>&nbsp;</td>
-            </tr>
+            </tr> -->
 
             <?php
             $i++;

@@ -3,7 +3,7 @@
 </div>
 										<br>
 										<div class="table-responsive">
-											<table id="mytable" class="table table-bordred table-striped">
+											<table id="mytable" class="table ">
 												<thead>
 													<th>สินค้า</th>
 													<th></th>
@@ -30,7 +30,7 @@
 
 															<tr id="tr<?php echo $cs;?>">
 																<td><?php echo $row->Pro_Name;?></td>
-																<td><img src="<?php echo base_url();?>assetAdmin/img/<?php echo ($row->Pro_Pic)?>" width="300px"></td>
+																<td><img  src="<?php echo base_url();?>assetAdmin/img/<?php echo ($row->Pro_Pic)?>"  width="300px"></td>
 																<td>฿ <?php echo $row->Pro_Price;?></td>
 																<td>
 
@@ -100,7 +100,7 @@
 										if($cart_session){
 											?>
 											<span id="button_bottom">
-												<a href="<?php echo base_url();?>index.php/fontEnd/Checkout" ><input class="btn btn-success pull-right" type="submit" value="ดำเนินการต่อ"></a>
+												<a href="<?php echo base_url();?>index.php/fontEnd/Order" ><input class="btn btn-success pull-right" type="submit" value="ดำเนินการต่อ"></a>
 												<button class="btn btn-danger pull-right RbtnMargin empty_cart" type="button" >ล้างตะกร้า</button>
 												<button class="btn btn-warning pull-right RbtnMargin update_cart" type="button" >อัพเดต</button>
 											</span>

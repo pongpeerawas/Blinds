@@ -19,7 +19,7 @@
               <div class="control-group">
                 <label class="control-label">ชื่อสินค้า :</label>
                 <div class="controls">
-                  <input type="text" name="Pro_Name" id="Pro_Name" class="span4" />
+                  <input type="text" name="Pro_Name" id="Pro_Name" class="span4" / required>
                 </div>
               </div>
               <div class="control-group">
@@ -31,7 +31,7 @@
               <div class="control-group">
                 <label class="control-label">ประเภทสินค้า :</label>
 
-                  <select name="Cg_Id">
+                  <select name="Cg_Id" required>
                     <<?php foreach ($product as $key ): ?>
                       <?php if ($data[0]['Cg_Id']==$key['Cg_Id']): ?>
                         <option selected value="<?php echo $key['Cg_Id']?>" ><?php echo $key['Cg_name'] ?></option>
@@ -50,13 +50,13 @@
             <div class="control-group">
               <label class="control-label">จำนวนสินค้า :</label>
               <div class="controls">
-                <input type="text"  name="Pro_Amount" id="Pro_Amount" class="span1" onkeypress="return noNumbers(event)"><br>
+                <input type="text"  name="Pro_Amount" id="Pro_Amount" class="span1" onkeypress="return noNumbers(event)" required><br>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">ราคา :</label>
               <div class="controls">
-                <input type="text"  name="Pro_Price" id="Pro_Price" class="span2"  onkeypress="return noNumbers(event)">&nbsp; บาท
+                <input type="text"  name="Pro_Price" id="Pro_Price" class="span2"  onkeypress="return noNumbers(event)" required>&nbsp; บาท
                 <span class="help-block"></span> </div>
               </div>
               <div class="control-group">
@@ -68,7 +68,7 @@
               <div class="control-group">
                 <label class="control-label">รูปสินค้า :</label>
                 <div class="controls">
-                <input type="file"   name="Pro_Pic" class="btn btn-primary">
+                <input type="file"   name="Pro_Pic" class="btn btn-primary" required>
 
 
                 </div>

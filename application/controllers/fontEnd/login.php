@@ -39,7 +39,7 @@ class Login extends CI_Controller {
         {
           $this->session->set_flashdata('error','ขออภัยชื่อเข้าใช้ / รหัสผ่าน ไม่ถูกต้อง!' );
         }else{
-          $this->session->set_flashdata('error','ขอภัยไม่พบบัญชีผผู้ใช้ในระบบ' );
+          $this->session->set_flashdata('error','ขอภัยไม่พบบัญชื่อผู้ใช้ในระบบ' );
         }
 
         redirect('fontEnd/Login');
