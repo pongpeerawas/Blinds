@@ -101,12 +101,16 @@
   if(isset($product)){
     foreach ($product as $row){
       ?>
-
       <div class="container">
-        <div class="content">
-          <h1><span><?php echo $row->Pro_Name ?></span></h1>
 
-        </div>
+      <div class="col-sm-12">
+        <ol class="breadcrumb">
+          <li><a href="<?php echo site_url('');?>">หน้าแรก</a></li>
+          <li class="active"><?php echo $row->Pro_Name ?></li>
+        </ol>
+      </div>
+
+
         <div class="row">
           <div class="col-md-8">
 

@@ -3,10 +3,10 @@ class Order_model extends CI_Model
 {
 
 
-  function getOrder($id){
-    $query = $this->db->form('orders')->where('Order_Id');
-    return $query;
-  }
+  // function getOrder($id){
+  //   $query = $this->db->form('orders')->where('Order_Id');
+  //   return $query;
+  // }
 
   function getCustomer($id)
   {
@@ -14,45 +14,31 @@ class Order_model extends CI_Model
     return $query;
   }
 
-  public function get_order_history()
-      {// get all invoices identified by $user
 
-        $this->db->join('customer','orders.Cus_Id = customer.Cus_Id','left');
+  public function get_order_list($id)
+  {
+      // $this->db->join('orders','orderlist.Order_Id = orders.Order_Id','left');
+      $this->db->join('product','orderlist.Pro_Id = product.Pro_Id','left');
 
-        $q = $this->db->select('*')->from('orders')->get()->result();
-        return $q;
-      }
+      return $query = $this->db->select('*')->from('orderlist')->where('Order_Id',$id)->get();
+  }
 
-        // function get_Order(){
-        //       return $q = $this->db->select('*')->from('orders')->get()->result();
-        //
-        // }
+  public function get_order_shipping($id)
+  {
 
-  // function getProid()
-  // {
-  //
-  // $where = "Pro_Amount";
-  // $db =$this->db->where($where);
-  // $db = $this->db->get('product')->result_array();
-  // }
-//
-//   public function update($update_proAmount)
-//   {
-// $row = $this->Product_model->product_id($cs);
-//  $this->db->where('Pro_Id', $cs);
-//  $this->db->update('product', $update_proAmount);
-//
-//
-//
-//   }
-  // public function insertOrder($data_order,$data_orderList,$data_shipping)
-  // {
-  //
-  //   $this->db->insert('orders',$data_order);
-  //   $this->db->insert('orderlist',$data_orderList);
-  //   $this->db->insert('shipping',$data_shipping);
-  //
-  // }
+      // $this->db->join('orders','shipping.Order_Id = orders.Order_Id','left');
+
+      return $query = $this->db->select('*')->from('shipping')->where('Order_Id',$id)->get();
+  }
+  public function get_order_sumprice($id)
+  {
+
+      // $this->db->join('orders','shipping.Order_Id = orders.Order_Id','left');
+
+      return $query = $this->db->select('*')->from('orders')->where('Order_Id',$id)->get();
+  }
+
+
 
 
 

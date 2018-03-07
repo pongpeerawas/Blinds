@@ -29,6 +29,16 @@
     <hr>
     <a href="<?php echo site_url('backEnd/Product/insertform'); ?>"><button name="button" class="btn btn-info" style="text-align:center">เพิ่ม</button></a>
 
+<div style="text-align: right;font-size: 15px;">
+    <?php foreach ($data as $key ): ?>
+
+      <?php if ($key['Pro_Amount'] < 11): ?>
+        <a href="<?php echo site_url('backEnd/product/updateform/'.$key['Pro_Id'])?>">
+          <h1> </h1><span class="label label-important"><?php echo $key['Pro_Name'];?></span>  *มีจำนวนใกล้จะหมด!
+        </a>
+      <?php endif;  ?>
+    <?php endforeach; ?>
+</div>
 
     <div class="widget-box">
       <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
@@ -59,7 +69,16 @@
                 <td><?php echo $key['Pro_Name'];?></td>
                 <td style="width:300px;"><?php echo $key['Pro_Detail'];?></td>
                 <td><?php echo $key['Cg_name'];?></td>
-                <td><?php echo $key['Pro_Amount'];?></td>
+                <td style="text-align: center">
+                  <?php if ($key['Pro_Amount'] < 11): ?>
+
+                      <span class="label label-important"><h4><?php echo $key['Pro_Amount'];?> ชิ้น</h4></span><br>
+                      
+                  <?php else: ?>
+                      <?php echo $key['Pro_Amount'];?> ชิ้น
+                  <?php endif; ?>
+
+                </td>
                 <td><?php echo $key['Pro_Price'];?></td>
                 <td><img src="<?php echo base_url('assetAdmin/img/'.$key['Pro_Pic']); ?>" style="width:150px;"></td>
                 <td><?php echo $key['Pro_Size'];?></td>

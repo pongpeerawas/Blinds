@@ -81,9 +81,9 @@ class Customer extends CI_Controller {
 
 						$template['content']      = $this->load->view('fontEnd/Profile',$contents,TRUE);
 
-						$id = $_GET['id'];
+						$id = 	$this->session->userdata('id');
 						$query = $this->Customer_model->getCustomer($id);
-						$user=$this->session->userdata('username');
+						$user=$this->session->userdata('id');
 						$data['history'] = $this->Customer_model->get_shopping_history($user);
 						$this->load->view('fontEnd/Template/Header');
 						$this->load->view('fontEnd/History',$data);
@@ -105,20 +105,32 @@ class Customer extends CI_Controller {
 		// 	);
 		// 	$this->loadpage($value);
 		// }
+		public function single_OrderDetail()
+		 {
+				 $id = $_GET['id'];
+				 // $id =	 $this->session->userdata('id')
+				 redirect('fontEnd/Customer/OrderDetail?id='.$id);
+		 }
 			 public function OrderDetail()
 	 			{
 
 	 							$contents['row']          = $this->Customer_model->customer();
 	 							$contents['cart_session'] = $this->session->userdata('cart_session');
-
 	 							$template['content']      = $this->load->view('fontEnd/Profile',$contents,TRUE);
 
 	 							$id = $_GET['id'];
-	 							$query = $this->Customer_model->getCustomer($id);
-	 							$user=$this->session->userdata('username');
-	 							$data['history'] = $this->Customer_model->get_shopping_history($user);
+
+								$query = $this->Order_model->get_order_list($id);
+								$data['orderlist'] = $query->result();
+								$query = $this->Order_model->get_order_shipping($id);
+								$data['shipping'] = $query->result();
+
+								$query = $this->Order_model->get_order_sumprice($id);
+								$data['sumprice'] = $query->result();
+
+
 	 							$this->load->view('fontEnd/Template/Header');
-	 							$this->load->view('fontEnd/History',$data);
+	 							$this->load->view('fontEnd/OrderDetail',$data);
 	 							$this->load->view('fontEnd/Template/Footer');
 
 	 			}

@@ -115,7 +115,7 @@ class Customer_model extends CI_Model
   		{// get all invoices identified by $user
   			$get_it =  $this->db->select('o.*,SUM(ol.quantity * ol.OrderList_Price) AS total')
   								->from('orders o, customer c, orderlist ol')
-  								->where('c.Cus_Name',$user)
+  								->where('c.Cus_Id',$user)
   								->where('c.Cus_Id = o.Cus_Id')
   								->where('ol.Order_Id = o.Order_Id')
   								->group_by('ol.Order_Id')

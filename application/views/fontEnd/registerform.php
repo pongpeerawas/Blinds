@@ -3,7 +3,10 @@
   <title>Register Page</title>
 </head>
 <body>
-
+  <div class="breadcrumb ">
+  	<li><a href="<?php echo site_url('');?>">หน้าแรก</a></li>
+  	<li class="active">ลงทะเบียน</li>
+  </div>
   <div class="container" align="center">
     <div class="row">
       <div class="col-md-2 col-sm=2"></div>

@@ -15,7 +15,7 @@
 
             <div class="col-sm-12">
               <ol class="breadcrumb">
-                <li><a href="index.php">หน้าแรก</a></li>
+                <li><a href="<?php echo site_url('');?>">หน้าแรก</a></li>
                 <li class="active">รายการสั่งซื้อสินค้า</li>
               </ol>
             </div>
@@ -33,7 +33,7 @@
 
                         <div class="panel-body"><center><h3>รายการสั่งซื้อสินค้าของคุณ</h3></center><br>
 
-                          <table class="table table-bordered table-striped" style="text-align: center">
+                          <table id="example" class="table table-bordered table-striped" style="text-align: center">
                             <thead class="text-center">
                               <tr>
                                 <td>เลขที่ใบสั่งซื้อ </td>
@@ -46,11 +46,15 @@
                               </tr>
                             </thead>
                               <tbody>
-                                <?php foreach ($history as $row): ?>
+
+                                <?php
+                                // if($history == true){
+                                   foreach ($history as $row): ?>
 
                                 <tr>
                                   <td>
                                     <?php echo $row->Order_Id;?>
+
                                   </td>
                                   <td> <?php echo $row->Order_datetime;?></td>
                                   <td><?php echo $row->Order_sumPrice;?> บาท</td>
@@ -77,11 +81,13 @@
 
 
 
-                  <td><a href="<?php echo site_url('backEnd/Order/ShowOrderList/'.$row->Order_Id)?>"><button class="btn btn-primary" ><span class="glyphicon glyphicon-duplicate"></span> รายละเอียด
+                  <td><a href="<?php echo base_url()?>index.php/fontEnd/Customer/single_OrderDetail?id=<?php echo $row->Order_Id ?>"><button class="btn btn-primary" ><span class="glyphicon glyphicon-duplicate"></span> รายละเอียด
 
                   </button>   </a></td>
                 </tr>
-                <?php endforeach;?>
+                <?php endforeach;
+                // }
+                ?>
             </tbody>
 
           </table>

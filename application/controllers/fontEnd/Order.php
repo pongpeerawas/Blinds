@@ -116,7 +116,7 @@ class Order extends CI_Controller {
 	}
 	public function clearCart(){
 		$this->session->unset_userdata('cart_session');
-		redirect('fontEnd/Customer/history');
+		redirect('fontEnd/Customer/single_history');
 	}
 
 }

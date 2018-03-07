@@ -3,9 +3,15 @@
 <!--หน้าหาส่วนกลาง-->
       <div class="col-sm-12">
 
-        <div class="breadcrumb">
+                    <div class="col-sm-12">
+                      <ol class="breadcrumb">
+                        <li><a href="<?php echo site_url('');?>">หน้าแรก</a></li>
+                        <li class="active">เข้าสู่ระบบ</li>
+                      </ol>
+                    </div>
+        <!-- <div class="breadcrumb">
             <h4>เข้าสู่ระบบ</h4>
-        </div>
+        </div> -->
         <!-- <div class="panel panel-default"> -->
   				<div class="panel-body">
 

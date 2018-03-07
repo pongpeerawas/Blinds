@@ -14,12 +14,25 @@ class Dashboard extends CI_Controller {
 
 		}
 
-	public function index()
+	public function loadpage($value)
 	{
 		$this->load->view('backEnd/Template/Header');
 		$this->load->view('backEnd/Template/Sidebar');
-		$this->load->view('backEnd/Dashboard');
+		$this->load->view($value['views'],$value['result']);
 		$this->load->view('backEnd/Template/Footer');
 	}
+	public function index()
+	{
+		 $query = $this->ProductModel->read_db();
+
+		$value = array(
+			'result' => array(
+				'data' => $query
+			),
+			'views' => 'backEnd/Dashboard'
+		);
+		$this->loadpage($value);
+	}
+
 
 }

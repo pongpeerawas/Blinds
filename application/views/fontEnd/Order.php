@@ -1,12 +1,9 @@
-<div class="breadcrumb">
-	<h4>สรุปการสั่งซื้อ</h4>
+<div class="breadcrumb ">
+	<li><a href="<?php echo site_url('');?>">หน้าแรก</a></li>
+	<li ><a href="<?php echo base_url();?>index.php/fontEnd/Cart/getCart">ตะกร้าสินค้า</a></li>
+	<li class="active">สรุปการสั่งซื้อ</li>
+
 </div>
-<!-- <div class="col-sm-12">
-	<ol class="breadcrumb">
-		<li><a href="index.php">หน้าแรก</a></li>
-		<li class="active">รายการสั่งซื้อสินค้า</li>
-	</ol>
-</div> -->
 <br>
 <?php echo form_open('fontEnd/Order/saveOrder');?>
 

@@ -15,7 +15,7 @@ class Order extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['history'] = $this->Order_model->get_order_history();
+		$data['history'] = $this->OrderModel->get_order_history();
 
 		$this->load->view('backEnd/Template/Header');
 		$this->load->view('backEnd/Template/Sidebar');

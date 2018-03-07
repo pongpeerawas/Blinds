@@ -1,5 +1,7 @@
-<div class="breadcrumb">
-	<h4>ตะกร้าสินค้า</h4>
+
+<div class="breadcrumb ">
+	<li><a href="<?php echo site_url('');?>">หน้าแรก</a></li>
+	<li class="active">ตะกร้าสินค้า</li>
 </div>
 										<br>
 										<div class="table-responsive">
