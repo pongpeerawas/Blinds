@@ -30,7 +30,8 @@ class Order_model extends CI_Model
 
       return $query = $this->db->select('*')->from('shipping')->where('Order_Id',$id)->get();
   }
-  public function get_order_sumprice($id)
+
+  public function get_order($id)
   {
 
       // $this->db->join('orders','shipping.Order_Id = orders.Order_Id','left');

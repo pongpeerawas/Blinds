@@ -58,16 +58,40 @@
                 <td><?php echo $row->Cus_Name;?></td>
                 <td><?php echo $row->Order_datetime;?></td>
                 <td><?php echo $row->Order_sumPrice;?></td>
-                <td><?php echo $row->Order_Paystatus;?></td>
-                <td><?php echo $row->Order_Shipping;?></td>
-                <td><?php echo $row->Order_PayConStatus;?></td>
+                <td>
+                  <?php if ($row->Order_Paystatus == "ยังไม่ชำระ"): ?>
+                    <span class="label label-important"><?php echo $row->Order_Paystatus;?></span>
+
+                  <?php else: ?>
+                    <span class="label label-success"><?php echo $row->Order_Paystatus;?></span>
+
+                  <?php endif; ?>
+                </td>
+                <td>
+                  <?php if ($row->Order_Shipping == "ยังไม่จัดส่ง"): ?>
+                  <span class="label label-important"><?php echo $row->Order_Shipping;?></span>
+                  <?php else: ?>
+                    <span class="label label-success"><?php echo $row->Order_Shipping;?></span>
+                  <?php endif; ?>
+
+                </td>
+                <td>
+                  <?php if ($row->Order_PayConStatus == "ยังแจ้งไม่ชำระ"): ?>
+                    <span class="label label-important"><?php echo $row->Order_PayConStatus;?></span>
+
+                  <?php else: ?>
+                    <span class="label label-success"><?php echo $row->Order_PayConStatus;?></span>
+
+                  <?php endif; ?>
+
+                </td>
                 <td>
                   <div class="btn-group">
                       <button class="btn btn-info">จัดการ</button>
                       <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
                   <ul class="dropdown-menu">
                   <li><a href="<?php echo site_url('backEnd/Order/updateform/'.$row->Order_Id)?>"><span class="glyphicon icon-pencil">  แก้ไข</span></a></li>
-                  <li><a href="<?php echo site_url('backEnd/Order/ShowOrderList/'.$row->Order_Id)?>"><span class="glyphicon icon-book"> ดูรายละเอียด</span> </a></li>
+                  <li>  <a href="<?php echo base_url()?>index.php/backEnd/Order/single_OrderDetail?id=<?php echo $row->Order_Id ?>"><span class="glyphicon icon-book"> ดูรายละเอียด</span> </a></li>
                 </div>
                 </ul></td>
 

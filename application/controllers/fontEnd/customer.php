@@ -122,10 +122,11 @@ class Customer extends CI_Controller {
 
 								$query = $this->Order_model->get_order_list($id);
 								$data['orderlist'] = $query->result();
+
 								$query = $this->Order_model->get_order_shipping($id);
 								$data['shipping'] = $query->result();
 
-								$query = $this->Order_model->get_order_sumprice($id);
+								$query = $this->Order_model->get_order($id);
 								$data['sumprice'] = $query->result();
 
 

@@ -31,7 +31,6 @@ class Order extends CI_Controller {
 		// $query = $this->Shipping_model->customer();
 
 		$contents['shipping'] = $query->result();
-
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template['content']    = $this->load->view('fontEnd/Order',$contents,TRUE);
 
@@ -50,8 +49,8 @@ class Order extends CI_Controller {
 		(
 			'Cus_Id'  =>  set_value('Cus_Id'),
 			'Order_sumPrice'			=> set_value('Order_sumPrice'),
-			'Order_PayConStatus'	=> 	'ยังแจ้งไม่ชำระ',
-			'Order_Paystatus'	=> 			'ยังไม่ชำระ',
+			'Order_PayConStatus'	=> 	'ยังไม่แจ้งชำระ',
+			'Order_Paystatus'	=> 			'ยังไม่ชำระเงิน',
 			'Order_Shipping'	=>			'ยังไม่จัดส่ง',
 
 		);

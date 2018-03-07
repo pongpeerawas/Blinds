@@ -42,7 +42,7 @@
               <!--    ---------------------------------------------------------------------------------------------------------------->
               &nbsp;<h3 style="text-align: left">รายละเอียดสินค้า</h3>
 
-              <table class="table table-responsive" style="text-align: center" border="0">
+              <table class="table table-responsive"  border="0">
                 <thead>
                   <tr>
                     <th style="text-align: center">รูปภาพ</th>
