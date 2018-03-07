@@ -34,7 +34,7 @@
                 <div class="control-group">
                   <label class="control-label">ชื่อประเภทสินค้า :</label>
                   <div class="controls">
-                    <input class="form-control" type="text"  name="Cg_name" id="Cg_name"/>
+                    <input class="form-control" type="text"  name="Cg_Name" id="Cg_Name"/>
                     <input  value=เพิ่ม type=submit class="btn btn-success update"  />
 
                   </div>
@@ -52,6 +52,7 @@
             <tr>
               <th>รหัสประเภทสินค้า</th>
               <th>ชื่อประเภทสินค้า</th>
+              <th>แก้ไข</th>
               <th>ลบ</th>
             </tr>
             <?php foreach ($data as $key ): ?>
@@ -59,7 +60,8 @@
       													<tbody>
       															<tr>
       															<td><?php echo $key['Cg_Id']; ?></td>
-      														  <td><?php echo $key['Cg_name'];?></td>
+      														  <td><?php echo $key['Cg_Name'];?></td>
+                                    <td><a href="<?php echo site_url('backEnd/category/updateform/'.$key['Cg_Id'])?>"><button name="button" class="btn btn-info">  แก้ไข</button></a></td>
       															<td><a href="<?php echo site_url('backEnd/category/del/'.$key['Cg_Id'])?>" onclick="return confirm('ยืนยันการลบ !')"><button name="button" class="btn btn-danger">ลบ</button></a></td>
       														</tr>
       													</tbody>
