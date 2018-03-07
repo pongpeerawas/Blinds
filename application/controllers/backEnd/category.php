@@ -41,6 +41,27 @@ class Category extends CI_Controller {
 		redirect('backEnd/Category');
 		//print_r($value);
 	}
+	public function updateform()
+	{
+		$read = $this->uri->segment(4);
+		$query = $this->CategoryModel->read_one($read);
+
+		$value = array(
+			'result' => array(
+				'data' => $query,
+			),
+			'views' => 'backEnd/EditCategory'
+		);
+		$this->loadpage($value);
+	}
+
+	public function update()
+	{
+		$update = $this->input->post();
+		$this->CategoryModel->update($update);
+		redirect('backEnd/Category');
+	}
+
 public function del()
 {
 	$del = $this->uri->segment(4);
