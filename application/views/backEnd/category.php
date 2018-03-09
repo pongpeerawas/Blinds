@@ -1,17 +1,17 @@
 <head>
 <title>หลังร้าน</title>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="<?php echo base_url('assetAdmin/css/bootstrap.min.css') ?>" rel="stylesheet" />
-<link href="<?php echo base_url('assetAdmin/css/bootstrap-responsive.min.css') ?>" rel="stylesheet" />
-<link href="<?php echo base_url('assetAdmin/css/uniform.css') ?>" rel="stylesheet" />
-<link href="<?php echo base_url('assetAdmin/css/select2.css') ?>" rel="stylesheet" />
-<link href="<?php echo base_url('assetAdmin/css/matrix-style.css') ?>" rel="stylesheet" />
-<link href="<?php echo base_url('assetAdmin/css/matrix-media.css') ?>" rel="stylesheet" />
-<link href="<?php echo base_url('assetAdmin/font-awesome/css/font-awesome.css') ?>" rel="stylesheet" />
-<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> -->
 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="<?php echo base_url('assetAdmin/css/bootstrap.min.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assetAdmin/css/bootstrap-responsive.min.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assetAdmin/css/uniform.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assetAdmin/css/select2.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assetAdmin/css/matrix-style.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assetAdmin/css/matrix-media.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assetAdmin/font-awesome/css/font-awesome.css') ?>" rel="stylesheet" />
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> -->
 
 </head>
 <div id="content">
@@ -35,8 +35,7 @@
                   <label class="control-label">ชื่อประเภทสินค้า :</label>
                   <div class="controls">
                     <input class="form-control" type="text"  name="Cg_Name" id="Cg_Name"/>
-                    <input  value=เพิ่ม type=submit class="btn btn-success update"  />
-
+                    <input  value=เพิ่ม type=submit class="btn btn-success update">
                   </div>
                 </div>
               </div>
@@ -48,24 +47,26 @@
 
           <div class="widget-content nopadding">
 
-            <table class="table  data-table">
+            <table class="table data-table">
             <tr>
               <th>รหัสประเภทสินค้า</th>
               <th>ชื่อประเภทสินค้า</th>
               <th>แก้ไข</th>
               <th>ลบ</th>
             </tr>
-            <?php foreach ($data as $key ): ?>
 
       													<tbody>
+                                  <?php foreach ($data as $key ): ?>
+
       															<tr>
       															<td><?php echo $key['Cg_Id']; ?></td>
       														  <td><?php echo $key['Cg_Name'];?></td>
                                     <td><a href="<?php echo site_url('backEnd/category/updateform/'.$key['Cg_Id'])?>"><button name="button" class="btn btn-info">  แก้ไข</button></a></td>
       															<td><a href="<?php echo site_url('backEnd/category/del/'.$key['Cg_Id'])?>" onclick="return confirm('ยืนยันการลบ !')"><button name="button" class="btn btn-danger">ลบ</button></a></td>
       														</tr>
+                                <?php endforeach; ?>
+
       													</tbody>
-      														<?php endforeach; ?>
           </table>
         </div>
 
@@ -75,11 +76,11 @@
 </div>
 
 
- <script src="<?php echo base_url('assetAdmin/js/jquery.min.js') ?>"></script>
- <script src="<?php echo base_url('assetAdmin/js/jquery.ui.custom.js') ?>"></script>
- <script src="<?php echo base_url('assetAdmin/js/bootstrap.min.js') ?>"></script>
- <script src="<?php echo base_url('assetAdmin/js/jquery.uniform.js') ?>"></script>
- <script src="<?php echo base_url('assetAdmin/js/select2.min.js') ?>"></script>
- <script src="<?php echo base_url('assetAdmin/js/jquery.dataTables.min.js') ?>"></script>
- <script src="<?php echo base_url('assetAdmin/js/matrix.js') ?>"></script>
- <script src="<?php echo base_url('assetAdmin/js/matrix.tables.js') ?>"></script>
+<script src="<?php echo base_url('assetAdmin/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assetAdmin/js/jquery.ui.custom.js') ?>"></script>
+<script src="<?php echo base_url('assetAdmin/js/bootstrap.min.js') ?>"></script>
+<script src="<?php echo base_url('assetAdmin/js/jquery.uniform.js') ?>"></script>
+<script src="<?php echo base_url('assetAdmin/js/select2.min.js') ?>"></script>
+<script src="<?php echo base_url('assetAdmin/js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?php echo base_url('assetAdmin/js/matrix.js') ?>"></script>
+<script src="<?php echo base_url('assetAdmin/js/matrix.tables.js') ?>"></script>

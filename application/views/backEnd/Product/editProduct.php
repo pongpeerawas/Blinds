@@ -36,10 +36,10 @@
                   <select name="Cg_Id">
                     <<?php foreach ($product as $key ): ?>
                       <?php if ($data[0]['Cg_Id']==$key['Cg_Id']): ?>
-                        <option selected value="<?php echo $key['Cg_Id']?>" ><?php echo $key['Cg_name'] ?></option>
+                        <option selected value="<?php echo $key['Cg_Id']?>" ><?php echo $key['Cg_Name'] ?></option>
 
                       <?php else: ?>
-                        <option value="<?php echo $key['Cg_Id']?>" ><?php echo $key['Cg_name'] ?></option>
+                        <option value="<?php echo $key['Cg_Id']?>" ><?php echo $key['Cg_Name'] ?></option>
 
                       <?php endif; ?>
                     <?php endforeach; ?>

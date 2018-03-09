@@ -52,7 +52,7 @@ th, td {
                       <h2><?php echo $row->Pro_Name;?></h2>
                       <hr>
                       <h5>ขนาด : <?php echo $row->Pro_Size;?></h5>
-                      <h5>ประเภท : <?php echo $row->Cg_name;?><h5>
+                      <h5>ประเภท : <?php echo $row->Cg_Name;?><h5>
                         <br>
                     <font color="#ff751a">  <h1><?php echo $row->Pro_Price;?> ฿</h1></font>
                     </div>

@@ -68,12 +68,12 @@
                 <td><?php echo $key['Pro_Id']; ?></td>
                 <td><?php echo $key['Pro_Name'];?></td>
                 <td style="width:300px;"><?php echo $key['Pro_Detail'];?></td>
-                <td><?php echo $key['Cg_name'];?></td>
+                <td><?php echo $key['Cg_Name'];?></td>
                 <td style="text-align: center">
                   <?php if ($key['Pro_Amount'] < 11): ?>
 
                       <span class="label label-important"><h4><?php echo $key['Pro_Amount'];?> ชิ้น</h4></span><br>
-                      
+
                   <?php else: ?>
                       <?php echo $key['Pro_Amount'];?> ชิ้น
                   <?php endif; ?>

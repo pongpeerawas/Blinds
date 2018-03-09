@@ -127,7 +127,7 @@
 
                 <h3><?php echo $row->Pro_Name ?></h3>
                 <hr>
-                <b>  ประเภท : </b><?php echo $row->Cg_name?>
+                <b>  ประเภท : </b><?php echo $row->Cg_Name?>
                 <br>
                 <b>   ขนาด : </b> <?php echo $row->Pro_Size ?> ซ.ม.
 

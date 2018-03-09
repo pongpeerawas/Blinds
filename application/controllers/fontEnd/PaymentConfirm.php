@@ -33,9 +33,6 @@ class PaymentConfirm extends CI_Controller {
 
 	public function getPaycon(){
 
-
-
-
 		// $query = $this->Payment->getCustomer($cid);
     // $contents['customer'] = $query->result();
     $id = $_GET['id'];
@@ -52,6 +49,16 @@ class PaymentConfirm extends CI_Controller {
 
 	}
 	public function savePaycon(){
+
+
+			$update = array
+				(
+					 'Order_Id'  =>  set_value('Order_Id'),
+					'Order_PayConStatus'	=> 	'รอการตรวจสอบ',
+				);
+
+				$this->db->where('Order_Id',$update['Order_Id'])->update('orders',$update);
+
 
     $input = $this->input->post();
     $pathinfo = pathinfo($_FILES['Pc_Pic']['name'],PATHINFO_EXTENSION);

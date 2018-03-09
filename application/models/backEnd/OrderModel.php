@@ -7,11 +7,17 @@ class OrderModel extends CI_Model
   {
 
     $this->db->join('customer','orders.Cus_Id = customer.Cus_Id','left');
-
     $q = $this->db->select('*')->from('orders')->get()->result();
     return $q;
   }
 
+
+    public function update($update)
+    {
+     $this->db
+     ->where('Order_Id',$update['Order_Id'])
+     ->update('orders',$update);
+    }
 
 
 

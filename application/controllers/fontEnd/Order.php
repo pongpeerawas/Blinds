@@ -49,7 +49,7 @@ class Order extends CI_Controller {
 		(
 			'Cus_Id'  =>  set_value('Cus_Id'),
 			'Order_sumPrice'			=> set_value('Order_sumPrice'),
-			'Order_PayConStatus'	=> 	'ยังไม่แจ้งชำระ',
+			'Order_PayConStatus'	=> 	'ยังไม่แจ้งชำระเงิน',
 			'Order_Paystatus'	=> 			'ยังไม่ชำระเงิน',
 			'Order_Shipping'	=>			'ยังไม่จัดส่ง',
 
