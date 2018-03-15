@@ -15,7 +15,7 @@
   <link href="<?php echo base_url('assetAdmin/font-awesome/css/font-awesome.css') ?>" rel="stylesheet" />
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> -->
   <head>
-    
+
   </head>
 
 </head>
@@ -23,7 +23,7 @@
 <div id="content">
   <div id="content-header">
     <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Form elements</a> <a href="#" class="current">Form wizard</a> </div>
-    <h1>รายการการแจ้งชำระเงิน</h1>
+    <h1>รายการการแจ้งชำระเงิน.</h1>
   </div>
   <div class="container-fluid">
     <hr>

@@ -19,10 +19,10 @@ class PaymentConfirm extends CI_Controller {
 
 		$this->load->view('backEnd/Template/Header');
 		$this->load->view('backEnd/Template/Sidebar');
-		$this->load->view('backEnd/ShowPaycon',$query);
+		$this->load->view('backEnd/ShowPaycon2',$query);
 		$this->load->view('backEnd/Template/footer');
 	}
-	
+
 	public function ShowPaycon()
 	{
 

@@ -117,7 +117,7 @@
   <div class="widget-content">
 
     <div class="alert alert-success alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
-      <h2 class="alert-heading">แจ้งชำระสินค้าเรียบร้อยแล้ว!</h2>
+      <h2 class="alert-heading">แจ้งชำระสินค้าเรียบร้อยแล้ว!!</h2>
   </div>
 
   </div>
