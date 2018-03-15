@@ -1,3 +1,52 @@
+
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+</head>
+
+<body>
+  <div id="paypal-button"></div>
+
+  <script>
+    paypal.Button.render({
+      env: 'production', // Or 'sandbox',
+
+      commit: true, // Show a 'Pay Now' button
+
+      style: {
+        color: 'gold',
+        size: 'small'
+      },
+
+      payment: function(data, actions) {
+        /*
+         * Set up the payment here
+         */
+      },
+
+      onAuthorize: function(data, actions) {
+        /*
+         * Execute the payment here
+         */
+      },
+
+      onCancel: function(data, actions) {
+        /*
+         * Buyer cancelled the payment
+         */
+      },
+
+      onError: function(err) {
+        /*
+         * An error occurred during the transaction
+         */
+      }
+    }, '#paypal-button');
+  </script>
+</body>
 <div class="container">
   <div class="row">
     <!--สไลค์-->
@@ -81,7 +130,7 @@
                                       <span class="badge badge-warning" style="color:Yellow"><?php echo $row->Order_Shipping;?></span>
 
                                     <?php } else { ?>
-                                      <span class="badge badge-info" style="color:Green"><span class="glyphicon glyphicon-ok"></span> จัดส่งสินค้าแล้ว </span>
+                                    <span style="color:Green">  <span class="glyphicon glyphicon-ok"></span> จัดส่งสินค้าแล้ว </span>
                                     <?php } ?>
                                   </td>
                                   <td>

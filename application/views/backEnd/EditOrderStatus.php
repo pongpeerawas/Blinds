@@ -72,7 +72,7 @@
                     <option value="แจ้งชำระแล้ว">แจ้งชำระแล้ว</option>
                     <option value="ยังไม่แจ้งชำระเงิน">ยังไม่แจ้งชำระเงิน</option>
 
-                  <?php elseif ($row->Order_PayConStatus == "ยังไม่แจ้งชำระ"): ?>
+                  <?php elseif ($row->Order_PayConStatus == "ยังไม่แจ้งชำระเงิน"): ?>
                     <option value="แจ้งชำระแล้ว">แจ้งชำระแล้ว</option>
                   <?php else: ?>
                     <option value="ยังไม่แจ้งชำระเงิน">ยังไม่แจ้งชำระเงิน</option>

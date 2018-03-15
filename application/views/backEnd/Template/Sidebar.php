@@ -8,7 +8,7 @@
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>รายการสั่งซื้อและการจัดส่ง</span> <span class="label label-important">3</span></a>
       <ul>
         <li><a href="<?php echo site_url('backEnd/Order'); ?>">รายการสั่งซื้อและการจัดส่ง</a></li>
-        <li><a href="form-validation.html">AR</a></li>
+        <li><a href="<?php echo site_url('backEnd/PaymentConfirm'); ?>">รายการการแจ้งชำระเงิน</a></li>
         <li><a href="form-wizard.html">Form with Wizard</a></li>
       </ul>
     </li>

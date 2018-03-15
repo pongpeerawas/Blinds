@@ -61,7 +61,7 @@
       															<tr>
       															<td><?php echo $key['Cg_Id']; ?></td>
       														  <td><?php echo $key['Cg_Name'];?></td>
-                                    <td><a href="<?php echo site_url('backEnd/category/updateform/'.$key['Cg_Id'])?>"><button name="button" class="btn btn-info">  แก้ไข</button></a></td>
+                                    <td><a href="<?php echo site_url('backEnd/category/updateform/'.$key['Cg_Id'])?>"><button name="button" class="btn btn-warning">  แก้ไข</button></a></td>
       															<td><a href="<?php echo site_url('backEnd/category/del/'.$key['Cg_Id'])?>" onclick="return confirm('ยืนยันการลบ !')"><button name="button" class="btn btn-danger">ลบ</button></a></td>
       														</tr>
                                 <?php endforeach; ?>

@@ -60,39 +60,41 @@
                 <td><?php echo $row->Order_sumPrice;?></td>
                 <td>
                   <?php if ($row->Order_Paystatus == "ยังไม่ชำระเงิน"): ?>
-                    <span class="label label-important"><?php echo $row->Order_Paystatus;?></span>
+                    <span class="label label-important"><span class="glyphicon icon-remove">  <?php echo $row->Order_Paystatus;?></span></span>
 
                   <?php else: ?>
-                    <span class="label label-success"><?php echo $row->Order_Paystatus;?></span>
+                    <span class="label label-success"><span class="glyphicon icon-thumbs-up"> <?php echo $row->Order_Paystatus;?></span></span>
 
                   <?php endif; ?>
                 </td>
                 <td>
                   <?php if ($row->Order_Shipping == "ยังไม่จัดส่ง"): ?>
-                  <span class="label label-important"><?php echo $row->Order_Shipping;?></span>
+                  <span class="label label-important"><span class="glyphicon icon-remove"> <?php echo $row->Order_Shipping;?></span></span>
                   <?php else: ?>
-                    <span class="label label-success"><?php echo $row->Order_Shipping;?></span>
+                    <span class="label label-success"><span class="glyphicon icon-thumbs-up"> <?php echo $row->Order_Shipping;?></span></span>
                   <?php endif; ?>
 
                 </td>
                 <td>
                   <?php if ($row->Order_PayConStatus == "ยังไม่แจ้งชำระเงิน"): ?>
-                    <span class="label label-important"><?php echo $row->Order_PayConStatus;?></span>
+                    <span class="label label-important"><span class="glyphicon icon-remove"> <?php echo $row->Order_PayConStatus;?></span></span>
 
                   <?php elseif ($row->Order_PayConStatus == "รอการตรวจสอบ"): ?>
-                    <span class="label label-warning"><?php echo $row->Order_PayConStatus;?></span>
+                    <span class="label label-warning"><span class="glyphicon icon-refresh"> <?php echo $row->Order_PayConStatus;?></span></span>
                     <?php else: ?>
-                      <span class="label label-success"><?php echo $row->Order_PayConStatus;?></span>
+                      <span class="label label-success"><span class="glyphicon icon-thumbs-up"> <?php echo $row->Order_PayConStatus;?></span></span>
                   <?php endif; ?>
 
                 </td>
                 <td>
                   <div class="btn-group">
-                      <button class="btn btn-info">จัดการ</button>
-                      <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+
+                      <button data-toggle="dropdown" class="btn btn-info dropdown-toggle">จัดการ      <span class="caret"></span></button>
                   <ul class="dropdown-menu">
                   <li><a href="<?php echo site_url('backEnd/Order/updateOrderStatusform/'.$row->Order_Id)?>"><span class="glyphicon icon-pencil">  แก้ไข</span></a></li>
-                  <li>  <a href="<?php echo site_url('backEnd/Order/OrderDetail/'.$row->Order_Id)?>"><span class="glyphicon icon-book"> ดูรายละเอียด</span> </a></li>
+                  <li>  <a href="<?php echo site_url('backEnd/Order/OrderDetail/'.$row->Order_Id)?>"><span class="glyphicon icon-zoom-in"> ดูรายละเอียด</span> </a></li>
+                  <li>  <a href="<?php echo site_url('backEnd/PaymentConfirm/ShowPaycon/'.$row->Order_Id)?>"><span class="glyphicon  icon-book"> การแจ้งชำระเงิน</span> </a></li>
+
                 </div>
                 </ul></td>
 

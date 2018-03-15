@@ -50,7 +50,7 @@
             <tr>
               <th>รหัส</th>
               <th>ชื่อสินค้า</th>
-              <th>รายละเอียดสินค้า</th>
+              <!-- <th>รายละเอียดสินค้า</th> -->
               <th>ประเภทสินค้า</th>
               <th>จำนวนสินค้า</th>
               <th>ราคา</th>
@@ -67,7 +67,7 @@
               <tr>
                 <td><?php echo $key['Pro_Id']; ?></td>
                 <td><?php echo $key['Pro_Name'];?></td>
-                <td style="width:300px;"><?php echo $key['Pro_Detail'];?></td>
+                <!-- <td style="width:300px;"><?php echo $key['Pro_Detail'];?></td> -->
                 <td><?php echo $key['Cg_Name'];?></td>
                 <td style="text-align: center">
                   <?php if ($key['Pro_Amount'] < 11): ?>
@@ -84,8 +84,8 @@
                 <td><?php echo $key['Pro_Size'];?></td>
                 <td>
                   <div class="btn-group">
-                      <button class="btn btn-info">จัดการ</button>
-                      <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+                    <button data-toggle="dropdown" class="btn btn-info dropdown-toggle">จัดการ      <span class="caret"></span></button>
+
                       <ul class="dropdown-menu">
                         <li><a href="<?php echo site_url('backEnd/product/updateform/'.$key['Pro_Id'])?>"><span class="glyphicon icon-pencil">  แก้ไข</span></a></li>
                         <li><a href="<?php echo site_url('backEnd/product/del/'.$key['Pro_Id'])?>" onclick="return confirm('ยืนยันการลบ !')"><span class="glyphicon icon-trash"> ลบ</span> </a></li>
