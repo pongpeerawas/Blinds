@@ -12,7 +12,7 @@
         <li><a href="form-wizard.html">Form with Wizard</a></li>
       </ul>
     </li>
-    <li><a href="managetransport.php"><i class="icon icon-tint"></i> <span>AR &amp;</span></a></li>
+    <li><a href="managetransport.php"><i class="icon icon-tint"></i> <span>AR;</span></a></li>
     <li><a href="managepay.php"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
   </ul>
 </div>
