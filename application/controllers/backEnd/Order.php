@@ -56,9 +56,9 @@ class Order extends CI_Controller {
 	public function OrderDetail()
 	{
 
-		$contents['row']          = $this->Customer_model->customer();
-		$contents['cart_session'] = $this->session->userdata('cart_session');
-		$template['content']      = $this->load->view('backEnd/ShowOrderList',$contents,TRUE);
+		// $contents['row']          = $this->Customer_model->customer();
+		// // $contents['cart_session'] = $this->session->userdata('cart_session');
+		// $template['content']      = $this->load->view('backEnd/ShowOrderList',$contents,TRUE);
 
 		// $id = $_GET['id'];
 		$id = $this->uri->segment(4);

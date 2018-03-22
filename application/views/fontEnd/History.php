@@ -1,52 +1,8 @@
 
-<!DOCTYPE html>
 
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-</head>
 
-<body>
-  <div id="paypal-button"></div>
 
-  <script>
-    paypal.Button.render({
-      env: 'production', // Or 'sandbox',
 
-      commit: true, // Show a 'Pay Now' button
-
-      style: {
-        color: 'gold',
-        size: 'small'
-      },
-
-      payment: function(data, actions) {
-        /*
-         * Set up the payment here
-         */
-      },
-
-      onAuthorize: function(data, actions) {
-        /*
-         * Execute the payment here
-         */
-      },
-
-      onCancel: function(data, actions) {
-        /*
-         * Buyer cancelled the payment
-         */
-      },
-
-      onError: function(err) {
-        /*
-         * An error occurred during the transaction
-         */
-      }
-    }, '#paypal-button');
-  </script>
-</body>
 <div class="container">
   <div class="row">
     <!--สไลค์-->
@@ -110,8 +66,10 @@
                                   <td><?php echo $row->Order_sumPrice;?> บาท</td>
                                   <td>
                                     <?php if ($row->Order_Paystatus  == "ยังไม่ชำระเงิน") { ?>
-                                      <!-- <a href="<?php echo base_url()?>index.php/fontEnd/Payment/pay  " >   <button class="btn btn-primary" >จ่ายตัง </button></a> -->
-                                      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                      <div id="paypal-button-container"></div>
+
+                                      <a href="<?php echo site_url('Paypal/index/'.$row->Order_Id)?>"><button class="btn btn-primary" >จ่ายตัง</button></a>
+                                      <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                         <input type="image" src="https://www.paypalobjects.com/th_TH/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - วิธีชำระเงินแบบออนไลน์ที่ปลอดภัยกว่าและง่ายกว่า!">
                                         <img alt="" border="0" src="https://www.paypalobjects.com/th_TH/i/scr/pixel.gif" width="2" height="2">
                                         <input type="hidden" name="cmd" value="_s-xclick">
@@ -119,7 +77,7 @@
                                         <input Type="Hidden" Name="inv" value="<?php echo $row->Order_Id; ?>"/>
                                         <input Type="Hidden" Name="amt" value="<?php echo $row->Order_sumPrice; ?>"/>
 
-                                      </form>
+                                      </form> -->
 
                                     <?php } else { ?>
                                       <big style="color:Green"><span class="glyphicon glyphicon-ok"></span> ชำระเงินแล้ว </big>
