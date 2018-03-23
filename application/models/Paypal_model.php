@@ -11,14 +11,14 @@ class Paypal_model extends CI_Model {
 
 	/* This function create new Service. */
 
-	function create($SubTotal,$Tax,$PaymentMethod,$PayerStatus,$PayerMail,$CreateTime,$UpdateTime,$State) {
+	function create($SubTotal,$PaymentMethod,$PayerStatus,$PayerMail,$CreateTime,$UpdateTime,$State) {
         // $this->db->set('Order_Id',$saleId);
         $this->db->set('PaymentMethod',$PaymentMethod);
         $this->db->set('PayerStatus',$PayerStatus);
         $this->db->set('PayerMail',$PayerMail);
         // $this->db->set('Total',$Total);
         $this->db->set('Total',$SubTotal);
-        $this->db->set('Subtotal',$Tax);
+        // $this->db->set('Subtotal',$Tax);
         $this->db->set('Payment_state',$State);
 		$this->db->set('CreateTime',$CreateTime);
 		$this->db->set('UpdateTime',$UpdateTime);

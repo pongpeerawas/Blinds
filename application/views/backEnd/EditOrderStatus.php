@@ -28,19 +28,20 @@
 
     <div class="container-fluid">
       <hr>
-
-<div class="span6">
+      <?php echo form_open_multipart('backEnd/Order/updateorderStatus');?>
+      <?php  foreach ($updateOrderStatus as $row): ?>
+<div class="span9">
       <div class="widget-box">
         <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
           <h5>แก้ไขสถานะการสั่งซื้อสินค้า การจัดส่งและการแจ้งชำระ</h5>
+
         </div>
         <div class="widget-content nopadding">
-          <?php echo form_open_multipart('backEnd/Order/updateorderStatus');?>
-          <?php  foreach ($updateOrderStatus as $row): ?>
+
           <table class="table">
             <thead>
               <tr>
-                <!-- <th>สถานะการชำระเงินออนไลน์</th> -->
+                <th>สถานะการชำระเงินออนไลน์</th>
                 <th>สถานะการจัดส่ง</th>
                 <th>สถานะแจ้งการโอน</th>
                 <th></th>
@@ -48,12 +49,18 @@
               </tr>
             </thead>
             <tbody>
-
-
-
               <tr>
                 <input type="hidden" class="form-control" name="Order_Id" value="<?php echo $row->Order_Id ?>" readonly>
+                <td>
+                  <select name="Order_Paystatus" value="<?php echo $row->Order_Paystatus ?>"   required>
+                    <option value="<?php echo $row->Order_PayConStatus ?>" ><?php echo $row->Order_Paystatus ?></option>
+                  <?php if ($row->Order_Paystatus == "ยังไม่ชำระเงิน"): ?>
+                    <option value="แจ้งชำระแล้ว">แจ้งชำระแล้ว</option>
+                  <?php else: ?>
+                    <option value="ยังไม่แจ้งชำระเงิน">ยังไม่แจ้งชำระเงิน</option>
+                  <?php endif; ?>
 
+                </td>
                 <td>
                   <select name="Order_Shipping" value="<?php echo $row->Order_Shipping ?>"   required>
                     <option value="<?php echo $row->Order_Shipping ?>" ><?php echo $row->Order_Shipping ?></option>
@@ -79,28 +86,19 @@
                   <?php endif; ?>
 
                 </td>
-
                 <td>
-
                     <input   value=บันทึก type=submit class="btn btn-success "   class="form-control" />
-
                 </td>
-
-
               </tr>
-
-
-
-
             </tbody>
           </table>
-        <?php endforeach;?>
 
-        <?php echo form_close();  ?>
       </div>
     </div>
   </div>
+<?php endforeach;?>
 
+<?php echo form_close();  ?>
 </div>
 
 </div>

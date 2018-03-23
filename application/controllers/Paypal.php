@@ -106,15 +106,25 @@ class Paypal extends CI_Controller
       ->setPayer($payer)
       ->setRedirectUrls($redirectUrls)
       ->setTransactions(array($transaction));
-      
+
       $payment->create($this->_api_context);
+
       $id = $this->input->post('item_name');
+
       $updatedata = array
       (
         'Order_Id'  =>  $id,
         'Order_Paystatus' 	  =>   'ชำระเงินแล้ว',
       );
       $this->Paypal_model->update_order_status($updatedata);
+
+      $updatedatapay = array
+      (
+
+        'Order_PayConStatus	' 	  =>   'แจ้งชำระแล้ว',
+      );
+      $this->db->update('orders',$updatedatapay);
+
       try {
 
       } catch (Exception $ex) {
@@ -197,7 +207,7 @@ class Paypal extends CI_Controller
         $Total = $sale->getAmount()->getTotal();
         /** it's all right **/
         /** Here Write your database logic like that insert record or value in database if you want **/
-        $this->paypal->create($Subtotal,$Tax,$PaymentMethod,$PayerStatus,$PayerMail,$CreateTime,$UpdateTime,$State);
+        $this->paypal->create($Subtotal,$PaymentMethod,$PayerStatus,$PayerMail,$CreateTime,$UpdateTime,$State);
         $this->session->set_flashdata('success_msg','Payment success');
         redirect('paypal/update_status');
 

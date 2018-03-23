@@ -41,13 +41,13 @@
                           <table id="example" class="table table-bordered table-striped" style="text-align: center">
                             <thead class="text-center">
                               <tr>
-                                <td>เลขที่ใบสั่งซื้อ </td>
-                                <td>วันที่สั่งซื้อ </td>
-                                <td>ราคารวม </td>
-                                <td>ชำระเงินผ่าน  </td>
-                                <td>สถานะการจัดส่งสินค้า </td>
-                                <td>สถานะการชำระเงิน </td>
-                                <td>รายละเอียด </td>
+                                <th class="text-center">เลขที่ใบสั่งซื้อ </th>
+                                <th class="text-center">วันที่สั่งซื้อ </th>
+                                <th class="text-center">ราคารวม </th>
+                                <th class="text-center">ชำระเงินผ่าน PayPal  </th>
+                                <th class="text-center">สถานะการจัดส่งสินค้า </th>
+                                <th class="text-center">สถานะการชำระเงิน </th>
+                                <th class="text-center">รายละเอียดใบสั่งซื้อสินค้า </th>
                               </tr>
                             </thead>
                             <tbody>
@@ -68,7 +68,7 @@
                                     <?php if ($row->Order_Paystatus  == "ยังไม่ชำระเงิน") { ?>
                                       <div id="paypal-button-container"></div>
 
-                                      <a href="<?php echo site_url('Paypal/index/'.$row->Order_Id)?>"><button class="btn btn-primary" >จ่ายตัง</button></a>
+                                      <a href="<?php echo site_url('Paypal/index/'.$row->Order_Id)?>"><button class="btn btn-primary" >ชำระเงิน</button></a>
                                       <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                         <input type="image" src="https://www.paypalobjects.com/th_TH/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - วิธีชำระเงินแบบออนไลน์ที่ปลอดภัยกว่าและง่ายกว่า!">
                                         <img alt="" border="0" src="https://www.paypalobjects.com/th_TH/i/scr/pixel.gif" width="2" height="2">
