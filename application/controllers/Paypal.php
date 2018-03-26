@@ -84,15 +84,19 @@ class Paypal extends CI_Controller
       // A transaction defines the contract of a
       // payment - what is the payment for and who
       // is fulfilling it.
+
       $transaction['description'] ='Payment description';
       $transaction['amount'] = $amount;
-      $transaction['invoice_number'] = uniqid();
+        // uniqid();
+      $transaction['invoice_number'] =  $this->input->post('Order_Id');
+
       $transaction['item_list'] = $itemList;
 
       // ### Redirect urls
       // Set the urls that the buyer must be redirected to after
       // payment approval/ cancellation.
-      // $id = $this->uri->segment(3);
+      // $item_name['item'] = $this->input->post('item_name');
+
       $baseUrl = base_url();
       $redirectUrls = new RedirectUrls();
       $redirectUrls->setReturnUrl($baseUrl.'index.php/paypal/getPaymentStatus')
@@ -151,7 +155,7 @@ class Paypal extends CI_Controller
     }
 
 
-    public function getPaymentStatus()
+    public function getPaymentStatus($item_name)
     {
 
       // paypal credentials
@@ -199,30 +203,35 @@ class Paypal extends CI_Controller
         $relatedResources = $trans[0]->getRelatedResources();
         $sale = $relatedResources[0]->getSale();
         // sale info //
-        // $saleId = $result->getTransactions()->getItemName();
-        $saleId = $sale->getId();
+
+          $saleId =   $trans[0]->getInvoiceNumber();
+
+
+        // $saleId = $sale->getId();
         $CreateTime = $sale->getCreateTime();
         $UpdateTime = $sale->getUpdateTime();
         $State = $sale->getState();
         $Total = $sale->getAmount()->getTotal();
         /** it's all right **/
         /** Here Write your database logic like that insert record or value in database if you want **/
-        $this->paypal->create($Subtotal,$PaymentMethod,$PayerStatus,$PayerMail,$CreateTime,$UpdateTime,$State);
+        $this->paypal->create($Subtotal,$PaymentMethod,$PayerStatus,$PayerMail,$CreateTime,$UpdateTime,$State,$saleId);
         $this->session->set_flashdata('success_msg','Payment success');
-        redirect('paypal/update_status');
+        $template['cart_session'] = $this->session->userdata('cart_session');
+
+        redirect('paypal/update_status',$template);
 
 
 
       $this->session->set_flashdata('success_msg','Payment failed');
-      redirect('paypal/cancel');
+      redirect('paypal/cancel',$template);
     }
 
     function update_status(){
-      $id = $this->uri->segment(3);
+      $item_name = set_value('item_name');
 
       $updatedata = array
       (
-        'Order_Id'  =>  $id,
+        'Order_Id'  =>  $item_name,
         'Order_Paystatus' 	  =>   'ชำระเงินแล้ว',
       );
       $this->Paypal_model->update_order_status($updatedata);

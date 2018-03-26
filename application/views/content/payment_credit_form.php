@@ -21,9 +21,9 @@
 
 
                     <fieldset>
-                        <!-- <input name="Order_Id" value="<?php echo $row->Order_Id ?>"> -->
+                         <input name="Order_Id" value="<?php echo $row->Order_Id ?>"> 
                         <input title="item_name" name="item_name" type="" value="<?php echo $row->Order_Id ?>">
-                        <input title="item_number" name="item_number" type="hidden" value="12345">
+                        <input title="item_number" name="item_number" type="hidden" value="-">
                         <input title="item_description" name="item_description" type="hidden" value="-">
                         <input title="item_tax" name="item_tax" type="hidden" value="1">
                         <!-- <input title="item_price" name="item_price" type="" value="7"> -->
