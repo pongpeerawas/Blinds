@@ -10,7 +10,8 @@ class Product_model extends CI_Model {
 	function product(){
 		$this->db->join('category','product.Cg_Id = category.Cg_Id','left');
 
-		$q = $this->db->select('*')->from('product')->get()->result();
+
+		$q = $this->db->select('*')->from('product')->order_by('Pro_Id','RANDOM')->get()->result();
 		return $q;
 	}
 

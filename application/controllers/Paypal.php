@@ -30,13 +30,25 @@ class Paypal extends CI_Controller
     }
 
     function index(){
-      $template['cart_session'] = $this->session->userdata('cart_session');
 
       $id = $this->uri->segment(3);
       $query = $this->Order_model->get_order($id);
+      $template['cart_session'] = $this->session->userdata('cart_session');
+
       $template['pay'] = $query->result();
 
-      $this->load->view('content/payment_credit_form',$template);
+      $query = $this->Order_model->get_order_list($id);
+      $data['orderlist'] = $query->result();
+
+      $query = $this->Order_model->get_order_shipping($id);
+      $data['shipping'] = $query->result();
+
+      $query = $this->Order_model->get_order($id);
+      $data['sumprice'] = $query->result();
+
+      $this->load->view('fontEnd/Template/Header',$template);
+      $this->load->view('content/payment_credit_form',$data);
+      $this->load->view('fontEnd/Template/Footer');
 
     }
 
@@ -87,7 +99,7 @@ class Paypal extends CI_Controller
 
       $transaction['description'] ='Payment description';
       $transaction['amount'] = $amount;
-        // uniqid();
+      // uniqid();
       $transaction['invoice_number'] =  $this->input->post('Order_Id');
 
       $transaction['item_list'] = $itemList;
@@ -112,22 +124,22 @@ class Paypal extends CI_Controller
       ->setTransactions(array($transaction));
 
       $payment->create($this->_api_context);
-
-      $id = $this->input->post('item_name');
-
-      $updatedata = array
-      (
-        'Order_Id'  =>  $id,
-        'Order_Paystatus' 	  =>   'ชำระเงินแล้ว',
-      );
-      $this->Paypal_model->update_order_status($updatedata);
-
-      $updatedatapay = array
-      (
-
-        'Order_PayConStatus	' 	  =>   'แจ้งชำระแล้ว',
-      );
-      $this->db->update('orders',$updatedatapay);
+      //
+      // $id = $this->input->post('item_name');
+      //
+      // $updatedata = array
+      // (
+      //   'Order_Id'  =>  $id,
+      //   'Order_Paystatus' 	  =>   'ชำระเงินแล้ว',
+      // );
+      // $this->Paypal_model->update_order_status($updatedata);
+      //
+      // $updatedatapay = array
+      // (
+      //
+      //   'Order_PayConStatus	' 	  =>   'แจ้งชำระแล้ว',
+      // );
+      // $this->db->update('orders',$updatedatapay);
 
       try {
 
@@ -188,37 +200,50 @@ class Paypal extends CI_Controller
 
       //  DEBUG RESULT, remove it later **/
 
-        $trans = $result->getTransactions();
+      $trans = $result->getTransactions();
 
-        // item info
-        $Subtotal = $trans[0]->getAmount()->getDetails()->getSubtotal();
-        $Tax = $trans[0]->getAmount()->getDetails()->getTax();
+      // item info
+      $Subtotal = $trans[0]->getAmount()->getDetails()->getSubtotal();
+      $Tax = $trans[0]->getAmount()->getDetails()->getTax();
 
-        $payer = $result->getPayer();
-        // payer info //
-        $PaymentMethod =$payer->getPaymentMethod();
-        $PayerStatus =$payer->getStatus();
-        $PayerMail =$payer->getPayerInfo()->getEmail();
+      $payer = $result->getPayer();
+      // payer info //
+      $PaymentMethod =$payer->getPaymentMethod();
+      $PayerStatus =$payer->getStatus();
+      $PayerMail =$payer->getPayerInfo()->getEmail();
 
-        $relatedResources = $trans[0]->getRelatedResources();
-        $sale = $relatedResources[0]->getSale();
-        // sale info //
+      $relatedResources = $trans[0]->getRelatedResources();
+      $sale = $relatedResources[0]->getSale();
+      // sale info //
 
-          $saleId =   $trans[0]->getInvoiceNumber();
+      $saleId =   $trans[0]->getInvoiceNumber();
 
 
-        // $saleId = $sale->getId();
-        $CreateTime = $sale->getCreateTime();
-        $UpdateTime = $sale->getUpdateTime();
-        $State = $sale->getState();
-        $Total = $sale->getAmount()->getTotal();
-        /** it's all right **/
-        /** Here Write your database logic like that insert record or value in database if you want **/
-        $this->paypal->create($Subtotal,$PaymentMethod,$PayerStatus,$PayerMail,$CreateTime,$UpdateTime,$State,$saleId);
-        $this->session->set_flashdata('success_msg','Payment success');
-        $template['cart_session'] = $this->session->userdata('cart_session');
+      // $saleId = $sale->getId();
+      $CreateTime = $sale->getCreateTime();
+      $UpdateTime = $sale->getUpdateTime();
+      $State = $sale->getState();
+      $Total = $sale->getAmount()->getTotal();
+      /** it's all right **/
+      /** Here Write your database logic like that insert record or value in database if you want **/
+      $this->paypal->create($Subtotal,$PaymentMethod,$PayerStatus,$PayerMail,$CreateTime,$UpdateTime,$State,$saleId);
 
-        redirect('paypal/update_status',$template);
+      $updatedata = array
+      (
+        'Order_Id'  =>  $saleId,
+        'Order_Paystatus' 	  =>   'ชำระเงินแล้ว',
+        'Order_PayConStatus	' 	  =>   'แจ้งชำระแล้ว',
+
+      );
+      $this->Paypal_model->update_order_status($updatedata);
+      // $this->db->update('orders',$updatedata);
+      $this->session->set_flashdata('success_msg','Payment success');
+      // $template['cart_session'] = $this->session->userdata('cart_session');
+      //
+      redirect('paypal/success');
+
+
+
 
 
 
@@ -226,18 +251,17 @@ class Paypal extends CI_Controller
       redirect('paypal/cancel',$template);
     }
 
-    function update_status(){
-      $item_name = set_value('item_name');
-
-      $updatedata = array
-      (
-        'Order_Id'  =>  $item_name,
-        'Order_Paystatus' 	  =>   'ชำระเงินแล้ว',
-      );
-      $this->Paypal_model->update_order_status($updatedata);
-      redirect('paypal/success');
-
-    }
+    // function update_status(){
+    //
+    //   $updatedata = array
+    //   (
+    //     'Order_Id'  =>  $item_name,
+    //     'Order_Paystatus' 	  =>   'ชำระเงินแล้ว',
+    //   );
+    //   $this->Paypal_model->update_order_status($updatedata);
+    //   redirect('paypal/success');
+    //
+    // }
     function success(){
       $this->load->view("content/success");
     }

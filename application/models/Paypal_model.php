@@ -32,23 +32,7 @@ class Paypal_model extends CI_Model {
 		->where('Order_Id',$updatedata['Order_Id'])
 		->update('orders',$updatedata);
 	}
-	public function update_order_id($updatedatapay)
-	{
-		$this->db
-		->where('Order_Id',$updatedatapay['Order_Id'])
-		->update('payments',$updatedatapay);
-	}
 
-	  public function check_oid()
-	  {
-	    $item_name = set_value('item_name');
-	    $gry = $this->db->where('Order_Id',$item_name)
-	    ->get('orders');
-	    if($gry->num_rows()	>	0)
-	    {
-	      return $gry->row();
-	    }else{
-	      return array();
-	    }
-	  }
+
+	
 }

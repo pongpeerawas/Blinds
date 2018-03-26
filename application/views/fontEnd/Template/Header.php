@@ -49,7 +49,7 @@
               <li  role="presentation" >
                 <?php if($this->session->userdata('username') ==	FALSE){ ?>
                 <li role="presentation">
-                  <a href="<?php echo site_url('fontEnd/Login');?>">สมัครสมาชิก/ล็อกอิน</li></a>
+                  <a href="<?php echo site_url('fontEnd/Login');?>">สมัครสมาชิก/เข้าสู่ระบบ</li></a>
                 <?php }else{ ?>
               <li role="presentation"><a href="<?php echo base_url()?>index.php/fontEnd/Customer/single_history?id=<?$this->session->userdata('id')?>">ข้อมูลการสั่งซื้อ</a></li>
 
@@ -57,7 +57,7 @@
                               <a href ="#" class = "dropdown-toggle" data-toggle="dropdown">คุณ : <?php echo $this->session->userdata('name') ?></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="<?php echo base_url()?>index.php/fontEnd/Customer/single?id=<?$this->session->userdata('id')?> ">ข้อมูลส่วนตัว</a></li>
-                                  <li><a href= "<?php echo base_url();?>index.php/fontEnd/Login/logout">ล็อกเอาท์</a></li>
+                                  <li><a href= "<?php echo base_url();?>index.php/fontEnd/Login/logout">ออกจากระบบ</a></li>
                                 </ul>
                               </li>
 
