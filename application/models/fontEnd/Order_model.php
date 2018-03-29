@@ -35,6 +35,7 @@ class Order_model extends CI_Model
   {
 
       // $this->db->join('orders','shipping.Order_Id = orders.Order_Id','left');
+      $this->db->join('customer','orders.Cus_Id = customer.Cus_Id','left');
 
       return $query = $this->db->select('*')->from('orders')->where('Order_Id',$id)->get();
   }

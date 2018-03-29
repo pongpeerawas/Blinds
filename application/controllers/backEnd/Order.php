@@ -43,8 +43,9 @@ class Order extends CI_Controller {
 		(
 			'Order_Id'  =>  set_value('Order_Id'),
 			'Order_Paystatus'	=> 	set_value('Order_Paystatus'),
-			'Order_PayConStatus'	=> 	set_value('Order_PayConStatus'),
 			'Order_Shipping'	=> 			set_value('Order_Shipping'),
+			'Order_PayConStatus'	=> 	set_value('Order_PayConStatus'),
+			
 		);
 
 		$this->OrderModel->update($update);

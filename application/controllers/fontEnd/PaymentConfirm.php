@@ -50,16 +50,6 @@ class PaymentConfirm extends CI_Controller {
 	}
 	public function savePaycon(){
 
-
-			$update = array
-				(
-					 'Order_Id'  =>  set_value('Order_Id'),
-					'Order_PayConStatus'	=> 	'รอการตรวจสอบ',
-				);
-
-				$this->db->where('Order_Id',$update['Order_Id'])->update('orders',$update);
-
-
     $input = $this->input->post();
     $pathinfo = pathinfo($_FILES['Pc_Pic']['name'],PATHINFO_EXTENSION);
     $new_file = date('YmdHis').".".$pathinfo;
@@ -67,6 +57,14 @@ class PaymentConfirm extends CI_Controller {
     $input['Pc_Pic']=$new_file;
 
     $this->db->insert('paymentconfirm',$input);
+
+		$update = array
+			(
+				'Order_Id'  =>  set_value('Order_Id'),
+				'Order_PayConStatus'	=> 	'รอการตรวจสอบ',
+			);
+
+			$this->db->where('Order_Id',$update['Order_Id'])->update('orders',$update);
 
 			redirect('fontEnd/Customer/single_history');
 

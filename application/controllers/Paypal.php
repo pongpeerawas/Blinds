@@ -37,6 +37,8 @@ class Paypal extends CI_Controller
 
       $template['pay'] = $query->result();
 
+
+
       $query = $this->Order_model->get_order_list($id);
       $data['orderlist'] = $query->result();
 

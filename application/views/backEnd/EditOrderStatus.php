@@ -53,11 +53,11 @@
                 <input type="hidden" class="form-control" name="Order_Id" value="<?php echo $row->Order_Id ?>" readonly>
                 <td>
                   <select name="Order_Paystatus" value="<?php echo $row->Order_Paystatus ?>"   required>
-                    <option value="<?php echo $row->Order_PayConStatus ?>" ><?php echo $row->Order_Paystatus ?></option>
+                    <option value="<?php echo $row->Order_Paystatus ?>" ><?php echo $row->Order_Paystatus ?></option>
                   <?php if ($row->Order_Paystatus == "ยังไม่ชำระเงิน"): ?>
-                    <option value="แจ้งชำระแล้ว">แจ้งชำระแล้ว</option>
+                    <option value="ชำระเงินแล้ว">ชำระเงินแล้ว</option>
                   <?php else: ?>
-                    <option value="ยังไม่แจ้งชำระเงิน">ยังไม่แจ้งชำระเงิน</option>
+                    <option value="ยังไม่ชำระเงิน">ยังไม่ชำระเงิน</option>
                   <?php endif; ?>
 
                 </td>

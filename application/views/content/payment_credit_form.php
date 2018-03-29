@@ -1,3 +1,10 @@
+<style type="text/css" media="print">
+       @page {
+           size: auto;
+           margin: 0 auto 0 auto;
+       }
+   </style>
+
 <section class="main">
   <div class="container" align="">
     <div class="breadcrumb ">
@@ -9,7 +16,7 @@
 
       </div>
       <section class="tab-content">
-
+        <div id="print">
         <section class="tab-pane active fade in content" id="dashboard">
           <div class="row">
             <div class="col-xs-12 ">
@@ -17,7 +24,6 @@
                 <div class="panel-heading">
 
 
-                <?php endforeach;?>
 
                 <?= $this->session->flashdata('error_msg') ?><br/>
                 <?= $this->session->flashdata('success_msg') ?><br/>
@@ -25,21 +31,25 @@
                   <thead>
                     <tr>
                       <td  style="text-align: left">
-                      <h1>  ใบสั่งซื้อสินค้า : <?php echo $row->Order_Id  ?></h1>
+                      <h3>  ใบสั่งซื้อสินค้า : <?php echo $row->Order_Id  ?></h3>
+
+                      &nbsp;  คุณ : <?php echo $row->Cus_Name?><br>
+                      &nbsp;  วันที่ทำรายการ : <?php echo $row->Order_datetime?>
+                    <?php endforeach;?>
+
+
                       <br><br>
                     </td>
                     <td></td>
                     <td  style="text-align: right">
-                      <br>
-                      <button class="btn btn-primary" onclick="">พิมพ์ใบเสร็จ</button>
-
+                        <h2>Curtain Shop</h2>
+                        <h5>91/1  ถ.เทพบุรี จ.อุดรธานี 41000</h5>
                     </td>
                     </tr>
                     <tr>
-                      <th style="text-align: left">รายละเอียด
-                      </th>
-                      <th style="width: 100px;text-align: center;">จำนวน</th>
-                      <th style="text-align: center">ราคาต่อหน่วย</th>
+                      <th style="text-align: left">รายละเอียด</th>
+                      <th style="width: 250px;text-align: right;">จำนวน</th>
+                      <th style="text-align: right">ราคาต่อหน่วย</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -47,13 +57,13 @@
 
                       <tr>
                         <td style="text-align: left">
-                          <img src="<?php echo base_url() ?>assetAdmin/img/<?php echo $row->Pro_Pic ?>" style="height: 170px;"><br>
+                          <!-- <img src="<?php echo base_url() ?>assetAdmin/img/<?php echo $row->Pro_Pic ?>" style="height: 170px;"><br> -->
                           <?php echo $row->Pro_Name;?>
-                          <br>
-                          <br>
+                          <!-- <br>
+                          <br> -->
                         </td>
-                        <td ><?php echo $row->quantity;?> ชิ้น</td>
-                        <td><?php echo $row->OrderList_Price;?> บาท</td>
+                        <td style="text-align: right" ><?php echo $row->quantity;?> ชิ้น</td>
+                        <td style="text-align: right"><?php echo $row->OrderList_Price;?> บาท</td>
                       </tr>
                     <?php endforeach;?>
                     <tr>
@@ -68,9 +78,15 @@
 
                     </tr>
                     <tr>
-                      <td style="text-align: left"> <br><br><br><button class="btn btn-danger" onclick="window.history.back()"> < กลับ</button></td>
-                      <td></td>
+                      <td style="text-align: left"> <br><br><br><button class="btn btn-danger" onclick="window.history.back()"> < กลับ</button>
+                        <button class="btn btn-primarys" onclick="printDiv('print')"  id="printpagebutton1" class="btn btn-link"><i class="fa fa-print"></i>   พิมพ์ใบเสร็จ</button>
+
+                      </td>
+                      <td style="text-align: left"><br><br><br>
+
+                      </td>
                       <td style="text-align: right">
+
                         <form method="post" class="form-horizontal" role="form" action="<?= base_url() ?>index.php/paypal/create_payment_with_paypal">
 
                           <?php foreach ($pay as $row): ?>
@@ -104,7 +120,7 @@
 
         </section>
 
-
+        </div>
       </section>
 
 
@@ -114,3 +130,22 @@
 
 
 </div>
+<script>
+    function myFunc(){
+        var printButton = document.getElementById("printpagebutton");
+        var printButton1 = document.getElementById("printpagebutton1");
+        //Set the print button visibility to 'hidden'
+        printButton.style.visibility = 'hidden';
+        printButton1.style.visibility = 'hidden';
+        window.print();
+        printButton.style.visibility = 'visible';
+        printButton1.style.visibility = 'visible';
+    }
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>

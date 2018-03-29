@@ -44,6 +44,8 @@ class Order extends CI_Controller {
 	public function saveOrder(){
 
 		//here for create new invoice
+		date_default_timezone_set('Asia/Bangkok'); # add your city to set local time zone
+		$now = date('Y-m-d H:i:s');
 
 		$data_order = array
 		(
@@ -52,7 +54,7 @@ class Order extends CI_Controller {
 			'Order_PayConStatus'	=> 	'ยังไม่แจ้งชำระเงิน',
 			'Order_Paystatus'	=> 			'ยังไม่ชำระเงิน',
 			'Order_Shipping'	=>			'ยังไม่จัดส่ง',
-
+			'Order_datetime'  =>      $now,
 		);
 
 		$this->db->insert('orders',$data_order);
